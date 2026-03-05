@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# EduMap: Análises de padrões de aprovação em cursos de universidades brasileiras pelo Sistema de Seleção Unificada (SISU)
 
 `CURSO: Sistemas de Informação`
 
@@ -6,20 +6,20 @@
 
 `SEMESTRE: 7º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto EduMap tem como objetivo prever a probabilidade de um candidato ser aprovado em determinado curso ou instituição a partir de sua nota do ENEM e outras características do processo seletivo.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Antônio Rubens Oliveira Junqueira
+* Arthur Neves da Silveira
+* Beatriz Pereira da Costa
+* Denis Alves da Silva Leite
+* Laís Lara Ferreira dos Santos
+* Sávio Sérgio Pereira da Silva
 
 ## Orientador
 
-* Nome completo do professor 1
+* Neil Paiva Tizzo
 
 # Planejamento
 
