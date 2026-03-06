@@ -117,15 +117,81 @@ Use-as para descoberta, organização e triagem de literatura.
 > - [Science Direct](https://www.sciencedirect.com/)
 > - [ACM Digital Library](https://dl.acm.org/)
 
-# Descrição do _dataset_ selecionado
+# Descrição do _dataset_ selecionado
 
-Nesta seção, apresente uma visão clara e objetiva do dataset selecionado, incluindo:
-* Identificação e origem – Nome, link de acesso, fonte (instituição, repositório, API etc.) e licença de uso.
-* Visão geral – Total de registros e atributos, período coberto e breve contextualização.
-* Atributos – Tabela com nome, descrição, tipo, unidade de medida (se aplicável) e exemplos de valores.
-* Qualidade dos dados – Presença de valores faltantes, inconsistências, duplicatas ou outliers.
+## Identificação e origem
 
-**Dica:** Seja objetivo, mas inclua detalhes suficientes para que outra pessoa possa entender e reutilizar o conjunto de dados sem buscar informações extras.
+- Nome: 2023 - Relatório SISU - Chamada Regular 1/2023
+- Link de acesso: https://dadosabertos.mec.gov.br/sisu/item/258-2023-relatorio-sisu-chamada-regular-1-2023
+- Fonte: Portal de Dados Abertos do Ministério da Educação
+- Licença de uso: Open Data Commons Open Database License (ODbL)
+
+## Visão geral
+
+O dataset reúne informações sobre o processo seletivo do **Sistema de Seleção Unificada (SISU)** referente à **primeira edição do ano de 2023**.
+
+O SISU é um sistema informatizado do Ministério da Educação que utiliza as notas do **ENEM (Exame Nacional do Ensino Médio)** para selecionar estudantes para vagas em instituições públicas de ensino superior.
+
+### Estrutura geral do dataset
+
+O conjunto de dados contém:
+- Registros de **inscrições em cursos ofertados pelo SISU**
+- Informações sobre **instituições de ensino superior**
+- Dados sobre **cursos, vagas e modalidades de concorrência**
+- Informações sobre **candidatos e suas notas no ENEM**
+- Dados sobre **classificação e resultado da seleção**
+
+### Estrutura dos dados
+
+Cada linha do dataset representa uma inscrição de um candidato em um curso específico dentro do processo do SISU. Como cada candidato pode escolher **duas opções de curso**, é possível que um mesmo candidato apareça mais de uma vez no dataset.
+
+### Conteúdo principal
+
+O dataset permite analisar:
+- competitividade entre cursos
+- distribuição regional das vagas
+- impacto das cotas no acesso ao ensino superior
+- diferenças de nota entre cursos e regiões
+- mobilidade geográfica dos estudantes
+## Atributos 
+
+|       Atributo        |                   Descrição                    |  Tipo   | Unidade |               Exemplos               |
+| :-------------------: | :--------------------------------------------: | :-----: | :-----: | :----------------------------------: |
+|          ANO          |            Ano do processo seletivo            | Inteiro |   Ano   |                 2023                 |
+|        EDICAO         |        Número da edição do SISU no ano         | Inteiro | Número  |                  1                   |
+|         ETAPA         |       Identificador da etapa do processo       | Inteiro | Número  |                  4                   |
+|       DS_ETAPA        |    Descrição da etapa do processo seletivo     | String  |    -    |           CHAMADA REGULAR            |
+|      CODIGO_IES       | Código identificador da instituição de ensino  | Inteiro | Código  |                 1234                 |
+|       NOME_IES        |     Nome da instituição de ensino superior     | String  |    -    | Universidade Federal de Minas Gerais |
+|       SIGLA_IES       |              Sigla da instituição              | String  |    -    |                 UFMG                 |
+|        UF_IES         |             Estado da instituição              | String  |   UF    |              MG, SP, RJ              |
+|     CODIGO_CAMPUS     |         Código identificador do campus         | Inteiro | Código  |                 567                  |
+|      NOME_CAMPUS      |         Nome do campus da instituição          | String  |    -    |           Campus Pampulha            |
+|   MUNICIPIO_CAMPUS    |    Município onde o campus está localizado     | String  |    -    |            Belo Horizonte            |
+|      NOME_CURSO       |             Nome do curso ofertado             | String  |    -    |      Medicina, Engenharia Civil      |
+|         GRAU          |           Tipo de formação do curso            | String  |    -    |      Bacharelado, Licenciatura       |
+|         TURNO         |                 Turno do curso                 | String  |    -    |          Matutino, Noturno           |
+|   MOD_CONCORRENCIA    |           Modalidade de concorrência           | String  |    -    |      Ampla concorrência, Cotas       |
+| QT_VAGAS_CONCORRENCIA | Número de vagas disponíveis para a modalidade  | Inteiro |  Vagas  |                  20                  |
+|        NOTA_L         |           Nota em Linguagens no ENEM           |  Float  | Pontos  |                640.5                 |
+|        NOTA_CH        |            Nota em Ciências Humanas            |  Float  | Pontos  |                610.2                 |
+|        NOTA_CN        |          Nota em Ciências da Natureza          |  Float  | Pontos  |                590.8                 |
+|        NOTA_M         |               Nota em Matemática               |  Float  | Pontos  |                720.3                 |
+|        NOTA_R         |                Nota na Redação                 |  Float  | Pontos  |                 800                  |
+|    NOTA_CANDIDATO     |   Nota final do candidato considerando pesos   |  Float  | Pontos  |                705.4                 |
+|      NOTA_CORTE       |  Nota mínima necessária para entrar no curso   |  Float  | Pontos  |                785.6                 |
+|     CLASSIFICACAO     | Posição do candidato na lista de classificação | Inteiro | Posição |                  12                  |
+|       APROVADO        |       Indica se o candidato foi aprovado       | String  |    -    |                S / N                 |
+
+## Qualidade dos dados 
+
+**Valores faltantes:** Alguns atributos podem apresentar valores ausentes, principalmente em campos relacionados a pesos das provas ou notas mínimas, pois nem todos os cursos utilizam esses critérios.
+
+**Inconsistências:** Podem ocorrer pequenas variações em campos categóricos, como nomes de cursos, municípios ou modalidades de concorrência, além de diferenças de capitalização ou abreviações.
+
+**Duplicatas:** Não foram identificadas duplicatas diretas. Um mesmo candidato pode aparecer mais de uma vez no dataset devido às duas opções de curso permitidas no SISU.
+
+**Outliers:** Podem existir notas muito altas ou muito baixas em comparação com a média, principalmente em cursos altamente concorridos, sendo necessário avaliar esses casos durante a análise exploratória.
 
 # Canvas analítico
 
