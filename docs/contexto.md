@@ -355,7 +355,7 @@ Ele reúne dados sobre:
 - Classificação dos candidatos
 - Aprovação e matrícula
 
-O SISU é um sistema informatizado do Ministério da Educação que utiliza as notas do **ENEM (Exame Nacional do Ensino Médio)** para selecionar estudantes para vagas em instituições públicas de ensino superior.
+O SISU é atualmente um dos principais mecanismos de acesso ao ensino superior público brasileiro, é um sistema informatizado do Ministério da Educação que utiliza as notas do **ENEM (Exame Nacional do Ensino Médio)** para selecionar estudantes para vagas em instituições públicas de ensino superior.
 
 
 ### Estrutura geral do dataset
