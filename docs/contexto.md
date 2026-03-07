@@ -347,7 +347,7 @@ Use-as para descoberta, organização e triagem de literatura.
 
 O dataset reúne informações sobre o processo seletivo do **Sistema de Seleção Unificada (SISU)** referente à **primeira edição do ano de 2023**.
 Ele reúne dados sobre:
-- Candidatos
+- Candidatos participantes do processo seletivo
 - Instituições de ensino superior
 - Cursos ofertados
 - Notas do ENEM
@@ -355,12 +355,14 @@ Ele reúne dados sobre:
 - Classificação dos candidatos
 - Aprovação e matrícula
 
+Esse dataset possibilita diversas análises relacionadas ao processo de acesso ao ensino superior no Brasil.
+
 O SISU é atualmente um dos principais mecanismos de acesso ao ensino superior público brasileiro, é um sistema informatizado do Ministério da Educação que utiliza as notas do **ENEM (Exame Nacional do Ensino Médio)** para selecionar estudantes para vagas em instituições públicas de ensino superior.
 
 
 ### Estrutura geral do dataset
 
-O conjunto de dados contém:
+O conjunto de dados contém registros relacionados ao processo seletivo do SISU, incluindo:
 - Registros de **inscrições em cursos ofertados pelo SISU**
 - Informações sobre **instituições de ensino superior**
 - Dados sobre **cursos, vagas e modalidades de concorrência**
@@ -369,11 +371,12 @@ O conjunto de dados contém:
 
 ### Estrutura dos dados
 
-Cada linha do dataset representa uma inscrição de um candidato em um curso específico dentro do processo do SISU. Como cada candidato pode escolher **duas opções de curso**, é possível que um mesmo candidato apareça mais de uma vez no dataset.
+Cada linha do dataset representa uma inscrição de um candidato em um curso específico dentro do processo do SISU. 
+Como cada candidato pode escolher **duas opções de curso**, é possível que um mesmo candidato apareça mais de uma vez no dataset.
 
 ### Conteúdo principal
 
-O dataset permite analisar:
+A partir desse conjunto de dados, é possivel realizar diversas análises relacionadas ao processo seletivo do ensino superior, tais como:
 - Prever nota de corte de um curso
 - Prever o nível de concorrência de um curso
 - Prever quais fatores mais influenciam a nota de corte
@@ -415,6 +418,7 @@ O dataset permite analisar:
 |       APROVADO        |       Indica se o candidato foi aprovado       | String  |    -    |                S / N                 |
 
 ## Qualidade dos dados 
+Durante a análise preliminar do dataset, alguns aspectos relacionados à qualidade dos dados devem ser considerados.
 
 **Valores faltantes:** Alguns atributos podem apresentar valores ausentes, principalmente em campos relacionados a pesos das provas ou notas mínimas, pois nem todos os cursos utilizam esses critérios.
 
