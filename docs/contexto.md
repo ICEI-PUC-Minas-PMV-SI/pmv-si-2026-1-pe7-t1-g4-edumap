@@ -162,146 +162,128 @@ O objetivo aqui não é definir clientes específicos ou papéis exatos dentro d
 > - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
 > - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/) -->
 
-## Estado da arte
+## Estado da Arte
 
-Estado da Arte
-A aplicação de técnicas de ciência de dados e aprendizado de máquina em dados educacionais tem crescido significativamente nos últimos anos. Pesquisas nessa área buscam identificar padrões em dados de desempenho acadêmico, prever resultados educacionais e apoiar processos de tomada de decisão em instituições de ensino. No contexto do ensino superior, diversos estudos utilizam dados de exames padronizados e históricos acadêmicos para prever desempenho, evasão, classificação ou probabilidade de aprovação em processos seletivos.
+Nesta seção, são apresentadas abordagens da literatura que tratam problemas semelhantes ao do projeto EduMap, focando na previsão de notas ou probabilidades de admissão em contextos educacionais, utilizando técnicas de Ciência de Dados e Machine Learning. Os trabalhos selecionados envolvem a previsão de admissões universitárias, notas de exames ou acesso ao ensino superior, com base em dados históricos e variáveis acadêmicas. Foram priorizados artigos dos últimos 5 anos, com ênfase em métodos preditivos aplicados a processos seletivos.
 
-A seguir são apresentados estudos relevantes da literatura que abordam problemas semelhantes ao investigado neste projeto.
+### Trabalho 1
+<details>
+<summary>Prediction for University Admission using Machine Learning (CHITHRA APOORVA et al., 2020)</summary>
 
-Estudo 1
-Predicting Student Performance Using Machine Learning Techniques
-Problema e contexto
-O estudo investigou a aplicação de algoritmos de aprendizado de máquina para prever o desempenho de estudantes a partir de dados educacionais. O objetivo foi identificar fatores que influenciam o sucesso acadêmico e construir modelos capazes de prever resultados educacionais.
-Dados (dataset)
-Foi utilizado um dataset educacional contendo informações acadêmicas de estudantes, incluindo notas, características demográficas e dados institucionais. O conjunto de dados passou por etapas de pré-processamento, incluindo limpeza de dados, tratamento de valores ausentes e normalização de variáveis.
-Abordagem/algoritmos
-Foram testados diversos algoritmos de aprendizado de máquina, incluindo:
-- Decision Tree
-- Random Forest
-- Support Vector Machine (SVM)
-- Naive Bayes
-- Métricas de avaliação
+- **Problema e contexto:** O estudo aborda o desafio enfrentado por estudantes indianos que buscam admissão em programas de mestrado em Ciência da Computação em universidades dos EUA. Os alunos frequentemente carecem de informações precisas sobre suas chances de admissão, levando a processos ineficientes, altos custos e dependência de fontes não confiáveis. O objetivo é desenvolver o modelo UAP (University Admission Predictor) para prever as chances de admissão com base em fatores cruciais, auxiliando na tomada de decisões informadas.
+- **Dados (dataset):**
+  - Origem: dados coletados de fontes como Yocket, focando em perfis de estudantes indianos.
+  - Tamanho: não explicitado, mas sem valores ausentes ou outliers após análise.
+  - Período: não especificado.
+  - Variáveis/atributos: pontuação GRE, TOEFL/IELTS, qualidade do SOP (Statement of Purpose), força do LOR (Letter of Recommendation), CGPA de graduação, experiência em pesquisa e chance de admissão (rótulo).
+  - Pré-processamentos: inspeção de valores, remoção de ruído, divisão em conjuntos de treino e teste; sem imputação necessária.
+- **Abordagem/algoritmos:**
+  - Algoritmos utilizados: K-Nearest Neighbors (KNN), Linear Regression, Ridge Regression e Random Forest.
+  - Parâmetros principais: não customizados além dos padrões; foco em regressão para prever probabilidades.
+- **Métricas de avaliação:** Acurácia (accuracy), escolhida para avaliar o desempenho geral dos modelos.
+- **Resultados:**
+  - Acurácia média de 79%; Linear Regression superou os outros.
+  - Limitações: dados limitados a estudantes indianos e poucas universidades; não considera mudanças em critérios de admissão.
+  - Conclusões: O modelo auxilia estudantes a economizarem tempo e recursos, com potencial para expansão.
+</details>
 
-Os modelos foram avaliados utilizando:
-- Acurácia
-- Precisão
-- Recall
-- F1-score
+### Trabalho 2
+<details>
+<summary>Optimizing University Admissions: A Machine Learning Perspective (MAULANA et al., 2023)</summary>
 
-Essas métricas foram escolhidas para avaliar a capacidade dos modelos em classificar corretamente o desempenho dos estudantes.
+ - **Problema e contexto:** O artigo aborda limitações nos processos tradicionais de admissão universitária, que falham em capturar capacidades holísticas e podem introduzir viés. Propõe o uso de Machine Learning para prever chances de admissão em programas de mestrado na UCLA, analisando padrões complexos em dados de candidatos para melhorar decisões de estudantes e instituições.
+- **Dados (dataset):**
+  - Origem: dataset de admissões na UCLA do Kaggle.
+  - Tamanho: não explicitado, mas com estatísticas descritivas.
+  - Período: não especificado.
+  - Variáveis/atributos: pontuações GRE (0–340), TOEFL (0–120), classificação da universidade (1–5), SOP (1–5), LOR (1–5), GPA de graduação (0–10), experiência em pesquisa (binária) e chance de admissão (alvo, 0–1).
+  - Pré-processamentos: análise exploratória com matriz de correlação e gráficos; sem detalhes específicos de limpeza.
+- **Abordagem/algoritmos:**
+  - Algoritmos utilizados: K-Nearest Neighbors (KNN), Random Forest, Support Vector Regression (SVR) e XGBoost.
+  - Parâmetros principais: padrões das bibliotecas scikit-learn e XGBoost; sem afinação customizada.
+- **Métricas de avaliação:** R-squared (R²), Root Mean Squared Error (RMSE) e Mean Absolute Error (MAE), para medir variância explicada e erros de previsão.
+- **Resultados:**
+  - Random Forest: R² = 0.816, RMSE = 0.005, MAE = 0.050 (melhor desempenho).
+  - Importância de features: CGPA (0.80) como mais influente.
+  - Limitações: dataset específico da UCLA; falta de validação em outros contextos.
+  - Conclusões: Random Forest é eficaz; ênfase no desempenho acadêmico; adaptável a outras universidades.
+</details>
 
-Resultados
-O algoritmo Random Forest apresentou melhor desempenho entre os modelos testados, alcançando níveis de acurácia superiores a 80%. O estudo concluiu que técnicas de aprendizado de máquina podem ser eficazes para identificar padrões em dados educacionais e auxiliar na previsão de desempenho acadêmico.
+### Trabalho 3
+<details>
+<summary>A Machine-Learning-Based Approach to Informing Student Admission Decisions (LIU et al., 2025)</summary>
 
-Estudo 2
-Educational Data Mining: A Review of Applications and Techniques
-Problema e contexto
-Este estudo apresenta uma revisão das principais aplicações de mineração de dados educacionais, com foco na análise de desempenho de estudantes e na previsão de resultados acadêmicos.
-Dados (dataset)
-A revisão analisa diversos conjuntos de dados educacionais provenientes de sistemas acadêmicos, plataformas de ensino e exames educacionais.
-Abordagem/algoritmos
-Os principais algoritmos identificados na literatura incluem:
-Random Forest
-Logistic Regression
-Neural Networks
-K-means Clustering
-Métricas de avaliação
+- **Problema e contexto:** O estudo aborda desafios em decisões de admissão em programas com alto volume de candidaturas e vagas limitadas, como mestrado em Psicologia em uma universidade alemã. Abordagens tradicionais usam yields fixos, ignorando incertezas, levando a sub ou superlotação. Propõe uma abordagem baseada em Machine Learning para prever matrículas condicionais, incorporar incerteza e ajustar admissões de forma data-driven.
+- **Dados (dataset):**
+  - Origem: dados de um mestrado em Psicologia em universidade alemã.
+  - Tamanho: ~1500 candidaturas/ano, 996 admitidos totais.
+  - Período: 2017–2020.
+  - Variáveis/atributos: idade, gênero, local de bacharelado, status da instituição, origem biográfica, major de bacharelado, distância de deslocamento e total de candidaturas.
+  - Pré-processamentos: imputação com missForest (<5% faltantes), codificação dummy para categóricos; foco em dados da primeira rodada.
+- **Abordagem/algoritmos:**
+  - Algoritmos utilizados: Logistic Regression, Elastic Net, Classification Tree e Random Forest (selecionado).
+  - Parâmetros principais: para Random Forest, n_estimators=100, max_depth=15/10, min_samples_split=5, min_samples_leaf=2; tuning via grid search e cross-validation.
+  - Abordagem: previsão de probabilidades individuais, agregação via Poisson binomial, bootstrapping para incerteza.
+- **Métricas de avaliação:** AUC, Brier Score, Mean Absolute Difference, cobertura de IC 95%, correlação rolling; para risco: P(E > SP | A), etc.
+- **Resultados:**
+  - Random Forest: AUC=0.84, Brier=0.15; MAE=9.05 para matrículas.
+  - Reduz risco de superlotação vs. tradicional (94% para 5–20%).
+  - Limitações: dados de um programa; requer total de candidaturas conhecido.
+  - Conclusões: Supera métodos tradicionais; melhora eficiência.
+</details>
 
-As métricas mais utilizadas nos estudos analisados foram:
-- Accuracy
-- AUC (Area Under the Curve)
-- RMSE
-- MAE
+### Trabalho 4
+<details>
+<summary>Machine Learning para Previsão de Acessos ao Ensino Superior (EPALANGA, 2025)</summary>
 
-Resultados
-A revisão mostra que técnicas de aprendizado de máquina têm sido amplamente utilizadas para prever desempenho acadêmico, evasão e sucesso educacional, destacando o potencial dessas abordagens para apoiar decisões educacionais.
+- **Problema e contexto:** A dissertação aborda a falta de ferramentas analíticas avançadas para gerenciar o acesso ao ensino superior em Portugal via Concurso Nacional de Acesso. Foca na previsão do número de candidaturas e nota de admissão do último colocado para cursos no ano seguinte, usando Machine Learning para otimizar decisões sobre vagas e estratégias.
+- **Dados (dataset):**
+  - Origem: site oficial da DGES.
+  - Tamanho: 890.192 vagas disponíveis, 746.415 preenchidas (77.7% ocupação média).
+  - Período: 2004–2024.
+  - Variáveis/atributos: código de instituição, nome do curso, vagas iniciais, colocados, nota do último colocado, taxa de ocupação, ano; features derivadas como médias cumulativas e taxas de crescimento.
+  - Pré-processamentos: remoção de linhas introdutórias, renomeação, conversão de tipos, imputação de faltantes com médias anuais, remoção de valores inválidos; engenharia de features temporais.
+- **Abordagem/algoritmos:**
+  - Algoritmos utilizados: Random Forest Regressor (principal), baselines Linear Regression e ARIMA.
+  - Parâmetros principais: n_estimators=100, max_depth=15/10, min_samples_split=5, min_samples_leaf=2; tuning via grid search.
+  - Abordagem: CRISP-DM; seleção de features via importância de permutação.
+- **Métricas de avaliação:** MAE, R², RMSE; distribuição de erros (% <1, <2, <5), IC 99%.
+- **Resultados:**
+  - Random Forest (nota de admissão): MAE=1.35, R²=0.984; (colocados): MAE=2.35, R²=0.989.
+  - Supera baselines.
+  - Limitações: falta de dados individuais; generalização limitada.
+  - Conclusões: Automatiza previsões com alta acurácia; dashboard interativo para suporte.
+</details>
 
-Estudo 3
-Predicting Academic Performance with Machine Learning
-Problema e contexto
-Este estudo buscou prever o desempenho acadêmico de estudantes utilizando modelos de aprendizado de máquina baseados em dados históricos de desempenho educacional.
-Dados (dataset)
-O dataset utilizado continha informações sobre:
-- notas dos estudantes
-- características demográficas
-- histórico acadêmico
-Foram aplicadas técnicas de pré-processamento, como normalização e remoção de valores inconsistentes.
-Abordagem/algoritmos
-Os algoritmos utilizados foram:
-Logistic Regression
-Random Forest
-Gradient Boosting
-Métricas de avaliação
+### Trabalho 5
+<details>
+<summary>Prevendo as notas do ENEM com Machine Learning (WATANABE, s.d.)</summary>
 
-Os modelos foram avaliados utilizando:
-- Accuracy
-- Precision
-- Recall
-- ROC-AUC
+- **Problema e contexto:** O artigo aborda um desafio da Codenation para prever a nota da prova de matemática (NU_NOTA_MT) dos participantes do ENEM 2016 usando Machine Learning. O foco é criar um modelo preditivo baseado apenas no dataset train.csv, destacando análise exploratória e construção de modelo para alta acurácia.
+- **Dados (dataset):**
+  - Origem: desafio Codenation, microdados ENEM 2016.
+  - Tamanho: não explicitado.
+  - Período: 2016.
+  - Variáveis/atributos: NU_NOTA_MT (alvo), NU_NOTA_CN, NU_NOTA_CH, NU_NOTA_LC, NU_NOTA_REDACAO, componentes de redação (NU_NOTA_COMP1–5), TP_PRESENCA_LC.
+  - Pré-processamentos: filtro de nulos/zeros em notas chave (assumindo ausência), preenchimento de componentes com 0; padronização com StandardScaler; análise de distribuição e correlação.
+- **Abordagem/algoritmos:**
+  - Algoritmo utilizado: RandomForestRegressor.
+  - Parâmetros principais: criterion='mae', max_depth=8, n_estimators=500, n_jobs=-1, random_state=0.
+- **Métricas de avaliação:** MAE, MSE, RMSE; calculadas no conjunto de treino.
+- **Resultados:**
+  - Ranking 6º no desafio (score 93.86%).
+  - Limitações: suposições sobre nulos podem viésar; sem conjunto de validação explícito.
+  - Conclusões: Importância da análise exploratória; sugestões para engenharia de features e AutoML.
+</details>
 
-Resultados
-Os modelos baseados em árvores de decisão, especialmente Random Forest e Gradient Boosting, apresentaram melhor desempenho na previsão do desempenho acadêmico.
+### Texto-síntese crítico
 
-Estudo 4
-Machine Learning Approaches for Predicting University Admission
-Problema e contexto
-Este estudo investigou a aplicação de modelos de aprendizado de máquina para prever a admissão de candidatos em universidades com base em dados de desempenho acadêmico e exames padronizados.
-Dados (dataset)
-O dataset incluiu informações sobre:
-- notas em exames padronizados
-- histórico acadêmico
-- características demográficas
-- Os dados foram submetidos a etapas de limpeza e normalização.
+Os estudos concordam na utilidade de técnicas de Machine Learning, como Random Forest e regressão linear, para prever resultados em processos seletivos educacionais, destacando variáveis acadêmicas (ex.: CGPA, GRE, notas de provas) como preditores principais. Há convergência na ênfase em pré-processamento de dados para lidar com ausentes e na superioridade de ensembles como Random Forest sobre baselines, alcançando acurácias ou R² acima de 0.8 em cenários de admissão ou previsão de notas. Divergências aparecem nos contextos: enquanto alguns focam em admissões pós-graduadas nos EUA (Trabalhos 1 e 2), outros tratam de acesso ao ensino superior europeu (Trabalhos 3 e 4) ou exames brasileiros como ENEM (Trabalho 5), variando métricas de classificação (AUC, acurácia) para regressão (MAE, R²).
 
-Abordagem/algoritmos
-Os algoritmos utilizados foram:
-- Linear Regression
-- Random Forest
-- Artificial Neural Networks
-- Métricas de avaliação
-
-As métricas utilizadas incluíram:
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-
-Resultados
-Os resultados indicaram que modelos baseados em aprendizado de máquina podem prever com razoável precisão as chances de admissão de candidatos em processos seletivos universitários.
-
-Estudo 5
-Learning Analytics in Higher Education: A Review
-Problema e contexto
-O estudo analisa aplicações de Learning Analytics no ensino superior, com foco na utilização de dados educacionais para melhorar processos de ensino, aprendizagem e tomada de decisão.
-Dados (dataset)
-Os datasets analisados incluem registros acadêmicos, dados de desempenho de estudantes e informações institucionais.
-Abordagem/algoritmos
-As técnicas mais utilizadas incluem:
-- Data Mining
-- Machine Learning
-- Statistical Modeling
-- Métricas de avaliação
-
-As métricas variam conforme o objetivo do estudo, incluindo:
-- Accuracy
-- F1-score
-- RMSE
-
-Resultados
-O estudo conclui que o uso de análise de dados educacionais tem grande potencial para apoiar instituições de ensino na melhoria do desempenho acadêmico e na identificação de padrões educacionais.
-
-Síntese Crítica da Literatura
-
-A análise dos estudos apresentados revela um consenso na literatura sobre o potencial das técnicas de aprendizado de máquina para analisar e prever fenômenos relacionados ao desempenho acadêmico e aos processos educacionais. Diversos trabalhos demonstram que algoritmos como Random Forest, Gradient Boosting e redes neurais apresentam bons resultados na identificação de padrões em dados educacionais, especialmente quando utilizados em conjuntos de dados históricos que contêm informações sobre desempenho acadêmico e características dos estudantes.
-
-Apesar desse consenso, existem divergências em relação às técnicas mais adequadas para cada tipo de problema. Alguns estudos destacam o bom desempenho de modelos baseados em árvores de decisão, enquanto outros enfatizam a eficácia de redes neurais ou modelos estatísticos tradicionais. Essas diferenças geralmente estão relacionadas às características dos datasets utilizados, como tamanho da base de dados, quantidade de variáveis disponíveis e qualidade dos dados.
-
-Além disso, a literatura ainda apresenta algumas lacunas importantes. Muitos estudos utilizam datasets limitados ou restritos a instituições específicas, o que dificulta a generalização dos resultados. Também há desafios relacionados à qualidade dos dados, presença de valores ausentes e possíveis vieses nos modelos. Outra lacuna relevante está na análise de processos seletivos nacionais em larga escala, como o caso do ENEM e do SISU, que envolvem grande volume de dados e múltiplos fatores que influenciam o processo de seleção.
-
-Nesse contexto, o presente projeto se alinha às pesquisas existentes ao aplicar técnicas de aprendizado de máquina em um dataset relacionado ao processo de ingresso no ensino superior brasileiro. Ao explorar dados de candidatos, cursos e notas obtidas no ENEM, o trabalho busca identificar padrões e analisar fatores relacionados à classificação e às notas de corte, contribuindo para o avanço das análises de dados educacionais no contexto brasileiro.
+Lacunas incluem generalização limitada (datasets específicos de uma universidade ou país), falta de dados individuais socioeconômicos, validação externa insuficiente e considerações éticas sobre viés. Limitações técnicas envolvem tamanhos de amostras pequenos e ausência de atualizações em tempo real; éticas, o risco de perpetuar desigualdades em seleções. O projeto EduMap alinha-se aos estudos ao usar ML para prever notas de corte no SISU com base em dados históricos, preenchendo uma lacuna no contexto brasileiro ao focar em dados abertos do MEC e disponibilizar uma aplicação prática. Diferencia-se ao priorizar regressão para estimativa contínua (nota de corte) em um sistema unificado como SISU, incorporando variáveis como curso, instituição e vagas, e avaliando múltiplos modelos para robustez.
 
 
-
-Nesta seção, descreva abordagens da literatura que tratam problemas semelhantes ao seu. Seu objetivo é documentar métodos, dados, métricas e resultados.
+<!-- Nesta seção, descreva abordagens da literatura que tratam problemas semelhantes ao seu. Seu objetivo é documentar métodos, dados, métricas e resultados.
 
 ### O que levantar (mínimo 5 trabalhos)
 Para **cada estudo encontrado** aderente à temática do grupo, registre de forma objetiva:
@@ -316,7 +298,7 @@ Para **cada estudo encontrado** aderente à temática do grupo, registre de form
 - Quais lacunas permanecem (dados, métricas, cenários, limitações técnicas/éticas)?
 - Como seu projeto se alinha aos estudos identificados?
 
-**Dica:** Prefira artigos dos últimos 5 anos ou referências clássicas indispensáveis.
+**Dica:** Prefira artigos dos últimos 5 anos ou referências clássicas indispensáveis. 
 
 ### Ferramentas inteligentes permitidas
 Você pode utilizar: Perplexity, SciSpace, Elicit, Research Rabbit, Litmaps.
@@ -333,7 +315,7 @@ Use-as para descoberta, organização e triagem de literatura.
 > - [Google Scholar](https://scholar.google.com/)
 > - [IEEE Xplore](https://ieeexplore.ieee.org/Xplore/home.jsp)
 > - [Science Direct](https://www.sciencedirect.com/)
-> - [ACM Digital Library](https://dl.acm.org/)
+> - [ACM Digital Library](https://dl.acm.org/)-->
 
 # Descrição do _dataset_ selecionado
 
@@ -452,6 +434,16 @@ Nesta etapa, o grupo deverá produzir um vídeo de 5 a 8 minutos apresentando o 
 - TUMELERO, Naína. **Aprenda como fazer o objetivo geral e os objetivos específicos do seu trabalho**. Blog Mettzer, 2017. Atualizado em: 7 mar. 2025. Disponível em: https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/. Acesso em: 7 mar. 2026.
   
 - PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS. Sistema Integrado de Bibliotecas. **Orientações para elaboração de citações e referências**: conforme as NBRs 10520:2023 e 6023:2025, da Associação Brasileira de Normas Técnicas (ABNT). 6. ed. Belo Horizonte: PUC Minas, 2025. Disponível em: https://www.pucminas.br/biblioteca. Acesso em: 7 mar. 2026.
+
+- CHITHRA APOORVA, D. A. et al. Prediction for University Admission using Machine Learning. International Journal of Recent Technology and Engineering (IJRTE), v. 8, n. 6, p. 4922–4926, 2020. DOI: 10.35940/ijrte.F9043.038620. Disponível em: https://www.researchgate.net/publication/363859360_Prediction_for_University_Admission_using_Machine_Learning. Acesso em: 7 mar. 2026.
+
+- MAULANA, A. et al. Optimizing University Admissions: A Machine Learning Perspective. Journal of Educational Management and Learning, v. 1, n. 1, p. 1–7, 2023. DOI: 10.60084/jeml.v1i1.46. Disponível em: https://pdfs.semanticscholar.org/e550/b3552f887bf7463905ddc4372f63e608af0a.pdf. Acesso em: 7 mar. 2026.
+
+- LIU, T. et al. A Machine-Learning-Based Approach to Informing Student Admission Decisions. Behavioral Sciences, v. 15, n. 3, p. 330, 2025. DOI: 10.3390/bs15030330. Disponível em: https://www.mdpi.com/2076-328X/15/3/330. Acesso em: 7 mar. 2026.
+
+- EPALANGA, A. E. Machine Learning para Previsão de Acessos ao Ensino Superior. Mestrado em Engenharia Informática e Computação, Faculdade de Engenharia da Universidade do Porto, 2025. Disponível em: https://repositorio-aberto.up.pt/bitstream/10216/168200/2/733106.pdf. Acesso em: 7 mar. 2026.
+
+- WATANABE, W. Prevendo as notas do ENEM com Machine Learning — Data Science. Medium, s.d. Disponível em: https://medium.com/@wesleywatanabe/data-science-machine-learning-enem-regressao-linear-5cd140459dc3. Acesso em: 7 mar. 2026.
  
 <!-- Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
 
