@@ -2,6 +2,14 @@
 
 Texto descritivo introdutório apresentando a visão geral do projeto a ser desenvolvido considerando o contexto em que ele se insere, os objetivos gerais, a justificativa e o público-alvo do projeto.
 
+Nos últimos anos, o processo de ingresso no ensino superior brasileiro tem sido amplamente influenciado pelos resultados do Exame Nacional do Ensino Médio (ENEM), utilizado como principal mecanismo de seleção para diversas instituições públicas por meio do Sistema de Seleção Unificada (SISU). Esse sistema centraliza a oferta de vagas em cursos de graduação em instituições públicas de todo o país e utiliza as notas obtidas pelos candidatos no ENEM para realizar a classificação e seleção dos estudantes.
+
+O SISU reúne um grande volume de informações sobre candidatos, cursos, instituições e desempenho nas provas do ENEM, formando bases de dados ricas e complexas que possibilitam diferentes tipos de análises educacionais. Entre os dados disponíveis estão informações sobre cursos ofertados, quantidade de vagas, modalidade de concorrência, notas obtidas nas áreas avaliadas pelo ENEM, classificação dos candidatos, notas de corte e resultados de aprovação e matrícula.
+
+A análise desses dados permite compreender melhor o comportamento do processo seletivo, bem como identificar padrões relacionados ao desempenho dos candidatos e à competitividade dos cursos. Nesse contexto, técnicas de ciência de dados e aprendizado de máquina podem ser aplicadas para explorar o conjunto de dados e desenvolver modelos capazes de identificar padrões e realizar previsões relacionadas ao processo de seleção.
+
+Diante disso, este projeto propõe a análise de um dataset contendo informações sobre candidatos participantes do processo seletivo de cursos de graduação, com o objetivo de explorar os dados e experimentar modelos de aprendizado de máquina capazes de auxiliar na compreensão de padrões presentes no processo de seleção e classificação dos candidatos.
+
 ## Problema
 
 Nesta seção, você deve apresentar o problema que a sua investigação/experimentação busca resolver. Por exemplo, caso o _dataset_ selecionado, seja um _dataset_ que contenha uma série temporal com o preço de diversas ações da bolsa de valores, o problema pode estar relacionado a dificuldade em saber a melhor hora (hora certa??) de comprar ou então, de executar a venda de uma determinada ação.
@@ -9,6 +17,14 @@ Nesta seção, você deve apresentar o problema que a sua investigação/experim
 Descreva ainda o contexto em que essa aplicação será usada, se houver: empresa parceira, tecnologias etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
 
 **Atenção:** Nesta etapa, apresente apenas informações reais e já confirmadas. Não antecipe requisitos técnicos detalhados, funcionalidades específicas ou desenhos de projeto — essa parte será desenvolvida posteriormente.
+
+O ingresso em instituições públicas de ensino superior no Brasil é altamente competitivo e depende diretamente do desempenho dos candidatos no ENEM e da concorrência existente em cada curso. Um dos principais indicadores desse processo é a nota de corte, que representa a menor pontuação necessária para que um candidato seja classificado dentro do número de vagas disponíveis.
+
+Entretanto, a nota de corte não é um valor fixo e pode variar significativamente de acordo com diversos fatores, como o número de candidatos concorrendo a uma vaga, a distribuição das notas obtidas no ENEM, a quantidade de vagas disponíveis e a modalidade de concorrência adotada no processo seletivo.
+
+Para candidatos, gestores educacionais e pesquisadores, pode ser difícil compreender ou prever o comportamento dessas notas ao longo do processo seletivo, especialmente em cursos com grande número de concorrentes. Dessa forma, surge a necessidade de utilizar métodos analíticos capazes de identificar padrões nos dados históricos e auxiliar na compreensão do comportamento das notas e da classificação dos candidatos.
+
+Neste contexto, a aplicação de técnicas de ciência de dados e aprendizado de máquina pode contribuir para a análise desse fenômeno, permitindo explorar relações entre variáveis como notas nas diferentes áreas do ENEM, pesos atribuídos pelos cursos, quantidade de vagas e desempenho dos candidatos no processo seletivo.
 
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
@@ -23,9 +39,14 @@ O papel da questão de pesquisa é guiar todas as etapas do projeto — desde a 
 
 **Dica:** Formule a questão de pesquisa de forma específica e objetiva, evitando perguntas muito amplas ou genéricas. Pergunte-se: "Ao final do trabalho, minha pesquisa terá condições de responder claramente a essa pergunta?"
 
+A partir do problema apresentado, a seguinte questão de pesquisa orienta o desenvolvimento deste trabalho:
+É possível utilizar técnicas de aprendizado de máquina para identificar padrões nos dados do processo seletivo do ensino superior e auxiliar na previsão ou análise do comportamento da nota de corte e da classificação dos candidatos?
+Essa questão busca investigar se modelos de aprendizado de máquina podem extrair conhecimento relevante a partir do conjunto de dados disponível e contribuir para uma melhor compreensão do processo de seleção universitária.
+
 > **Links Úteis**:
 > - [Questão de pesquisa](https://www.enago.com.br/academy/how-to-develop-good-research-question-types-examples/)
 > - [Problema de pesquisa](https://blog.even3.com.br/problema-de-pesquisa/)
+
 
 ## Objetivos preliminares
 
@@ -41,12 +62,30 @@ Exemplo:
 Objetivo específico 1: Predizer a tendência de alta, estabilidade ou queda de uma determinada ação em uma janela de tempo definida.
 Objetivo específico 2: Estimar o valor exato da ação ao final do período analisado.
 
+Objetivo Geral
+
+Explorar e experimentar modelos de aprendizado de máquina aplicados ao dataset do processo seletivo do ensino superior brasileiro, com o objetivo de identificar padrões e analisar fatores relacionados ao desempenho e classificação dos candidatos.
+
+Objetivos Específicos
+- Analisar e explorar o conjunto de dados, identificando as principais variáveis e relações existentes entre elas.
+- Aplicar técnicas de pré-processamento e preparação de dados para possibilitar o uso em modelos de aprendizado de máquina.
+- Experimentar diferentes algoritmos de aprendizado de máquina para analisar padrões relacionados à classificação e às notas dos candidatos.
+- Avaliar o desempenho dos modelos utilizando métricas adequadas de avaliação.
+
 **Importante:** À medida que a pesquisa/experimentação avança, os objetivos podem ser ajustados ou refinados. Mantenha essa seção atualizada no repositório para refletir o andamento e as novas decisões do projeto.
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
+
+O acesso ao ensino superior é um tema de grande relevância social e educacional no Brasil. Segundo dados do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), milhões de estudantes realizam o ENEM todos os anos com o objetivo de ingressar em instituições de ensino superior públicas ou privadas.
+
+O Sistema de Seleção Unificada (SISU) representa um dos principais mecanismos de acesso ao ensino superior público no país, reunindo informações sobre milhares de cursos e candidatos em cada edição do processo seletivo. Esse grande volume de dados constitui uma importante fonte para análises acadêmicas e para o desenvolvimento de soluções baseadas em ciência de dados.
+
+A utilização de técnicas de análise de dados e aprendizado de máquina nesse contexto pode contribuir para a compreensão do comportamento do processo seletivo, permitindo identificar padrões relacionados ao desempenho dos candidatos, à concorrência entre cursos e às variações das notas de corte.
+
+Além disso, o estudo desse tipo de base de dados também possui relevância acadêmica, pois permite aplicar conceitos de mineração de dados, aprendizado de máquina e análise estatística em um contexto real e de grande impacto social. Dessa forma, o projeto contribui tanto para o desenvolvimento de competências técnicas na área de ciência de dados quanto para a análise de um fenômeno relevante no sistema educacional brasileiro.
 
 Nesta seção, apresente a importância e a motivação para trabalhar com o conjunto de dados escolhido. Explique por que esse dataset é relevante e como ele se conecta ao problema identificado anteriormente.
 
@@ -64,6 +103,13 @@ Indique:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
+Os resultados deste projeto podem beneficiar diferentes grupos interessados na análise de dados educacionais e no processo de seleção para o ensino superior.
+Entre os principais públicos interessados estão:
+- Pesquisadores e estudantes da área de ciência de dados, que podem utilizar o estudo como referência para aplicações de técnicas de aprendizado de máquina em bases de dados educacionais.
+- Estudantes que participam do ENEM e do SISU, que podem se beneficiar de análises que auxiliem na compreensão da competitividade de determinados cursos.
+- Gestores educacionais e instituições de ensino, que podem utilizar análises baseadas em dados para compreender melhor o comportamento do processo seletivo e apoiar decisões relacionadas à oferta de cursos e vagas.
+- Professores e pesquisadores da área de educação, interessados em compreender padrões de desempenho e seleção no ensino superior.
+
 
 Nesta seção, descreva quem poderá se beneficiar com a sua investigação, apresentando os diferentes perfis de pessoas ou grupos impactados.
 
@@ -82,6 +128,139 @@ O objetivo aqui não é definir clientes específicos ou papéis exatos dentro d
 > - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
 
 ## Estado da arte
+
+Estado da Arte
+A aplicação de técnicas de ciência de dados e aprendizado de máquina em dados educacionais tem crescido significativamente nos últimos anos. Pesquisas nessa área buscam identificar padrões em dados de desempenho acadêmico, prever resultados educacionais e apoiar processos de tomada de decisão em instituições de ensino. No contexto do ensino superior, diversos estudos utilizam dados de exames padronizados e históricos acadêmicos para prever desempenho, evasão, classificação ou probabilidade de aprovação em processos seletivos.
+
+A seguir são apresentados estudos relevantes da literatura que abordam problemas semelhantes ao investigado neste projeto.
+
+Estudo 1
+Predicting Student Performance Using Machine Learning Techniques
+Problema e contexto
+O estudo investigou a aplicação de algoritmos de aprendizado de máquina para prever o desempenho de estudantes a partir de dados educacionais. O objetivo foi identificar fatores que influenciam o sucesso acadêmico e construir modelos capazes de prever resultados educacionais.
+Dados (dataset)
+Foi utilizado um dataset educacional contendo informações acadêmicas de estudantes, incluindo notas, características demográficas e dados institucionais. O conjunto de dados passou por etapas de pré-processamento, incluindo limpeza de dados, tratamento de valores ausentes e normalização de variáveis.
+Abordagem/algoritmos
+Foram testados diversos algoritmos de aprendizado de máquina, incluindo:
+- Decision Tree
+- Random Forest
+- Support Vector Machine (SVM)
+- Naive Bayes
+- Métricas de avaliação
+Os modelos foram avaliados utilizando:
+- Acurácia
+- Precisão
+- Recall
+- F1-score
+
+Essas métricas foram escolhidas para avaliar a capacidade dos modelos em classificar corretamente o desempenho dos estudantes.
+
+Resultados
+O algoritmo Random Forest apresentou melhor desempenho entre os modelos testados, alcançando níveis de acurácia superiores a 80%. O estudo concluiu que técnicas de aprendizado de máquina podem ser eficazes para identificar padrões em dados educacionais e auxiliar na previsão de desempenho acadêmico.
+
+Estudo 2
+Educational Data Mining: A Review of Applications and Techniques
+Problema e contexto
+Este estudo apresenta uma revisão das principais aplicações de mineração de dados educacionais, com foco na análise de desempenho de estudantes e na previsão de resultados acadêmicos.
+Dados (dataset)
+A revisão analisa diversos conjuntos de dados educacionais provenientes de sistemas acadêmicos, plataformas de ensino e exames educacionais.
+Abordagem/algoritmos
+Os principais algoritmos identificados na literatura incluem:
+Random Forest
+Logistic Regression
+Neural Networks
+K-means Clustering
+Métricas de avaliação
+As métricas mais utilizadas nos estudos analisados foram:
+- Accuracy
+- AUC (Area Under the Curve)
+- RMSE
+- MAE
+
+Resultados
+A revisão mostra que técnicas de aprendizado de máquina têm sido amplamente utilizadas para prever desempenho acadêmico, evasão e sucesso educacional, destacando o potencial dessas abordagens para apoiar decisões educacionais.
+
+Estudo 3
+Predicting Academic Performance with Machine Learning
+Problema e contexto
+Este estudo buscou prever o desempenho acadêmico de estudantes utilizando modelos de aprendizado de máquina baseados em dados históricos de desempenho educacional.
+Dados (dataset)
+O dataset utilizado continha informações sobre:
+- notas dos estudantes
+- características demográficas
+- histórico acadêmico
+Foram aplicadas técnicas de pré-processamento, como normalização e remoção de valores inconsistentes.
+Abordagem/algoritmos
+Os algoritmos utilizados foram:
+Logistic Regression
+Random Forest
+Gradient Boosting
+Métricas de avaliação
+Os modelos foram avaliados utilizando:
+- Accuracy
+- Precision
+- Recall
+- ROC-AUC
+
+Resultados
+Os modelos baseados em árvores de decisão, especialmente Random Forest e Gradient Boosting, apresentaram melhor desempenho na previsão do desempenho acadêmico.
+
+Estudo 4
+Machine Learning Approaches for Predicting University Admission
+Problema e contexto
+Este estudo investigou a aplicação de modelos de aprendizado de máquina para prever a admissão de candidatos em universidades com base em dados de desempenho acadêmico e exames padronizados.
+Dados (dataset)
+O dataset incluiu informações sobre:
+- notas em exames padronizados
+- histórico acadêmico
+- características demográficas
+- Os dados foram submetidos a etapas de limpeza e normalização.
+Abordagem/algoritmos
+Os algoritmos utilizados foram:
+- Linear Regression
+- Random Forest
+- Artificial Neural Networks
+- Métricas de avaliação
+
+As métricas utilizadas incluíram:
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+
+Resultados
+Os resultados indicaram que modelos baseados em aprendizado de máquina podem prever com razoável precisão as chances de admissão de candidatos em processos seletivos universitários.
+
+Estudo 5
+Learning Analytics in Higher Education: A Review
+Problema e contexto
+O estudo analisa aplicações de Learning Analytics no ensino superior, com foco na utilização de dados educacionais para melhorar processos de ensino, aprendizagem e tomada de decisão.
+Dados (dataset)
+Os datasets analisados incluem registros acadêmicos, dados de desempenho de estudantes e informações institucionais.
+Abordagem/algoritmos
+As técnicas mais utilizadas incluem:
+- Data Mining
+- Machine Learning
+- Statistical Modeling
+- Métricas de avaliação
+
+As métricas variam conforme o objetivo do estudo, incluindo:
+- Accuracy
+- F1-score
+- RMSE
+
+Resultados
+O estudo conclui que o uso de análise de dados educacionais tem grande potencial para apoiar instituições de ensino na melhoria do desempenho acadêmico e na identificação de padrões educacionais.
+
+Síntese Crítica da Literatura
+
+A análise dos estudos apresentados revela um consenso na literatura sobre o potencial das técnicas de aprendizado de máquina para analisar e prever fenômenos relacionados ao desempenho acadêmico e aos processos educacionais. Diversos trabalhos demonstram que algoritmos como Random Forest, Gradient Boosting e redes neurais apresentam bons resultados na identificação de padrões em dados educacionais, especialmente quando utilizados em conjuntos de dados históricos que contêm informações sobre desempenho acadêmico e características dos estudantes.
+
+Apesar desse consenso, existem divergências em relação às técnicas mais adequadas para cada tipo de problema. Alguns estudos destacam o bom desempenho de modelos baseados em árvores de decisão, enquanto outros enfatizam a eficácia de redes neurais ou modelos estatísticos tradicionais. Essas diferenças geralmente estão relacionadas às características dos datasets utilizados, como tamanho da base de dados, quantidade de variáveis disponíveis e qualidade dos dados.
+
+Além disso, a literatura ainda apresenta algumas lacunas importantes. Muitos estudos utilizam datasets limitados ou restritos a instituições específicas, o que dificulta a generalização dos resultados. Também há desafios relacionados à qualidade dos dados, presença de valores ausentes e possíveis vieses nos modelos. Outra lacuna relevante está na análise de processos seletivos nacionais em larga escala, como o caso do ENEM e do SISU, que envolvem grande volume de dados e múltiplos fatores que influenciam o processo de seleção.
+
+Nesse contexto, o presente projeto se alinha às pesquisas existentes ao aplicar técnicas de aprendizado de máquina em um dataset relacionado ao processo de ingresso no ensino superior brasileiro. Ao explorar dados de candidatos, cursos e notas obtidas no ENEM, o trabalho busca identificar padrões e analisar fatores relacionados à classificação e às notas de corte, contribuindo para o avanço das análises de dados educacionais no contexto brasileiro.
+
+
 
 Nesta seção, descreva abordagens da literatura que tratam problemas semelhantes ao seu. Seu objetivo é documentar métodos, dados, métricas e resultados.
 
