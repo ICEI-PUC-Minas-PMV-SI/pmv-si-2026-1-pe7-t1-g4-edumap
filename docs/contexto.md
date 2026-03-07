@@ -132,20 +132,13 @@ O dataset reúne informações sobre o processo seletivo do **Sistema de Seleç�
 
 O SISU é um sistema informatizado do Ministério da Educação que utiliza as notas do **ENEM (Exame Nacional do Ensino Médio)** para selecionar estudantes para vagas em instituições públicas de ensino superior.
 Ele reúne dados sobre:
-
-candidatos
-
-instituições de ensino superior
-
-cursos ofertados
-
-notas do ENEM
-
-pesos das áreas de conhecimento
-
-classificação dos candidatos
-
-aprovação e matrícula
+- Candidatos
+- Instituições de ensino superior
+- Cursos ofertados
+- Notas do ENEM
+- Pesos das áreas de conhecimento
+- Classificação dos candidatos
+- Aprovação e matrícula
 
 ### Estrutura geral do dataset
 
