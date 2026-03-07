@@ -129,8 +129,6 @@ Use-as para descoberta, organização e triagem de literatura.
 ## Visão geral
 
 O dataset reúne informações sobre o processo seletivo do **Sistema de Seleção Unificada (SISU)** referente à **primeira edição do ano de 2023**.
-
-O SISU é um sistema informatizado do Ministério da Educação que utiliza as notas do **ENEM (Exame Nacional do Ensino Médio)** para selecionar estudantes para vagas em instituições públicas de ensino superior.
 Ele reúne dados sobre:
 - Candidatos
 - Instituições de ensino superior
@@ -139,6 +137,8 @@ Ele reúne dados sobre:
 - Pesos das áreas de conhecimento
 - Classificação dos candidatos
 - Aprovação e matrícula
+O SISU é um sistema informatizado do Ministério da Educação que utiliza as notas do **ENEM (Exame Nacional do Ensino Médio)** para selecionar estudantes para vagas em instituições públicas de ensino superior.
+
 
 ### Estrutura geral do dataset
 
