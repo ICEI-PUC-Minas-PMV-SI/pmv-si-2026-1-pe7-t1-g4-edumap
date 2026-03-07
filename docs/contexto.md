@@ -1,6 +1,6 @@
 # Introdução
 
-Texto descritivo introdutório apresentando a visão geral do projeto a ser desenvolvido considerando o contexto em que ele se insere, os objetivos gerais, a justificativa e o público-alvo do projeto.
+<!-- Texto descritivo introdutório apresentando a visão geral do projeto a ser desenvolvido considerando o contexto em que ele se insere, os objetivos gerais, a justificativa e o público-alvo do projeto.
 
 Nos últimos anos, o processo de ingresso no ensino superior brasileiro tem sido amplamente influenciado pelos resultados do Exame Nacional do Ensino Médio (ENEM), utilizado como principal mecanismo de seleção para diversas instituições públicas por meio do Sistema de Seleção Unificada (SISU). Esse sistema centraliza a oferta de vagas em cursos de graduação em instituições públicas de todo o país e utiliza as notas obtidas pelos candidatos no ENEM para realizar a classificação e seleção dos estudantes.
 
@@ -8,11 +8,17 @@ O SISU reúne um grande volume de informações sobre candidatos, cursos, instit
 
 A análise desses dados permite compreender melhor o comportamento do processo seletivo, bem como identificar padrões relacionados ao desempenho dos candidatos e à competitividade dos cursos. Nesse contexto, técnicas de ciência de dados e aprendizado de máquina podem ser aplicadas para explorar o conjunto de dados e desenvolver modelos capazes de identificar padrões e realizar previsões relacionadas ao processo de seleção.
 
-Diante disso, este projeto propõe a análise de um dataset contendo informações sobre candidatos participantes do processo seletivo de cursos de graduação, com o objetivo de explorar os dados e experimentar modelos de aprendizado de máquina capazes de auxiliar na compreensão de padrões presentes no processo de seleção e classificação dos candidatos.
+Diante disso, este projeto propõe a análise de um dataset contendo informações sobre candidatos participantes do processo seletivo de cursos de graduação, com o objetivo de explorar os dados e experimentar modelos de aprendizado de máquina capazes de auxiliar na compreensão de padrões presentes no processo de seleção e classificação dos candidatos. -->
 
 ## Problema
 
-Nesta seção, você deve apresentar o problema que a sua investigação/experimentação busca resolver. Por exemplo, caso o _dataset_ selecionado, seja um _dataset_ que contenha uma série temporal com o preço de diversas ações da bolsa de valores, o problema pode estar relacionado a dificuldade em saber a melhor hora (hora certa??) de comprar ou então, de executar a venda de uma determinada ação.
+O projeto EduMap investiga a possibilidade de prever a nota de corte de cursos ofertados no processo seletivo do Sistema de Seleção Unificada (SISU) a partir da análise de dados históricos do programa. A nota de corte corresponde à menor pontuação necessária para que um candidato permaneça entre os classificados dentro do número de vagas disponíveis em determinado curso, universidade e modalidade de concorrência. Como essa nota é resultado da interação entre diversos fatores — como número de vagas, instituição, curso, turno e comportamento dos candidatos durante o processo seletivo — ela apresenta variações que não podem ser determinadas apenas por regras simples, tornando-se um problema adequado para investigação com técnicas de Ciência de Dados e _Machine Learning_.
+
+No contexto do acesso ao ensino superior público brasileiro, a nota de corte é amplamente utilizada pelos candidatos como referência para avaliar suas chances de aprovação em cursos e instituições durante o período de inscrições do SISU. No entanto, essas notas são atualizadas ao longo do processo seletivo e refletem o comportamento coletivo dos candidatos, o que torna sua estimativa antecipada uma tarefa complexa.
+
+A partir do conjunto de dados do SISU referente à Chamada Regular da edição de 2023/1, este projeto busca analisar padrões presentes nas ofertas de cursos e nas notas registradas, investigando como esses dados podem ser utilizados para construir modelos capazes de estimar a nota de corte associada a diferentes combinações de cursos e instituições. Dessa forma, o trabalho explora o uso de métodos de análise de dados aplicados a um contexto educacional real, contribuindo para a compreensão dos fatores relacionados à competitividade no acesso ao ensino superior gratuito no Brasil.
+
+<!-- Nesta seção, você deve apresentar o problema que a sua investigação/experimentação busca resolver. Por exemplo, caso o _dataset_ selecionado, seja um _dataset_ que contenha uma série temporal com o preço de diversas ações da bolsa de valores, o problema pode estar relacionado a dificuldade em saber a melhor hora (hora certa??) de comprar ou então, de executar a venda de uma determinada ação.
 
 Descreva ainda o contexto em que essa aplicação será usada, se houver: empresa parceira, tecnologias etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
 
@@ -29,11 +35,15 @@ Neste contexto, a aplicação de técnicas de ciência de dados e aprendizado de
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
 > - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/) -->
 
 ## Questão de pesquisa
 
-A questão de pesquisa é o ponto de partida e a base orientadora de todo o trabalho a ser desenvolvido. Ela deve estar diretamente alinhada ao problema identificado e expressar, de forma clara, o que se deseja investigar ou comprovar.
+A partir do problema apresentado, a seguinte questão de pesquisa orienta o desenvolvimento deste trabalho:
+
+É possível utilizar técnicas de Ciência de Dados e _Machine Learning_ para estimar a nota de corte de cursos ofertados no Sistema de Seleção Unificada (SISU) a partir de características relacionadas ao curso, à instituição, modalidade, turno, região do campus e à oferta de vagas presentes em dados históricos do processo seletivo?
+
+<!-- A questão de pesquisa é o ponto de partida e a base orientadora de todo o trabalho a ser desenvolvido. Ela deve estar diretamente alinhada ao problema identificado e expressar, de forma clara, o que se deseja investigar ou comprovar.
 
 O papel da questão de pesquisa é guiar todas as etapas do projeto — desde a definição da metodologia até a análise e interpretação dos resultados. Ao término da investigação ou experimentação, o objetivo é que seja possível responder a essa questão de forma fundamentada, utilizando evidências obtidas ao longo do processo.
 
@@ -45,7 +55,7 @@ Essa questão busca investigar se modelos de aprendizado de máquina podem extra
 
 > **Links Úteis**:
 > - [Questão de pesquisa](https://www.enago.com.br/academy/how-to-develop-good-research-question-types-examples/)
-> - [Problema de pesquisa](https://blog.even3.com.br/problema-de-pesquisa/)
+> - [Problema de pesquisa](https://blog.even3.com.br/problema-de-pesquisa/) -->
 
 
 ## Objetivos preliminares
