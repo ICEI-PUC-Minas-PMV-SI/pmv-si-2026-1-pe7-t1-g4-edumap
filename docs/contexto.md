@@ -181,6 +181,7 @@ Foram testados diversos algoritmos de aprendizado de máquina, incluindo:
 - Support Vector Machine (SVM)
 - Naive Bayes
 - Métricas de avaliação
+
 Os modelos foram avaliados utilizando:
 - Acurácia
 - Precisão
@@ -205,6 +206,7 @@ Logistic Regression
 Neural Networks
 K-means Clustering
 Métricas de avaliação
+
 As métricas mais utilizadas nos estudos analisados foram:
 - Accuracy
 - AUC (Area Under the Curve)
@@ -230,6 +232,7 @@ Logistic Regression
 Random Forest
 Gradient Boosting
 Métricas de avaliação
+
 Os modelos foram avaliados utilizando:
 - Accuracy
 - Precision
@@ -249,6 +252,7 @@ O dataset incluiu informações sobre:
 - histórico acadêmico
 - características demográficas
 - Os dados foram submetidos a etapas de limpeza e normalização.
+
 Abordagem/algoritmos
 Os algoritmos utilizados foram:
 - Linear Regression
