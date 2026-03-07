@@ -1,4 +1,4 @@
-# EduMap: Análises de padrões de aprovação em cursos de universidades brasileiras pelo Sistema de Seleção Unificada (SISU)
+# EduMap: Análises e previsões de notas de corte de cursos de Universidades brasileiras
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +6,8 @@
 
 `SEMESTRE: 7º`
 
-O projeto EduMap tem como objetivo prever a probabilidade de um candidato ser aprovado em determinado curso ou instituição a partir de sua nota do ENEM e outras características do processo seletivo.
+O projeto EduMap tem como objetivo auxiliar estudantes que desejam ingressar no ensino superior, oferecendo uma estimativa da nota de corte de cursos específicos. Essa previsão é realizada com base na análise de diferentes características e dados relevantes, permitindo gerar previsões que podem apoiar os candidatos na tomada de decisão e no planejamento de suas estratégias de escolha de cursos e instituições.
+
 
 ## Integrantes
 
