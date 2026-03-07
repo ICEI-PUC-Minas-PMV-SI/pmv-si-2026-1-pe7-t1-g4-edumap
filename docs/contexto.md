@@ -430,9 +430,9 @@ O dataset permite analisar:
 <img width="1220" height="864" alt="Captura de tela 2026-03-07 172718" src="https://github.com/user-attachments/assets/f9b65cb7-b195-449e-938c-71557cbafaa8" />
 
 
-
+<!--
 > **Links Úteis**:
-> - [Modelo do Canvas Analítico](https://github.com/ICEI-PUC-Minas-PMV-SI/PesquisaExperimentacao-Template/blob/main/help/Software-Analtics-Canvas-v1.0.pdf)
+> - [Modelo do Canvas Analítico](https://github.com/ICEI-PUC-Minas-PMV-SI/PesquisaExperimentacao-Template/blob/main/help/Software-Analtics-Canvas-v1.0.pdf) -->
 
 # Vídeo de apresentação da Etapa 01
 
@@ -440,7 +440,15 @@ Nesta etapa, o grupo deverá produzir um vídeo de 5 a 8 minutos apresentando o 
 
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
+- BRASIL. Ministério da Educação. **2023 – Relatório SISU – Chamada Regular 1/2023**. Portal Dados Abertos do MEC, 2023. Disponível em: https://dadosabertos.mec.gov.br/sisu/item/258-2023-relatorio-sisu-chamada-regular-1-2023. Acesso em: 7 mar. 2026.
+  
+- ENAGO ACADEMY. **Como desenvolver uma pergunta de pesquisa relevante: tipos e exemplos**. Enago Academy, 2022. Disponível em: https://www.enago.com/academy/how-to-develop-good-research-question-types-examples/. Acesso em: 7 mar. 2026.
+  
+- TUMELERO, Naína. **Aprenda como fazer o objetivo geral e os objetivos específicos do seu trabalho**. Blog Mettzer, 2017. Atualizado em: 7 mar. 2025. Disponível em: https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/. Acesso em: 7 mar. 2026.
+  
+- PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS. Sistema Integrado de Bibliotecas. **Orientações para elaboração de citações e referências**: conforme as NBRs 10520:2023 e 6023:2025, da Associação Brasileira de Normas Técnicas (ABNT). 6. ed. Belo Horizonte: PUC Minas, 2025. Disponível em: https://www.pucminas.br/biblioteca. Acesso em: 7 mar. 2026.
+ 
+<!-- Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
 
 > **Links Úteis**:
-> - [Padrão ABNT PUC Minas](https://portal.pucminas.br/biblioteca/index_padrao.php?pagina=5886)
+> - [Padrão ABNT PUC Minas](https://portal.pucminas.br/biblioteca/index_padrao.php?pagina=5886) -->
