@@ -157,11 +157,16 @@ Cada linha do dataset representa uma inscrição de um candidato em um curso esp
 ### Conteúdo principal
 
 O dataset permite analisar:
-- competitividade entre cursos
-- distribuição regional das vagas
-- impacto das cotas no acesso ao ensino superior
-- diferenças de nota entre cursos e regiões
-- mobilidade geográfica dos estudantes
+- Prover  nota de corte de um curso
+- Prever o nível de concorrência de um curso
+- Prever quais fatores mais influencia a nota de corte
+- Prover a modalidade de concorrência escolhido
+- Distribuição desigual de oportuniades
+- Relação entre oferta e competição
+- Prever a nota de corte do curso 
+- Impacto das cotas no acesso ao ensino superior
+- iferenças de nota entre cursos e regiões
+
 ## Atributos 
 
 |       Atributo        |                   Descrição                    |  Tipo   | Unidade |               Exemplos               |
