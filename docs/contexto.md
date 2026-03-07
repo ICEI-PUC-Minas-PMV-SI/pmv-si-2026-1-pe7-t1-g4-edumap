@@ -1,5 +1,12 @@
 # Introdução
 
+O projeto EduMap investiga a aplicação de técnicas de Ciência de Dados e _Machine Learning_ na análise de dados do Sistema de Seleção Unificada (SISU), sistema utilizado por instituições públicas brasileiras para selecionar candidatos ao ensino superior com base nas notas obtidas no Exame Nacional do Ensino Médio (ENEM). Entre as informações mais relevantes desse processo está a **nota de corte**, que representa a menor pontuação necessária para que um candidato permaneça entre os classificados dentro do número de vagas de determinado curso e instituição.
+
+O objetivo do projeto é desenvolver e avaliar modelos de aprendizado de máquina capazes de analisar dados históricos do SISU — especificamente da edição 2023/1 — para estimar a nota de corte associada a diferentes cursos e instituições. A investigação envolve etapas de preparação e análise do conjunto de dados, identificação de padrões relevantes e treinamento de modelos capazes de produzir estimativas com base nas características presentes no dataset.
+
+Como resultado, o EduMap busca demonstrar o potencial das técnicas de aprendizado de máquina na análise de dados educacionais e na identificação de padrões em processos seletivos complexos. Além disso, pretende-se disponibilizar uma aplicação que permita aos usuários inserir informações sobre cursos e instituições para obter uma estimativa da nota de corte prevista pelos modelos desenvolvidos, tendo como público-alvo estudantes interessados em compreender melhor a dinâmica de concorrência do SISU e pessoas interessadas em aplicações práticas de análise de dados.
+
+
 <!-- Texto descritivo introdutório apresentando a visão geral do projeto a ser desenvolvido considerando o contexto em que ele se insere, os objetivos gerais, a justificativa e o público-alvo do projeto.
 
 Nos últimos anos, o processo de ingresso no ensino superior brasileiro tem sido amplamente influenciado pelos resultados do Exame Nacional do Ensino Médio (ENEM), utilizado como principal mecanismo de seleção para diversas instituições públicas por meio do Sistema de Seleção Unificada (SISU). Esse sistema centraliza a oferta de vagas em cursos de graduação em instituições públicas de todo o país e utiliza as notas obtidas pelos candidatos no ENEM para realizar a classificação e seleção dos estudantes.
@@ -60,7 +67,24 @@ Essa questão busca investigar se modelos de aprendizado de máquina podem extra
 
 ## Objetivos preliminares
 
-Nesta seção, você deve apresentar os objetivos preliminares do trabalho, deixando claro que o objetivo geral é experimentar modelos de aprendizado de máquina adequados para solucionar o problema descrito anteriormente.
+### Objetivo Geral
+
+Desenvolver, experimentar e avaliar modelos adequados de aprendizado de máquina aplicados ao conjunto de dados do Sistema de Seleção Unificada (SISU) 2023/1, com o objetivo de investigar a capacidade desses modelos em prever a nota de corte de cursos ofertados no processo seletivo a partir de características relacionadas aos cursos, às instituições e à oferta de vagas. O projeto busca analisar padrões presentes nos dados históricos do sistema e verificar em que medida técnicas de _Machine Learning_ podem contribuir para estimar a nota de corte em diferentes combinações de cursos e instituições no contexto do processo seletivo.
+
+### Objetivos Específicos
+
+- Realizar a coleta e preparação do conjunto de dados do Sistema de Seleção Unificada (SISU), incluindo etapas de limpeza, organização e tratamento das informações disponíveis.
+ 
+- Explorar e analisar os dados por meio de técnicas de Ciência de Dados, buscando identificar padrões e relações relevantes entre as variáveis presentes no dataset.
+ 
+- Selecionar e treinar três diferentes modelos de aprendizado de máquina adequados ao problema de previsão da nota de corte.
+  
+- Avaliar e comparar o desempenho dos três modelos treinados, analisando sua capacidade de estimar a nota de corte com base nos dados utilizados.
+ 
+- Implantar e disponibilizar uma solução baseada no modelo desenvolvido, permitindo que usuários informem dados relevantes — como curso e instituição — para obter uma estimativa da nota de corte prevista, demonstrando a aplicação prática de um dos modelos desenvolvidos no projeto.
+
+
+<!-- Nesta seção, você deve apresentar os objetivos preliminares do trabalho, deixando claro que o objetivo geral é experimentar modelos de aprendizado de máquina adequados para solucionar o problema descrito anteriormente.
 
 Além do objetivo geral, é importante definir pelo menos dois objetivos específicos, que direcionem a investigação de acordo com o foco que o grupo pretende adotar. Esses objetivos específicos podem envolver: 
 * Explorar um determinado tipo de modelagem ou técnica de aprendizado de máquina;
@@ -85,7 +109,7 @@ Objetivos Específicos
 **Importante:** À medida que a pesquisa/experimentação avança, os objetivos podem ser ajustados ou refinados. Mantenha essa seção atualizada no repositório para refletir o andamento e as novas decisões do projeto.
  
 > **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/) -->
 
 ## Justificativa
 
