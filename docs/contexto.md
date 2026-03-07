@@ -113,15 +113,17 @@ Objetivos Específicos
 
 ## Justificativa
 
-O acesso ao ensino superior é um tema de grande relevância social e educacional no Brasil. Segundo dados do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), milhões de estudantes realizam o ENEM todos os anos com o objetivo de ingressar em instituições de ensino superior públicas ou privadas.
+O acesso ao ensino superior constitui um dos principais fatores associados ao desenvolvimento social e econômico de um país. No Brasil, o Exame Nacional do Ensino Médio (ENEM) tornou-se o principal mecanismo de avaliação utilizado para o ingresso em instituições de ensino superior, sendo aplicado anualmente a milhões de estudantes. De acordo com os dados do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), o ENEM contou com mais de 3,9 milhões de inscritos na edição de 2023, demonstrando a grande relevância desse exame no contexto educacional brasileiro.
 
-O Sistema de Seleção Unificada (SISU) representa um dos principais mecanismos de acesso ao ensino superior público no país, reunindo informações sobre milhares de cursos e candidatos em cada edição do processo seletivo. Esse grande volume de dados constitui uma importante fonte para análises acadêmicas e para o desenvolvimento de soluções baseadas em ciência de dados.
+O Sistema de Seleção Unificada (SISU) foi criado com o objetivo de centralizar o processo de seleção de candidatos para instituições públicas de ensino superior, utilizando as notas obtidas no ENEM como critério de classificação. A cada edição do sistema, milhares de cursos e instituições participam do processo seletivo, gerando um grande volume de dados relacionados às características dos cursos, número de vagas ofertadas, modalidades de concorrência e desempenho dos candidatos.
 
-A utilização de técnicas de análise de dados e aprendizado de máquina nesse contexto pode contribuir para a compreensão do comportamento do processo seletivo, permitindo identificar padrões relacionados ao desempenho dos candidatos, à concorrência entre cursos e às variações das notas de corte.
+Esse conjunto de dados representa uma fonte relevante para estudos acadêmicos e aplicações práticas de análise de dados. A utilização de técnicas de Ciência de Dados e aprendizado de máquina permite explorar esses dados de forma sistemática, possibilitando identificar padrões associados à competitividade dos cursos e às variações nas notas de corte observadas durante o processo seletivo.
 
-Além disso, o estudo desse tipo de base de dados também possui relevância acadêmica, pois permite aplicar conceitos de mineração de dados, aprendizado de máquina e análise estatística em um contexto real e de grande impacto social. Dessa forma, o projeto contribui tanto para o desenvolvimento de competências técnicas na área de ciência de dados quanto para a análise de um fenômeno relevante no sistema educacional brasileiro.
+Nesse contexto, a escolha de investigar a previsão da nota de corte por meio de técnicas de aprendizado de máquina justifica-se pelo potencial dessas abordagens em identificar relações complexas entre variáveis presentes no dataset, como curso, instituição, modalidade de concorrência, turno e número de vagas. A análise desses fatores pode contribuir para compreender melhor a dinâmica do processo seletivo e auxiliar na construção de modelos capazes de estimar a nota de corte a partir de dados históricos.
 
-Nesta seção, apresente a importância e a motivação para trabalhar com o conjunto de dados escolhido. Explique por que esse dataset é relevante e como ele se conecta ao problema identificado anteriormente.
+Além da relevância acadêmica, este estudo também apresenta potencial impacto social, uma vez que a compreensão do comportamento das notas de corte pode auxiliar estudantes interessados em ingressar no ensino superior a avaliar de forma mais informada suas possibilidades de aprovação em determinados cursos e instituições. Dessa forma, o projeto contribui tanto para o desenvolvimento de competências técnicas na área de Ciência de Dados quanto para a análise de um fenômeno relevante no sistema educacional brasileiro.
+
+<!-- Nesta seção, apresente a importância e a motivação para trabalhar com o conjunto de dados escolhido. Explique por que esse dataset é relevante e como ele se conecta ao problema identificado anteriormente.
 
 Indique:
 * Razões para a escolha dos objetivos específicos – Justifique por que decidiu aprofundar sua investigação nessas metas, relacionando-as ao potencial de solução ou melhoria para o problema.
@@ -134,18 +136,17 @@ Indique:
 * Construa um texto coeso que conecte o problema, os objetivos e a relevância do trabalho.
 
 > **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/) -->
 
 ## Público-Alvo
-Os resultados deste projeto podem beneficiar diferentes grupos interessados na análise de dados educacionais e no processo de seleção para o ensino superior.
+Os resultados deste projeto EduMap podem beneficiar diferentes grupos interessados na análise de dados educacionais e no funcionamento do processo de seleção para o ensino superior no Brasil.
+
 Entre os principais públicos interessados estão:
-- Pesquisadores e estudantes da área de ciência de dados, que podem utilizar o estudo como referência para aplicações de técnicas de aprendizado de máquina em bases de dados educacionais.
-- Estudantes que participam do ENEM e do SISU, que podem se beneficiar de análises que auxiliem na compreensão da competitividade de determinados cursos.
-- Gestores educacionais e instituições de ensino, que podem utilizar análises baseadas em dados para compreender melhor o comportamento do processo seletivo e apoiar decisões relacionadas à oferta de cursos e vagas.
-- Professores e pesquisadores da área de educação, interessados em compreender padrões de desempenho e seleção no ensino superior.
+- **Candidatos ao Ensino Superior:** Estudantes com domínio sobre as regras do SISU, mas com níveis variados de letramento digital. Buscam uma ferramenta simplificada que converta dados complexos em estimativas compreensíveis para auxiliar na tomada de decisão durante o processo seletivo, sem a necessidade de conhecimentos em Ciência de Dados.
+- **Comunidade Acadêmica e Técnica:** Pesquisadores e estudantes de áreas como Ciência de Dados e Educação. Possuem alta familiaridade com recursos tecnológicos e buscam no projeto uma referência metodológica sobre o uso de Machine Learning aplicado a bases de dados governamentais abertas.
+- **Gestores e Analistas Educacionais:** Profissionais de instituições de ensino ou órgãos públicos que atuam no planejamento de vagas e políticas de acesso. Possuem interesse técnico na identificação de padrões de competitividade e comportamento regional das notas de corte para subsidiar decisões estratégicas.
 
-
-Nesta seção, descreva quem poderá se beneficiar com a sua investigação, apresentando os diferentes perfis de pessoas ou grupos impactados.
+<!-- Nesta seção, descreva quem poderá se beneficiar com a sua investigação, apresentando os diferentes perfis de pessoas ou grupos impactados.
 
 O objetivo aqui não é definir clientes específicos ou papéis exatos dentro da aplicação, mas sim compreender o perfil dos usuários e partes interessadas. Para isso, considere:
 * Conhecimentos prévios relacionados ao domínio do problema e ao uso de tecnologia;
@@ -159,7 +160,7 @@ O objetivo aqui não é definir clientes específicos ou papéis exatos dentro d
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
 > - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
 > - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/) -->
 
 ## Estado da arte
 
