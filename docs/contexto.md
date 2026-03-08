@@ -435,6 +435,8 @@ Nesta etapa, o grupo deverá produzir um vídeo de 5 a 8 minutos apresentando o 
   
 - PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS. Sistema Integrado de Bibliotecas. **Orientações para elaboração de citações e referências**: conforme as NBRs 10520:2023 e 6023:2025, da Associação Brasileira de Normas Técnicas (ABNT). 6. ed. Belo Horizonte: PUC Minas, 2025. Disponível em: https://www.pucminas.br/biblioteca. Acesso em: 7 mar. 2026.
 
+- INEP. 3,9 milhões estão inscritos no Enem 2023. Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira, 2023. Disponível em: https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/3-9-milhoes-estao-inscritos-no-enem-2023. Acesso em: 7 mar. 2026.
+
 - CHITHRA APOORVA, D. A. et al. Prediction for University Admission using Machine Learning. International Journal of Recent Technology and Engineering (IJRTE), v. 8, n. 6, p. 4922–4926, 2020. DOI: 10.35940/ijrte.F9043.038620. Disponível em: https://www.researchgate.net/publication/363859360_Prediction_for_University_Admission_using_Machine_Learning. Acesso em: 7 mar. 2026.
 
 - MAULANA, A. et al. Optimizing University Admissions: A Machine Learning Perspective. Journal of Educational Management and Learning, v. 1, n. 1, p. 1–7, 2023. DOI: 10.60084/jeml.v1i1.46. Disponível em: https://pdfs.semanticscholar.org/e550/b3552f887bf7463905ddc4372f63e608af0a.pdf. Acesso em: 7 mar. 2026.
