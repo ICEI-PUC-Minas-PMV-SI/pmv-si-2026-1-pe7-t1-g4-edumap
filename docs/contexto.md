@@ -113,7 +113,7 @@ Objetivos Específicos
 
 ## Justificativa
 
-O acesso ao ensino superior constitui um dos principais fatores associados ao desenvolvimento social e econômico de um país. No Brasil, o Exame Nacional do Ensino Médio (ENEM) tornou-se o principal mecanismo de avaliação utilizado para o ingresso em instituições de ensino superior, sendo aplicado anualmente a milhões de estudantes. De acordo com os dados do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), o ENEM contou com mais de 3,9 milhões de inscritos na edição de 2023, demonstrando a grande relevância desse exame no contexto educacional brasileiro.
+O acesso ao ensino superior constitui um dos principais fatores associados ao desenvolvimento social e econômico de um país. No Brasil, o Exame Nacional do Ensino Médio (ENEM) tornou-se o principal mecanismo de avaliação utilizado para o ingresso em instituições de ensino superior, sendo aplicado anualmente a milhões de estudantes. De acordo com os dados do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), o ENEM contou com mais de 3,9 milhões de inscritos na edição de 2023 (INEP, 2023), demonstrando a grande relevância desse exame no contexto educacional brasileiro.
 
 O Sistema de Seleção Unificada (SISU) foi criado com o objetivo de centralizar o processo de seleção de candidatos para instituições públicas de ensino superior, utilizando as notas obtidas no ENEM como critério de classificação. A cada edição do sistema, milhares de cursos e instituições participam do processo seletivo, gerando um grande volume de dados relacionados às características dos cursos, número de vagas ofertadas, modalidades de concorrência e desempenho dos candidatos.
 
