@@ -315,7 +315,7 @@ Use-as para descoberta, organização e triagem de literatura.
 > - [Google Scholar](https://scholar.google.com/)
 > - [IEEE Xplore](https://ieeexplore.ieee.org/Xplore/home.jsp)
 > - [Science Direct](https://www.sciencedirect.com/)
-> - [ACM Digital Library](https://dl.acm.org/)-->
+> - [ACM Digital Library](https://dl.acm.org/) -->
 
 # Descrição do _dataset_ selecionado
 
