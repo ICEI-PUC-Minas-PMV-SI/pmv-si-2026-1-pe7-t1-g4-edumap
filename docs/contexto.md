@@ -116,9 +116,9 @@ O Sistema de Seleção Unificada (SISU) foi criado com o objetivo de centralizar
 
 Esse conjunto de dados representa uma fonte relevante para estudos acadêmicos e aplicações práticas de análise de dados. A utilização de técnicas de Ciência de Dados e aprendizado de máquina permite explorar esses dados de forma sistemática, possibilitando identificar padrões associados à competitividade dos cursos e às variações nas notas de corte observadas durante o processo seletivo.
 
-Nesse contexto, a escolha de investigar a previsão da nota de corte por meio de técnicas de aprendizado de máquina justifica-se pelo potencial dessas abordagens em identificar relações complexas entre variáveis presentes no dataset, como curso, instituição, modalidade de concorrência, turno e número de vagas. A análise desses fatores pode contribuir para compreender melhor a dinâmica do processo seletivo e auxiliar na construção de modelos capazes de estimar a nota de corte a partir de dados históricos.
+Nesse contexto, a escolha de investigar os fatores que influenciam a nota de corte e a competitividade dos cursos por meio de técnicas de aprendizado de máquina com foco em interpretabilidade justifica-se pelo potencial dessas abordagens em revelar relações complexas entre variáveis presentes no dataset, como curso, instituição, modalidade de concorrência, turno e número de vagas. A análise desses fatores pode contribuir para compreender melhor a dinâmica do processo seletivo e auxiliar na construção de modelos interpretáveis capazes de quantificar a influência de cada variável sobre a nota de corte e a aprovação dos candidatos.
 
-Além da relevância acadêmica, este estudo também apresenta potencial impacto social, uma vez que a compreensão do comportamento das notas de corte pode auxiliar estudantes interessados em ingressar no ensino superior a avaliar de forma mais informada suas possibilidades de aprovação em determinados cursos e instituições. Dessa forma, o projeto contribui tanto para o desenvolvimento de competências técnicas na área de Ciência de Dados quanto para a análise de um fenômeno relevante no sistema educacional brasileiro.
+Além da relevância acadêmica, este estudo também apresenta potencial impacto social, uma vez que a compreensão dos fatores determinantes da competitividade pode auxiliar estudantes interessados em ingressar no ensino superior a avaliar de forma mais informada suas estratégias de preparação e escolha de cursos, bem como subsidiar gestores educacionais na formulação de políticas de ampliação de vagas e redução de desigualdades de acesso. Dessa forma, o projeto contribui tanto para o desenvolvimento de competências técnicas na área de Ciência de Dados quanto para a análise de um fenômeno relevante no sistema educacional brasileiro.
 
 <!-- Nesta seção, apresente a importância e a motivação para trabalhar com o conjunto de dados escolhido. Explique por que esse dataset é relevante e como ele se conecta ao problema identificado anteriormente.
 
@@ -139,8 +139,8 @@ Indique:
 Os resultados deste projeto EduMap podem beneficiar diferentes grupos interessados na análise de dados educacionais e no funcionamento do processo de seleção para o ensino superior no Brasil.
 
 Entre os principais públicos interessados estão:
-- **Candidatos ao Ensino Superior:** Estudantes com domínio sobre as regras do SISU, mas com níveis variados de letramento digital. Buscam uma ferramenta simplificada que converta dados complexos em estimativas compreensíveis para auxiliar na tomada de decisão durante o processo seletivo, sem a necessidade de conhecimentos em Ciência de Dados.
-- **Comunidade Acadêmica e Técnica:** Pesquisadores e estudantes de áreas como Ciência de Dados e Educação. Possuem alta familiaridade com recursos tecnológicos e buscam no projeto uma referência metodológica sobre o uso de Machine Learning aplicado a bases de dados governamentais abertas.
+- **Candidatos ao Ensino Superior:** Estudantes com domínio sobre as regras do SISU, mas com níveis variados de letramento digital. Buscam uma ferramenta simplificada que converta dados complexos em insights compreensíveis sobre os fatores que determinam a competitividade dos cursos, auxiliando na tomada de decisão durante o processo seletivo, sem a necessidade de conhecimentos avançados em Ciência de Dados.
+- **Comunidade Acadêmica e Técnica:** Pesquisadores e estudantes de áreas como Ciência de Dados e Educação. Possuem alta familiaridade com recursos tecnológicos e buscam no projeto uma referência metodológica sobre o uso de Machine Learning interpretável aplicado a bases de dados governamentais abertas.
 - **Gestores e Analistas Educacionais:** Profissionais de instituições de ensino ou órgãos públicos que atuam no planejamento de vagas e políticas de acesso. Possuem interesse técnico na identificação de padrões de competitividade e comportamento regional das notas de corte para subsidiar decisões estratégicas.
 
 <!-- Nesta seção, descreva quem poderá se beneficiar com a sua investigação, apresentando os diferentes perfis de pessoas ou grupos impactados.
@@ -161,13 +161,13 @@ O objetivo aqui não é definir clientes específicos ou papéis exatos dentro d
 
 ## Estado da Arte
 
-Nesta seção, são apresentadas abordagens da literatura que tratam problemas semelhantes ao do projeto EduMap, focando na previsão de notas ou probabilidades de admissão em contextos educacionais, utilizando técnicas de Ciência de Dados e Machine Learning. Os trabalhos selecionados envolvem a previsão de admissões universitárias, notas de exames ou acesso ao ensino superior, com base em dados históricos e variáveis acadêmicas. Foram priorizados artigos dos últimos 5 anos, com ênfase em métodos preditivos aplicados a processos seletivos.
+Nesta seção, são apresentadas abordagens da literatura que tratam problemas semelhantes ao do projeto EduMap, focando na identificação de fatores que influenciam notas de corte, competitividade ou probabilidades de admissão em contextos educacionais, utilizando técnicas de Ciência de Dados e Machine Learning com ênfase em interpretabilidade. Os trabalhos selecionados envolvem a análise de admissões universitárias, notas de exames ou acesso ao ensino superior, com base em dados históricos e variáveis acadêmicas/institucionais. Foram priorizados artigos dos últimos 5 anos, com destaque para métodos que permitem extrair importância de features e explicar a influência das variáveis.
 
 ### Trabalho 1
 <details>
 <summary>Prediction for University Admission using Machine Learning (CHITHRA APOORVA et al., 2020)</summary>
 
-- **Problema e contexto:** O estudo aborda o desafio enfrentado por estudantes indianos que buscam admissão em programas de mestrado em Ciência da Computação em universidades dos EUA. Os alunos frequentemente carecem de informações precisas sobre suas chances de admissão, levando a processos ineficientes, altos custos e dependência de fontes não confiáveis. O objetivo é desenvolver o modelo UAP (University Admission Predictor) para prever as chances de admissão com base em fatores cruciais, auxiliando na tomada de decisões informadas.
+- **Problema e contexto:** O estudo aborda o desafio enfrentado por estudantes indianos que buscam admissão em programas de mestrado em Ciência da Computação em universidades dos EUA. Os alunos frequentemente carecem de informações claras sobre os fatores que determinam suas chances de admissão. O objetivo é desenvolver o modelo UAP (University Admission Predictor) para identificar e quantificar os fatores cruciais que influenciam a admissão, auxiliando na tomada de decisões informadas.
 - **Dados (dataset):**
   - Origem: dados coletados de fontes como Yocket, focando em perfis de estudantes indianos.
   - Tamanho: não explicitado, mas sem valores ausentes ou outliers após análise.
@@ -176,12 +176,12 @@ Nesta seção, são apresentadas abordagens da literatura que tratam problemas s
   - Pré-processamentos: inspeção de valores, remoção de ruído, divisão em conjuntos de treino e teste; sem imputação necessária.
 - **Abordagem/algoritmos:**
   - Algoritmos utilizados: K-Nearest Neighbors (KNN), Linear Regression, Ridge Regression e Random Forest.
-  - Parâmetros principais: não customizados além dos padrões; foco em regressão para prever probabilidades.
-- **Métricas de avaliação:** Acurácia (accuracy), escolhida para avaliar o desempenho geral dos modelos.
+  - Parâmetros principais: não customizados além dos padrões; foco em modelos que permitem extrair importância de features.
+- **Métricas de avaliação:** Acurácia (accuracy), escolhida para avaliar o desempenho geral dos modelos e a capacidade de identificar padrões relevantes.
 - **Resultados:**
   - Acurácia média de 79%; Linear Regression superou os outros.
   - Limitações: dados limitados a estudantes indianos e poucas universidades; não considera mudanças em critérios de admissão.
-  - Conclusões: O modelo auxilia estudantes a economizarem tempo e recursos, com potencial para expansão.
+  - Conclusões: O modelo auxilia na identificação de fatores determinantes, economizando tempo e recursos dos estudantes, com potencial para expansão.
 </details>
 
 ### Trabalho 2
@@ -275,9 +275,9 @@ Nesta seção, são apresentadas abordagens da literatura que tratam problemas s
 
 ### Texto-síntese crítico
 
-Os estudos concordam na utilidade de técnicas de Machine Learning, como Random Forest e regressão linear, para prever resultados em processos seletivos educacionais, destacando variáveis acadêmicas (ex.: CGPA, GRE, notas de provas) como preditores principais. Há convergência na ênfase em pré-processamento de dados para lidar com ausentes e na superioridade de ensembles como Random Forest sobre baselines, alcançando acurácias ou R² acima de 0.8 em cenários de admissão ou previsão de notas. Divergências aparecem nos contextos: enquanto alguns focam em admissões pós-graduadas nos EUA (Trabalhos 1 e 2), outros tratam de acesso ao ensino superior europeu (Trabalhos 3 e 4) ou exames brasileiros como ENEM (Trabalho 5), variando métricas de classificação (AUC, acurácia) para regressão (MAE, R²).
+Os estudos concordam na utilidade de técnicas de Machine Learning, como Random Forest e regressão linear, para identificar os principais fatores que influenciam resultados em processos seletivos educacionais, destacando variáveis acadêmicas (ex.: CGPA, GRE, notas de provas) como preditores principais. Há convergência na ênfase em pré-processamento de dados para lidar com ausentes e na superioridade de ensembles como Random Forest sobre baselines, alcançando acurácias ou R² acima de 0.8 em cenários de admissão ou previsão de notas. Divergências aparecem nos contextos: enquanto alguns focam em admissões pós-graduadas nos EUA (Trabalhos 1 e 2), outros tratam de acesso ao ensino superior europeu (Trabalhos 3 e 4) ou exames brasileiros como ENEM (Trabalho 5), variando métricas de classificação (AUC, acurácia) para regressão (MAE, R²).
 
-Lacunas incluem generalização limitada (datasets específicos de uma universidade ou país), falta de dados individuais socioeconômicos, validação externa insuficiente e considerações éticas sobre viés. Limitações técnicas envolvem tamanhos de amostras pequenos e ausência de atualizações em tempo real; éticas, o risco de perpetuar desigualdades em seleções. O projeto EduMap alinha-se aos estudos ao usar ML para prever notas de corte no SISU com base em dados históricos, preenchendo uma lacuna no contexto brasileiro ao focar em dados abertos do MEC e disponibilizar uma aplicação prática. Diferencia-se ao priorizar regressão para estimativa contínua (nota de corte) em um sistema unificado como SISU, incorporando variáveis como curso, instituição e vagas, e avaliando múltiplos modelos para robustez.
+Lacunas incluem generalização limitada (datasets específicos de uma universidade ou país), falta de dados individuais socioeconômicos ou institucionais (como modalidade de concorrência e vagas no SISU), validação externa insuficiente e considerações éticas sobre viés. Limitações técnicas envolvem tamanhos de amostras pequenos e ausência de atualizações em tempo real. O projeto EduMap alinha-se aos estudos ao usar ML para prever notas de corte no SISU com base em dados históricos, preenchendo uma lacuna no contexto brasileiro ao focar em dados abertos do MEC e priorizando modelos com foco em interpretabilidade (importância de variáveis, correlações e segmentação). Diferencia-se ao incorporar variáveis institucionais, acadêmicas e estruturais específicas do SISU (curso, turno, modalidade, vagas, localização) e ao avaliar criticamente o potencial e as limitações da Inteligência Artificial na análise educacional.
 
 
 <!-- Nesta seção, descreva abordagens da literatura que tratam problemas semelhantes ao seu. Seu objetivo é documentar métodos, dados, métricas e resultados.
