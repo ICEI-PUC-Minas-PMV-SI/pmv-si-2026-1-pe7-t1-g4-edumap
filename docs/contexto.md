@@ -1,10 +1,10 @@
 # Introdução
 
-O projeto EduMap investiga a aplicação de técnicas de Ciência de Dados e _Machine Learning_ na análise de dados do Sistema de Seleção Unificada (SISU), sistema utilizado por instituições públicas brasileiras para selecionar candidatos ao ensino superior com base nas notas obtidas no Exame Nacional do Ensino Médio (ENEM). Entre as informações mais relevantes desse processo está a **nota de corte**, que representa a menor pontuação necessária para que um candidato permaneça entre os classificados dentro do número de vagas de determinado curso e instituição.
+O projeto EduMap está inserido no contexto da crescente utilização de dados educacionais para apoiar a tomada de decisão e ampliar a compreensão sobre o acesso ao ensino superior no Brasil. O Sistema de Seleção Unificada (SISU), como principal mecanismo de ingresso em instituições públicas, gera um volume significativo de dados que refletem a dinâmica da concorrência entre cursos, instituições e modalidades de acesso. Nesse cenário, o avanço das técnicas de Ciência de Dados e de aprendizado de máquina possibilita a análise mais aprofundada dessas informações, contribuindo para a identificação de padrões e relações que não são facilmente perceptíveis por métodos tradicionais.
 
-O objetivo do projeto é desenvolver e avaliar modelos de aprendizado de máquina capazes de analisar dados históricos do SISU — especificamente da edição 2023/1 — para estimar a nota de corte associada a diferentes cursos e instituições. A investigação envolve etapas de preparação e análise do conjunto de dados, identificação de padrões relevantes e treinamento de modelos capazes de produzir estimativas com base nas características presentes no dataset.
+Diante desse contexto, o objetivo geral consiste em investigar os fatores que influenciam a competitividade dos cursos no SISU 2023/1, analisando como variáveis como instituição, curso, turno, modalidade de concorrência, localização e número de vagas se relacionam com a nota de corte, a classificação e a aprovação dos candidatos. Para isso, o projeto envolve etapas de tratamento de dados, análise estatística e aplicação de modelos interpretáveis de aprendizado de máquina.
 
-Como resultado, o EduMap busca demonstrar o potencial das técnicas de aprendizado de máquina na análise de dados educacionais e na identificação de padrões em processos seletivos complexos. Além disso, pretende-se disponibilizar uma aplicação que permita aos usuários inserir informações sobre cursos e instituições para obter uma estimativa da nota de corte prevista pelos modelos desenvolvidos, tendo como público-alvo estudantes interessados em compreender melhor a dinâmica de concorrência do SISU e pessoas interessadas em aplicações práticas de análise de dados.
+A relevância do estudo está na ampliação do entendimento sobre os determinantes da competitividade no SISU, contribuindo para análises mais embasadas e transparentes. O público-alvo inclui estudantes, pesquisadores e gestores educacionais interessados em compreender melhor a dinâmica de acesso ao ensino superior público.
 
 
 <!-- Texto descritivo introdutório apresentando a visão geral do projeto a ser desenvolvido considerando o contexto em que ele se insere, os objetivos gerais, a justificativa e o público-alvo do projeto.
@@ -19,11 +19,11 @@ Diante disso, este projeto propõe a análise de um dataset contendo informaçõ
 
 ## Problema
 
-O projeto EduMap investiga a possibilidade de prever a nota de corte de cursos ofertados no processo seletivo do Sistema de Seleção Unificada (SISU) a partir da análise de dados históricos do programa. A nota de corte corresponde à menor pontuação necessária para que um candidato permaneça entre os classificados dentro do número de vagas disponíveis em determinado curso, universidade e modalidade de concorrência. Como essa nota é resultado da interação entre diversos fatores — como número de vagas, instituição, curso, turno e comportamento dos candidatos durante o processo seletivo — ela apresenta variações que não podem ser determinadas apenas por regras simples, tornando-se um problema adequado para investigação com técnicas de Ciência de Dados e _Machine Learning_.
+A elevada competitividade observada nos processos seletivos do Sistema de Seleção Unificada (SISU) evidencia a complexidade dos fatores que influenciam o ingresso no ensino superior público. Elementos como instituição, curso, turno, modalidade de concorrência, localização e número de vagas interagem de forma não trivial, impactando diretamente indicadores como nota de corte, classificação e aprovação dos candidatos. No entanto, essas relações nem sempre são explícitas ou facilmente interpretáveis, o que dificulta uma compreensão aprofundada dos determinantes da competitividade entre os diferentes cursos ofertados.
 
-No contexto do acesso ao ensino superior público brasileiro, a nota de corte é amplamente utilizada pelos candidatos como referência para avaliar suas chances de aprovação em cursos e instituições durante o período de inscrições do SISU. No entanto, essas notas são atualizadas ao longo do processo seletivo e refletem o comportamento coletivo dos candidatos, o que torna sua estimativa antecipada uma tarefa complexa.
+Além disso, embora exista grande volume de dados disponibilizados pelo SISU, sua utilização ainda é, em muitos casos, limitada a análises descritivas superficiais, sem o devido aproveitamento de técnicas mais robustas de Ciência de Dados e aprendizado de máquina. A ausência de abordagens analíticas mais avançadas compromete a identificação de padrões relevantes e a extração de conhecimento útil, tanto para candidatos quanto para gestores educacionais. Isso gera uma lacuna no entendimento sobre como diferentes variáveis contribuem, individual e conjuntamente, para os resultados do processo seletivo.
 
-A partir do conjunto de dados do SISU referente à Chamada Regular da edição de 2023/1, este projeto busca analisar padrões presentes nas ofertas de cursos e nas notas registradas, investigando como esses dados podem ser utilizados para construir modelos capazes de estimar a nota de corte associada a diferentes combinações de cursos e instituições. Dessa forma, o trabalho explora o uso de métodos de análise de dados aplicados a um contexto educacional real, contribuindo para a compreensão dos fatores relacionados à competitividade no acesso ao ensino superior gratuito no Brasil.
+Diante desse cenário, torna-se necessário desenvolver uma abordagem sistemática que permita não apenas analisar, mas também interpretar os fatores que influenciam as notas de a competitividade dos cursos no SISU 2023/1. A aplicação de modelos interpretáveis de aprendizado de máquina, aliada a técnicas de análise exploratória e segmentação de dados, surge como uma alternativa promissora para suprir essa lacuna. Assim, o problema central deste estudo consiste em compreender, de forma estruturada e baseada em dados, quais variáveis são mais determinantes e como elas se relacionam com os resultados do processo seletivo, considerando também as potencialidades e limitações do uso de Inteligência Artificial nesse contexto.
 
 <!-- Nesta seção, você deve apresentar o problema que a sua investigação/experimentação busca resolver. Por exemplo, caso o _dataset_ selecionado, seja um _dataset_ que contenha uma série temporal com o preço de diversas ações da bolsa de valores, o problema pode estar relacionado a dificuldade em saber a melhor hora (hora certa??) de comprar ou então, de executar a venda de uma determinada ação.
 
@@ -48,7 +48,7 @@ Neste contexto, a aplicação de técnicas de ciência de dados e aprendizado de
 
 A partir do problema apresentado, a seguinte questão de pesquisa orienta o desenvolvimento deste trabalho:
 
-É possível utilizar técnicas de Ciência de Dados e _Machine Learning_ para estimar a nota de corte de cursos ofertados no Sistema de Seleção Unificada (SISU) a partir de características relacionadas ao curso, à instituição, modalidade, turno, região do campus e à oferta de vagas presentes em dados históricos do processo seletivo?
+Quais são os principais fatores que influenciam a competitividade dos cursos ofertados no SISU 2023/1 e de que forma variáveis institucionais, acadêmicas e estruturais impactam a nota de corte, a classificação e a aprovação dos candidatos, segundo a análise por técnicas de Ciência de Dados e aprendizado de máquina?
 
 <!-- A questão de pesquisa é o ponto de partida e a base orientadora de todo o trabalho a ser desenvolvido. Ela deve estar diretamente alinhada ao problema identificado e expressar, de forma clara, o que se deseja investigar ou comprovar.
 
@@ -69,19 +69,16 @@ Essa questão busca investigar se modelos de aprendizado de máquina podem extra
 
 ### Objetivo Geral
 
-Desenvolver, experimentar e avaliar modelos adequados de aprendizado de máquina aplicados ao conjunto de dados do Sistema de Seleção Unificada (SISU) 2023/1, com o objetivo de investigar a capacidade desses modelos em prever a nota de corte de cursos ofertados no processo seletivo a partir de características relacionadas aos cursos, às instituições e à oferta de vagas. O projeto busca analisar padrões presentes nos dados históricos do sistema e verificar em que medida técnicas de _Machine Learning_ podem contribuir para estimar a nota de corte em diferentes combinações de cursos e instituições no contexto do processo seletivo.
+Investigar, por meio da aplicação de técnicas de Ciência de Dados e de aprendizado de máquina, os principais fatores que impactam a competitividade dos cursos ofertados no SISU 2023/1, examinando de que forma variáveis relacionadas à instituição, ao curso, ao turno, à modalidade de concorrência, à localização e à quantidade de vagas se correlacionam com a nota de corte, a classificação e a aprovação dos candidatos.
 
 ### Objetivos Específicos
 
-- Realizar a coleta e preparação do conjunto de dados do Sistema de Seleção Unificada (SISU), incluindo etapas de limpeza, organização e tratamento das informações disponíveis.
- 
-- Explorar e analisar os dados por meio de técnicas de Ciência de Dados, buscando identificar padrões e relações relevantes entre as variáveis presentes no dataset.
- 
-- Selecionar e treinar três diferentes modelos de aprendizado de máquina adequados ao problema de previsão da nota de corte.
-  
-- Avaliar e comparar o desempenho dos três modelos treinados, analisando sua capacidade de estimar a nota de corte com base nos dados utilizados.
- 
-- Implantar e disponibilizar uma solução baseada no modelo desenvolvido, permitindo que usuários informem dados relevantes — como curso e instituição — para obter uma estimativa da nota de corte prevista, demonstrando a aplicação prática de um dos modelos desenvolvidos no projeto.
+- Realizar o pré-processamento e a estruturação do conjunto de dados referente ao SISU 2023/1, visando sua adequação para as etapas analíticas.
+- Conduzir uma análise estatística exploratória das distribuições de notas de corte, aprovações e classificações entre cursos, instituições e modalidades de concorrência.
+- Determinar os atributos mais significativos na explicação da competitividade dos cursos ofertados.
+- Empregar modelos de aprendizado de máquina com foco em interpretabilidade para avaliar a influência das variáveis sobre a nota de corte e a aprovação dos candidatos.
+- Executar a segmentação de cursos com características semelhantes em termos de competitividade e acesso.
+- Analisar criticamente o potencial e as limitações da utilização de técnicas de Inteligência Artificial na interpretação de dados educacionais do SISU.
 
 
 <!-- Nesta seção, você deve apresentar os objetivos preliminares do trabalho, deixando claro que o objetivo geral é experimentar modelos de aprendizado de máquina adequados para solucionar o problema descrito anteriormente.
