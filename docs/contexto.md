@@ -363,7 +363,6 @@ A partir desse conjunto de dados, é possivel realizar diversas análises relaci
 - Prever a modalidade de concorrência escolhido
 - Distribuição desigual de oportuniades
 - Relação entre oferta e competição
-- Prever a nota de corte do curso 
 - Impacto das cotas no acesso ao ensino superior
 - Diferenças de nota entre cursos e regiões
 
