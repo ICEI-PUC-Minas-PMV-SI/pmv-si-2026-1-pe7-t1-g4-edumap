@@ -411,7 +411,7 @@ Durante a análise preliminar do dataset, alguns aspectos relacionados à qualid
 # Canvas analítico
 
 
-<img width="1220" height="864" alt="Captura de tela 2026-03-07 172718" src="https://github.com/user-attachments/assets/f9b65cb7-b195-449e-938c-71557cbafaa8" />
+<img width="988" height="693" alt="canvas-analitico" src="https://github.com/user-attachments/assets/aaa4504f-c073-4e11-93ea-753f5e192e7e" />
 
 
 <!--
