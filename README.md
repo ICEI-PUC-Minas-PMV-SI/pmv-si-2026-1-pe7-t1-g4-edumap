@@ -1,4 +1,4 @@
-# EduMap: Análises e previsões de notas de corte de cursos de Universidades brasileiras
+# EduMap: Análises sobre as notas de corte e competitividade de cursos de Universidades públicas brasileiras
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +6,7 @@
 
 `SEMESTRE: 7º`
 
-O projeto EduMap tem como objetivo auxiliar estudantes que desejam ingressar no ensino superior, oferecendo uma estimativa da nota de corte de cursos específicos. Essa previsão é realizada com base na análise de diferentes características e dados relevantes, permitindo gerar previsões que podem apoiar os candidatos na tomada de decisão e no planejamento de suas estratégias de escolha de cursos e instituições.
+O projeto EduMap tem como objetivo apoiar estudantes que pretendem ingressar no ensino superior por meio da análise de fatores que influenciam a nota de corte e a competitividade de cursos específicos. A análise é baseada em dados do SISU, considerando diferentes variáveis relevantes para a compreensão do comportamento da competitividade. A partir desse processamento, o sistema busca identificar padrões e fornecer insights que auxiliem os candidatos na tomada de decisão e no planejamento estratégico da escolha de cursos e instituições.
 
 
 ## Integrantes
