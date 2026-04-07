@@ -12,7 +12,11 @@ A partir da análise descrita e exploratória realizada, descreva todos os achad
 
 ## Ferramentas utilizadas
 
-Existem muitas ferramentas diferentes que podem ser utilizadas para fazer a análise dos dados. Nesta seção, descreva as ferramentas/tecnologias utilizadas e sua aplicação. Vale destacar que, preferencialmente, as análises deverão ser realizadas utilizando a linguagem de programação Python.
+As principais ferramentas utilizadas nesta etapa do projeto estão apresentadas a seguir, acompanhadas de suas características iniciais. Embora existam diversas opções para análise de dados, optou-se pelo uso do ambiente Google Colab, no qual foram empregadas bibliotecas específicas conforme descrito.
+
+Toda a programação foi desenvolvida utilizando a linguagem Python, escolhida por sua versatilidade, simplicidade e alta eficiência. O Python se destaca no contexto de ciência de dados por possuir um amplo ecossistema de bibliotecas científicas, estatísticas e matemáticas desenvolvidas por terceiros, o que amplia significativamente suas capacidades.
+
+A utilização dessas bibliotecas permite a execução de análises mais avançadas, manipulação eficiente de grandes volumes de dados e a construção de visualizações robustas, tornando o Python uma das principais linguagens utilizadas em projetos acadêmicos e profissionais na área de análise de dados.
 
 | Ferramenta | Tipo | Finalidade | Principais Aplicações |
 |------------|------|------------|----------------------|
