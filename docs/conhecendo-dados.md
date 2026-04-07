@@ -7,30 +7,15 @@ O projeto está inserido no contexto do sistema EduMap, que visa analisar notas 
 ## 2. Conhecendo os Dados
 ### 2.1 Descrição da Base de Dados
 
-O dataset utilizado foi obtido a partir do portal de dados abertos do MEC:
+base de dados utilizada foi obtida por meio do portal de dados abertos do Ministério da Educação, contendo informações referentes aos candidatos participantes do SISU. O conjunto de dados original apresenta mais de um milhão de registros, sendo aplicado, neste trabalho, um recorte específico para o estado de Minas Gerais, totalizando aproximadamente 196 mil registros.
 
-- Base: SISU 2023 – Chamada Regular;
-- Fonte: dadosabertos.mec.gov.br;
-- Registros totais: 1.048.575;
-- Recorte utilizado: Minas Gerais (~196.095 registros).
+Cada linha representa um candidato participante do processo seletivo, contendo informações como ano e edição do SISU, código e nome da instituição de ensino, curso e turno, notas do candidato, classificação, situação (aprovado, lista de espera, etc.), dentre outras informações.
 
-Cada linha representa um candidato participante do processo seletivo, contendo informações como:
-
-- Ano e edição do SISU
-- Código e nome da instituição
-- Curso e turno
-- Nota do candidato
-- Classificação
-- Situação (aprovado, lista de espera, etc.)
-- 
 ### 2.2 Análise Descritiva
 #### 2.2.1 Medidas de Tendência Central
-Foram utilizadas funções do Pandas para análise estatística descritiva:
-
-`df_dataset.describe()`
+Foram utilizadas funções do Pandas para análise estatística descritiva: `df_dataset.describe()`
 
 A partir disso, foi possível observar:
-
 - A média das notas indica o nível geral de desempenho dos candidatos
 - A mediana ajuda a entender a distribuição central sem influência de outliers
 - Diferenças entre média e mediana sugerem assimetria nos dados
@@ -46,19 +31,36 @@ Essas medidas mostram que há grande variação nas notas e classificações, o 
 ### 2.3 Análise Visual dos Dados
 
 Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
+- Pairplot:
+  
+  <img src="../docs/img/Pairplot.jpeg" alt="pairplot" width="700">
+
+
+- Pairplot Balanceado:
+  
+  <img src="../docs/img/Pairplot-balanceado.jpeg" alt="pairplot" width="700">
+
 - Histogramas → distribuição das notas
+
+  <img src="../docs/img/histograma.jpeg" alt="histograma" width="700">
+
 - Boxplots → identificação de outliers
-- Gráficos de dispersão → relação entre variáveis
 
-Exemplo de código utilizado:
+  <img src="../docs/img/boxplot-top20cursos.jpeg" alt="boxplot" width="700">
+  
+- Mapa de Calor → relação entre variáveis
 
-`sns.histplot(df_dataset['NOTA'], kde=True)
-plt.show()`
+  <img src="../docs/img/mapa-calor.jpeg" alt="mapa-calor" width="700">
+
+- Variance Inflation Factor (VIF)
+
+  <img src="../docs/img/vif.jpeg" alt="vif" width="400">
+
 
 Essas visualizações ajudaram a:
-- Identificar distribuição assimétrica das notas
-- Detectar valores extremos (outliers)
-- Compreender padrões de concentração de dados
+- Identificar distribuição assimétrica das notas;
+- Detectar valores extremos (outliers);
+- Compreender padrões de concentração de dados.
   
 ### 2.4 Detecção de Outliers
 
@@ -78,9 +80,6 @@ Foram analisadas relações entre variáveis utilizando:
 - Gráficos de dispersão
 - Técnicas estatísticas
 
-Exemplo de código:
-`df_dataset.corr()`
-
 Também foram utilizadas técnicas mais avançadas como:
 - VIF (Variance Inflation Factor) para multicolinearidade
 - Análise com bibliotecas como statsmodels
@@ -91,9 +90,6 @@ Principais observações:
 - Existem dependências entre variáveis relacionadas ao desempenho do candidato
 
 ### 2.6 Trechos de Código Relevantes
-Leitura dos dados:
-`df_dataset = pd.read_csv(path, encoding='latin1', sep=';')`
-
 Inspeção inicial:
 `df_dataset.head()
 df_dataset.info()`
