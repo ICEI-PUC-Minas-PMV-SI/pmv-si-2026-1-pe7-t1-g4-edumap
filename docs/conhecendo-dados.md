@@ -14,6 +14,10 @@ A partir da análise descrita e exploratória realizada, descreva todos os achad
 
 Existem muitas ferramentas diferentes que podem ser utilizadas para fazer a análise dos dados. Nesta seção, descreva as ferramentas/tecnologias utilizadas e sua aplicação. Vale destacar que, preferencialmente, as análises deverão ser realizadas utilizando a linguagem de programação Python.
 
-|:--:|:---:|
-
-|MATPLOTLIB|O Matplotlib é a principal biblioteca base para criação de gráficos em Python, sendo amplamente utilizada em ambientes acadêmicos e profissionais.|
+| Ferramenta | Tipo | Finalidade | Principais Aplicações |
+|------------|------|------------|----------------------|
+| Matplotlib | Biblioteca base | Criação de gráficos estáticos | Gráficos de linha, barras, histogramas, dispersão |
+| Seaborn    | Biblioteca estatística | Visualização avançada e estética | Heatmaps, pairplot, regressão, distribuição |
+| Pandas     | Manipulação de dados | Estruturação e análise de dados | DataFrames, leitura de CSV, gráficos rápidos |
+| Plotly     | Biblioteca interativa | Gráficos interativos e dashboards | Dashboards, zoom, gráficos dinâmicos |
+| Google Colab | Ambiente de execução | Desenvolvimento e execução de código | Análise de dados, visualização e compartilhamento |
