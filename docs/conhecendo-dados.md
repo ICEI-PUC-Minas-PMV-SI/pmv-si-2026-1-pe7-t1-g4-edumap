@@ -14,4 +14,5 @@ A partir da análise descrita e exploratória realizada, descreva todos os achad
 
 Existem muitas ferramentas diferentes que podem ser utilizadas para fazer a análise dos dados. Nesta seção, descreva as ferramentas/tecnologias utilizadas e sua aplicação. Vale destacar que, preferencialmente, as análises deverão ser realizadas utilizando a linguagem de programação Python.
 
-
+|--|---|
+|MATPLOTLIB|O Matplotlib é a principal biblioteca base para criação de gráficos em Python, sendo amplamente utilizada em ambientes acadêmicos e profissionais.|
