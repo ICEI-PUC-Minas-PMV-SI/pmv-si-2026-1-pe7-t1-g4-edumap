@@ -1,6 +1,6 @@
 # Conhecendo os dados
 
-Este trabalho tem como objetivo realizar uma 1ª análise exploratória de dados (EDA), a Engenharia de Dados e, em seguida, uma 2ª análise exploratória de dados a partir de um dataset do SISU 2023/1, com foco no estado de Minas Gerais. A análise busca compreender a estrutura dos dados, identificar padrões, detectar possíveis outliers e analisar relações entre variáveis que influenciam a competitividade dos cursos.
+Este trabalho tem como objetivo realizar uma 1ª análise exploratória de dados (EDA), a Engenharia de Dados e, em seguida, uma 2ª análise exploratória de dados a partir de um dataset do SISU 2023/1, com foco nos processos de candidatura a vagas no estado de Minas Gerais. A análise busca compreender a estrutura dos dados, identificar padrões, detectar possíveis outliers e analisar relações entre variáveis que influenciam a competitividade dos cursos, fatores que influenciam a nota de corte e a relação entre oferta e competição.
 
 O projeto está inserido no contexto do sistema EduMap, que visa analisar notas de corte e o nível de concorrência em cursos superiores, utilizando técnicas de ciência de dados e aprendizado de máquina.
 
