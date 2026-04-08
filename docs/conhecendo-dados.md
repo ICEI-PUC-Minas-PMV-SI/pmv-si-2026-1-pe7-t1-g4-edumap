@@ -7,7 +7,7 @@ O projeto está inserido no contexto do sistema EduMap, que visa analisar notas 
 ## 2. Conhecendo os Dados
 ### 2.1 Descrição da Base de Dados
 
-base de dados utilizada foi obtida por meio do portal de dados abertos do Ministério da Educação, contendo informações referentes aos candidatos participantes do SISU. O conjunto de dados original apresenta mais de um milhão de registros, sendo aplicado, neste trabalho, um recorte específico para o estado de Minas Gerais, totalizando aproximadamente 196 mil registros.
+A base de dados utilizada foi obtida por meio do portal de dados abertos do Ministério da Educação, contendo informações referentes aos candidatos participantes do SISU em 2023. O conjunto de dados original apresenta mais de um milhão de registros, sendo aplicado, neste trabalho, um recorte específico para o estado de Minas Gerais, totalizando aproximadamente 196 mil registros.
 
 Cada linha representa um candidato participante do processo seletivo, contendo informações como ano e edição do SISU, código e nome da instituição de ensino, curso e turno, notas do candidato, classificação, situação (aprovado, lista de espera, etc.), dentre outras informações.
 
