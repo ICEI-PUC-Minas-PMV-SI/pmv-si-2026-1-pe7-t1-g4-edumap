@@ -40,6 +40,37 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
   
   <img src="../docs/img/Pairplot Balanceado 01 .png" alt="Pairplot" width="700">
 
+#### _Padrões observados no gráfico_
+
+ - A classe `S` e `N` aparecem em quantidades iguais devido ao balanceamento do gráfico.
+ - Em vários pares de notas, os pontos formam um desenho inclinado para cima, indicando relação positiva entre as variáveis comparadas, uma relação direta entre as variáveis, isso mais observado em Mat. e CN.
+ - No KDE da redação é possível observar a distribuição entre as notas dos `S` e dos `N`
+ - Mat. E CN definem muito bem a linha entre aprovados e reprovados em uma diagonal ascendentes com pontos bem agrupados.
+ - Muitos candidatos com nota zero em CN tiveram boas notas em redação, mas não foram aprovados
+ - A relação entre Redação e Mat. Possui muitos pontos espalhados e não tem boa indicação de influência, além de que estar bem misturados os `S` e s `N`.
+
+
+> |Variáveis comparadas|O que se observa?|
+> |---|---|
+> |**NOTA_L x NOTA_R**|Formato circular sem relação direta entre aprovados e reprovados na variação das notas nas áreas de conhecimento
+> |**NOTA_CH x NOTA_R**|Pouco menos circular e sem uma relação direta de grande intensidade entre aprovados e reprovados na variação das notas nas áreas de conhecimento
+> |**NOTA_L x NOTA_CH**|Temos uma estrutura mais em diagonal ascendentes, porem ainda muito misturados os aprovados e não aprovados
+> |**NOTA_M × NOTA_CN**|Também aparece uma tendência positiva, com pontos bem concentrados e baixa dispersão.|
+> |**NOTA_R × NOTA_M**|Os pontos se distribuem em uma faixa ampla, mas ainda com inclinação crescente mas muito misturados.|
+
+
+#### _Resumo_
+
+> Esse pairplot balanceado mostra como as notas se relacionam e nos mostram um caminho claro para a aprovação ou como ter sucesso no modelo atual, onde se concentrar mais nos estudos e ter mais preocupação com os resultados.
+
+> A imagem sugere associação positiva entre várias notas e mostra que a aprovação tem distribuição bastante concentrada em valores altos das notas. É uma visualização útil para perceber padrões gerais entre as variáveis, sem ainda tirar conclusões causais.
+
+
+
+
+
+
+
 - Histogramas → distribuição das notas
 
   <img src="../docs/img/histograma.jpeg" alt="histograma" width="700">
