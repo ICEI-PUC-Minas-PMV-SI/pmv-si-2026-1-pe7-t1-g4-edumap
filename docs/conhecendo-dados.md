@@ -35,12 +35,11 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
   
   <img src="../docs/img/Pairplot.jpeg" alt="pairplot" width="700">
 
-
 - Pairplot Balanceado:
   
   <img src="../docs/img/Pairplot Balanceado 01 .png" alt="Pairplot" width="700">
 
-#### Padrões observados no gráfico
+-- Padrões observados no gráfico
 
  - A classe `S` e `N` aparecem em quantidades iguais devido ao balanceamento do gráfico.
  - Em vários pares de notas, os pontos formam um desenho inclinado para cima, indicando relação positiva entre as variáveis comparadas, uma relação direta entre as variáveis, observamos com mais intensidade em Mat. e CN.
