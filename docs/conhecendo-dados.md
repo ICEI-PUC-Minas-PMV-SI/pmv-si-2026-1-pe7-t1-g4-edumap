@@ -35,7 +35,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
   
   <img src="../docs/img/Pairplot.jpeg" alt="pairplot" width="700">
 
-- Pairplot Balanceado:
+#### 2.3.2 Pairplot Balanceado:
   
   <img src="../docs/img/Pairplot Balanceado 01 .png" alt="Pairplot" width="700">
 
@@ -64,19 +64,19 @@ Esse pairplot balanceado mostra como as notas se relacionam e nos mostram um cam
 
 A imagem sugere associação positiva entre várias notas e mostra que a aprovação tem distribuição bastante concentrada em valores altos das notas. É uma visualização útil para perceber padrões gerais entre as variáveis, sem ainda tirar conclusões causais.
 
-- Histogramas → distribuição das notas
+#### 2.3.3 Histogramas → distribuição das notas
 
   <img src="../docs/img/histograma.jpeg" alt="histograma" width="700">
 
-- Boxplots → identificação de outliers
+#### 2.3.4 Boxplots → identificação de outliers
 
   <img src="../docs/img/boxplot-top20cursos.jpeg" alt="boxplot" width="700">
   
-- Mapa de Calor → relação entre variáveis
+#### 2.3.5 Mapa de Calor → relação entre variáveis
 
   <img src="../docs/img/mapa-calor.jpeg" alt="mapa-calor" width="700">
 
-- Variance Inflation Factor (VIF)
+#### 2.3.6 Variance Inflation Factor (VIF)
 
   <img src="../docs/img/vif.jpeg" alt="vif" width="400">
 
