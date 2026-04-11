@@ -51,11 +51,11 @@ Padrões observados no gráfico
 
 |Variáveis comparadas|O que se observa?|
 |---|---|
-|**NOTA_L x NOTA_R**|Formato circular sem relação direta entre aprovados e reprovados na variação das notas nas áreas de conhecimento
-|**NOTA_CH x NOTA_R**|Pouco menos circular e sem uma relação direta de grande intensidade entre aprovados e reprovados na variação das notas nas áreas de conhecimento
-|**NOTA_L x NOTA_CH**|Temos uma estrutura mais em diagonal ascendentes, porem ainda muito misturados os aprovados e não aprovados
-|**NOTA_M × NOTA_CN**|Também aparece uma tendência positiva, com pontos bem concentrados e baixa dispersão.|
-|**NOTA_R × NOTA_M**|Os pontos se distribuem em uma faixa ampla, mas ainda com inclinação crescente mas muito misturados.|
+|NOTA_L x NOTA_R|Formato circular sem relação direta entre aprovados e reprovados na variação das notas nas áreas de conhecimento
+|NOTA_CH x NOTA_R|Pouco menos circular e sem uma relação direta de grande intensidade entre aprovados e reprovados na variação das notas nas áreas de conhecimento
+|NOTA_L x NOTA_CH|Temos uma estrutura mais em diagonal ascendentes, porem ainda muito misturados os aprovados e não aprovados
+|NOTA_M × NOTA_CN|Também aparece uma tendência positiva, com pontos bem concentrados e baixa dispersão.|
+|NOTA_R × NOTA_M|Os pontos se distribuem em uma faixa ampla, mas ainda com inclinação crescente mas muito misturados.|
 
 
 Resumo
