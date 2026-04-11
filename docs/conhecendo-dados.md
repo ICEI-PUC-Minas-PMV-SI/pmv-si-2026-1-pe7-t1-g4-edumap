@@ -38,7 +38,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
 
 - Pairplot Balanceado:
   
-  <img src="../docs/img/Pairplot Balanceado 01.jpeg" alt="Pairplot" width="700">
+  <img src="../docs/img/Pairplot Balanceado 01.png" alt="Pairplot" width="700">
 
 - Histogramas → distribuição das notas
 
