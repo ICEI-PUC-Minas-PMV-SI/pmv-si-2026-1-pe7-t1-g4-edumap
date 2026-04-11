@@ -40,7 +40,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
   
   <img src="../docs/img/Pairplot Balanceado 01 .png" alt="Pairplot" width="700">
 
-#### _Padrões observados no gráfico_
+####_Padrões observados no gráfico_
 
  - A classe `S` e `N` aparecem em quantidades iguais devido ao balanceamento do gráfico.
  - Em vários pares de notas, os pontos formam um desenho inclinado para cima, indicando relação positiva entre as variáveis comparadas, uma relação direta entre as variáveis, observamos com mais intensidade em Mat. e CN.
@@ -50,7 +50,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
  - A relação entre Redação e Mat. Possui muitos pontos espalhados e não tem boa indicação de influência, além de que estar bem misturados os `S` e s `N`.
 
 
-|Variáveis comparadas|O que se observa?|
+#### |Variáveis comparadas|O que se observa?|
 |---|---|
 |**NOTA_L x NOTA_R**|Formato circular sem relação direta entre aprovados e reprovados na variação das notas nas áreas de conhecimento
 |**NOTA_CH x NOTA_R**|Pouco menos circular e sem uma relação direta de grande intensidade entre aprovados e reprovados na variação das notas nas áreas de conhecimento
