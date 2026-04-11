@@ -31,7 +31,7 @@ Essas medidas mostram que há grande variação nas notas e classificações, o 
 ### 2.3 Análise Visual dos Dados
 
 Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
-- Pairplot:
+#### 2.3.1 Pairplot:
   
   <img src="../docs/img/Pairplot.jpeg" alt="pairplot" width="700">
 
