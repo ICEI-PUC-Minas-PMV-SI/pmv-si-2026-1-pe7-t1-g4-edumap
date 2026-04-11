@@ -39,7 +39,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
   
   <img src="../docs/img/Pairplot Balanceado 01 .png" alt="Pairplot" width="700">
 
--- Padrões observados no gráfico
+Padrões observados no gráfico
 
  - A classe `S` e `N` aparecem em quantidades iguais devido ao balanceamento do gráfico.
  - Em vários pares de notas, os pontos formam um desenho inclinado para cima, indicando relação positiva entre as variáveis comparadas, uma relação direta entre as variáveis, observamos com mais intensidade em Mat. e CN.
@@ -49,7 +49,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
  - A relação entre Redação e Mat. Possui muitos pontos espalhados e não tem boa indicação de influência, além de que estar bem misturados os `S` e s `N`.
 
 
-#### |Variáveis comparadas|O que se observa?|
+|Variáveis comparadas|O que se observa?|
 |---|---|
 |**NOTA_L x NOTA_R**|Formato circular sem relação direta entre aprovados e reprovados na variação das notas nas áreas de conhecimento
 |**NOTA_CH x NOTA_R**|Pouco menos circular e sem uma relação direta de grande intensidade entre aprovados e reprovados na variação das notas nas áreas de conhecimento
@@ -58,7 +58,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
 |**NOTA_R × NOTA_M**|Os pontos se distribuem em uma faixa ampla, mas ainda com inclinação crescente mas muito misturados.|
 
 
-#### Resumo
+Resumo
 
 Esse pairplot balanceado mostra como as notas se relacionam e nos mostram um caminho claro para a aprovação ou como ter sucesso no modelo atual, onde se concentrar mais nos estudos e ter mais preocupação com os resultados.
 
