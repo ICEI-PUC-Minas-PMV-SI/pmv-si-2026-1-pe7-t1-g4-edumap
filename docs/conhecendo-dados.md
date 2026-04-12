@@ -74,7 +74,15 @@ A imagem sugere associação positiva entre várias notas e mostra que a aprova�
   
 #### 2.3.5 Mapa de Calor → relação entre variáveis
 
-  <img src="../docs/img/mapa-calor.jpeg" alt="mapa-calor" width="700">
+  <img width="758" height="660" alt="image" src="https://github.com/user-attachments/assets/d4a1a559-9960-4a14-a5b2-5208c5a6234a" />
+
+  - Dataset com notas individuais, nota final, classificação e variáveis de contexto. Forte presença de variáveis redundantes.
+  - Notas individuais têm alta correlação com NOTA_CANDIDATO (0.75–0.85), indicando forte dependência entre elas.
+  - Matemática/CN (0.71) e Linguagens/CH (0.73) formam blocos fortes; Redação tem correlação moderada (0.45–0.52).
+  - Classificação depende mais da concorrência (0.76) do que das notas; nota de corte é moderadamente influenciada por notas e vagas.
+  - OPCAO tem baixa correlação; PERCENTUAL_BONUS não apresenta correlação válida (NaN).
+  - Há forte redundância entre variáveis de desempenho e estrutura clara de dois eixos (quantitativo e verbal).
+
 
 #### 2.3.6 Variance Inflation Factor (VIF)
 
