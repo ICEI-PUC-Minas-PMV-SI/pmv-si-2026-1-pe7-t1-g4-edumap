@@ -86,8 +86,27 @@ A partir da análise exploratória dos boxplots, foi possível identificar padr�
 
 ### 3.4 Histogramas → distribuição das notas
 
-  <img src="../docs/img/histograma.jpeg" alt="histograma" width="700">
+<img width="2000"  alt="histograma" src="https://github.com/user-attachments/assets/22850f16-5456-4786-acce-231806196f6d" />
 
+
+A análise dos dados mostra um cenário de alta seletividade, onde a aprovação exige um desempenho substancialmente superior à média da população avaliada. A tabela abaixo sintetiza os principais indicadores e suas implicações estratégicas:
+
+Dimensão Analisada,Indicador Crítico,Implicação Acadêmica
+Competitividade,Gap de 93 pontos (Média 600 vs. Corte 693),Alta densidade de candidatos qualificados em intervalo restrito.
+Alavancagem,Tetos de Matemática (983) e Redação (1000),Disciplinas determinantes para a classificação no topo.
+Gargalo Técnico,Menor média em Ciências da Natureza (528),Área de maior complexidade; atua como principal filtro de seleção.
+Vulnerabilidade,Peso de Redação e Matemática,Subdesempenho nestas áreas é estatisticamente irreversível.
+Demografia,Concentração etária nos 19 anos,Perfil homogêneo de egressos recentes do Ensino Médio.
+
+|Dimensão Analisada|Indicador Crítico|Implicação Acadêmica|
+|-----|-------|---------|
+|Competitividade|Gap de 93 pontos (Média 600 vs. Corte 693)|Alta densidade de candidatos qualificados em intervalo restrito.|
+|Alavancagem|Tetos de Matemática (983) e Redação (1000)|Disciplinas determinantes para a classificação no topo.|
+|Gargalo Técnico|Menor média em Ciências da Natureza (528)|Área de maior complexidade; atua como principal filtro de seleção.|
+|Vulnerabilidade|Peso de Redação e Matemática|Subdesempenho nestas áreas é estatisticamente irreversível.|
+|Demografia|Concentração etária nos 19 anos|Perfil homogêneo de egressos recentes do Ensino Médio.|
+
+O êxito no certame depende da mitigação de erros em disciplinas de alta ponderação (Matemática e Redação) e da superação da barreira técnica imposta por Ciências da Natureza. O perfil dos aprovados indica a necessidade de uma precisão cirúrgica na pontuação para garantir o ingresso em cursos de alta demanda.
 
 ### 3.5 Mapa de Calor → relação entre variáveis
 
