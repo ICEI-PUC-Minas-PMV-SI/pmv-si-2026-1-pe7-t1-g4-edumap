@@ -4,15 +4,14 @@ Este trabalho tem como objetivo realizar uma 1ª análise exploratória de dados
 
 O projeto está inserido no contexto do sistema EduMap, que visa analisar notas de corte e o nível de concorrência em cursos superiores, utilizando técnicas de ciência de dados e aprendizado de máquina.
 
-## 2. Conhecendo os Dados
-### 2.1 Descrição da Base de Dados
+## 1. Descrição da Base de Dados
 
 A base de dados utilizada foi obtida por meio do portal de dados abertos do Ministério da Educação, contendo informações referentes aos candidatos participantes do SISU em 2023. O conjunto de dados original apresenta mais de um milhão de registros, sendo aplicado, neste trabalho, um recorte específico para o estado de Minas Gerais, totalizando aproximadamente 196 mil registros.
 
 Cada linha representa um candidato participante do processo seletivo, contendo informações como ano e edição do SISU, código e nome da instituição de ensino, curso e turno, notas do candidato, classificação, situação (aprovado, lista de espera, etc.), dentre outras informações.
 
-### 2.2 Análise Descritiva
-#### 2.2.1 Medidas de Tendência Central
+## 2. Análise Descritiva
+### 2.1 Medidas de Tendência Central
 Foram utilizadas funções do Pandas para análise estatística descritiva: `df_dataset.describe()`
 
 A partir disso, foi possível observar:
@@ -20,7 +19,7 @@ A partir disso, foi possível observar:
 - A mediana ajuda a entender a distribuição central sem influência de outliers
 - Diferenças entre média e mediana sugerem assimetria nos dados
   
-#### 2.2.2 Medidas de Dispersão
+### 2.2 Medidas de Dispersão
 A análise também considerou:
 - Desvio padrão → variabilidade das notas
 - Intervalo entre valores mínimos e máximos
@@ -28,18 +27,20 @@ A análise também considerou:
 
 Essas medidas mostram que há grande variação nas notas e classificações, o que é esperado em processos seletivos amplos como o SISU.
 
-### 2.3 Análise Visual dos Dados
+
+## 3. Análise Visual dos Dados
 
 Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
-#### 2.3.1 Pairplot:
-  
-  <img src="../docs/img/Pairplot.jpeg" alt="pairplot" width="700">
 
-#### 2.3.2 Pairplot Balanceado:
+### 3.1 Pairplot:
   
-  <img src="../docs/img/Pairplot Balanceado 01 .png" alt="Pairplot" width="700">
+  <img src="../docs/img/Pairplot.jpeg" alt="pairplot" width="600">
 
-Padrões observados no gráfico
+### 3.2 Pairplot Balanceado:
+  
+  <img src="../docs/img/Pairplot Balanceado 01 .png" alt="Pairplot" width="600">
+
+#### **Padrões observados no gráfico:**
 
  - A classe `S` e `N` aparecem em quantidades iguais devido ao balanceamento do gráfico.
  - Em vários pares de notas, os pontos formam um desenho inclinado para cima, indicando relação positiva entre as variáveis comparadas, uma relação direta entre as variáveis, observamos com mais intensidade em Mat. e CN.
@@ -58,21 +59,37 @@ Padrões observados no gráfico
 |NOTA_R × NOTA_M|Os pontos se distribuem em uma faixa ampla, mas ainda com inclinação crescente mas muito misturados.|
 
 
-Resumo
+#### **Resumo**
 
 Esse pairplot balanceado mostra como as notas se relacionam e nos mostram um caminho claro para a aprovação ou como ter sucesso no modelo atual, onde se concentrar mais nos estudos e ter mais preocupação com os resultados.
 
 A imagem sugere associação positiva entre várias notas e mostra que a aprovação tem distribuição bastante concentrada em valores altos das notas. É uma visualização útil para perceber padrões gerais entre as variáveis, sem ainda tirar conclusões causais.
 
-#### 2.3.3 Histogramas → distribuição das notas
+### 3.3 Boxplots → identificação de outliers
+
+O boxplot é uma ferramenta estatística utilizada para resumir a distribuição de uma variável numérica de forma compacta e visual. Esse tipo de gráfico permite identificar, de maneira eficiente, medidas importantes como a tendência central (representada pela mediana), a dispersão dos dados (por meio do intervalo interquartil – IQR), a assimetria da distribuição (observada pela posição relativa da mediana dentro da caixa) e a presença de valores atípicos (outliers), que são exibidos como pontos fora dos limites dos "bigodes".
+
+Nos gráficos gerados neste projeto, foram analisadas as distribuições das notas dos candidatos sob diferentes perspectivas, incluindo: tipo de concorrência da vaga, grau acadêmico e turno do curso, sexo dos candidatos e situação de aprovação. Além disso, foram realizadas comparações considerando subconjuntos específicos dos dados, como as dez universidades do estado de Minas Gerais com maior número de registros, os dez estados mais representativos e os vinte cursos com maior número de inscritos nesta edição do SISU.
+
+  <img src="../docs/img/nota_cand vs tipo_concorrencia.png" alt="boxplot" width="700">
+  <img src="../docs/img/nota_cand vs grau_curso.png" alt="boxplot" width="700">
+  <img src="../docs/img/nota_cand vs turno_curso.png" alt="boxplot" width="700">
+  <img src="../docs/img/nota_cand vs sexo_cand.png" alt="boxplot" width="700">
+  <img src="../docs/img/nota_cand vs sit_aprovado.png" alt="boxplot" width="700">
+  <img src="../docs/img/nota_cand vs ies_mg.png" alt="boxplot" width="700">
+  <img src="../docs/img/nota_cand vs top10_estados.png" alt="boxplot" width="700">
+  <img src="../docs/img/nota_cand vs top20_cursos_mg.png" alt="boxplot" width="700">
+
+A partir da análise exploratória dos boxplots, foi possível identificar padrões relevantes e variáveis com potencial influência sobre a concorrência e as notas de corte dos cursos e instituições. Essa etapa foi fundamental para orientar a seleção de atributos mais relevantes, contribuindo diretamente para a construção de modelos de aprendizado de máquina mais robustos e representativos, ao reduzir ruídos e focar em variáveis com maior poder explicativo.
+
+
+
+### 3.4 Histogramas → distribuição das notas
 
   <img src="../docs/img/histograma.jpeg" alt="histograma" width="700">
 
-#### 2.3.4 Boxplots → identificação de outliers
 
-  <img src="../docs/img/boxplot-top20cursos.jpeg" alt="boxplot" width="700">
-  
-#### 2.3.5 Mapa de Calor → relação entre variáveis
+### 3.5 Mapa de Calor → relação entre variáveis
 
   <img width="758" height="660" alt="image" src="https://github.com/user-attachments/assets/d4a1a559-9960-4a14-a5b2-5208c5a6234a" />
 
@@ -84,17 +101,14 @@ A imagem sugere associação positiva entre várias notas e mostra que a aprova�
   - Há forte redundância entre variáveis de desempenho e estrutura clara de dois eixos (quantitativo e verbal).
 
 
-#### 2.3.6 Variance Inflation Factor (VIF)
+### 3.6 Variance Inflation Factor (VIF)
 
   <img src="../docs/img/vif.jpeg" alt="vif" width="400">
 
 
-Essas visualizações ajudaram a:
-- Identificar distribuição assimétrica das notas;
-- Detectar valores extremos (outliers);
-- Compreender padrões de concentração de dados.
+Todas essas visualizações ajudaram a identificar distribuição assimétrica das notas, detectar valores extremos (outliers) e compreender padrões de concentração de dados.
   
-### 2.4 Detecção de Outliers
+## 4. Detecção de Outliers
 
 A identificação de outliers foi realizada principalmente com:
 - Boxplots
@@ -105,7 +119,7 @@ Observações:
 - Esses valores podem representar candidatos com desempenho muito acima ou abaixo da média
 - A presença de outliers pode impactar modelos de machine learning
 
-### 2.5 Análise de Relações entre Variáveis
+## 5. Análise de Relações entre Variáveis
 
 Foram analisadas relações entre variáveis utilizando:
 - Correlação
@@ -121,21 +135,48 @@ Principais observações:
 - Relações entre classificação e aprovação são evidentes
 - Existem dependências entre variáveis relacionadas ao desempenho do candidato
 
-### 2.6 Trechos de Código Relevantes
-Inspeção inicial:
-`df_dataset.head()
-df_dataset.info()`
+## 6. Trechos de Código Relevantes
 
 Bibliotecas utilizadas:
-`import pandas as pd
+`import os
+import shap
 import numpy as np
+import pandas as pd
 import seaborn as sns
+import statsmodels.api as sm
 import matplotlib.pyplot as plt`
 
 Modelagem inicial (contexto do projeto):
-`from sklearn.ensemble import RandomForestClassifier`
+`from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.calibration import calibration_curve, CalibratedClassifierCV
+from sklearn.metrics import f1_score
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, brier_score_loss, log_loss, balanced_accuracy_score
+from sklearn.feature_selection import mutual_info_classif
+from sklearn.inspection import permutation_importance
+from sklearn.tree import plot_tree`
 
-## 3. Descrição dos Achados
+Chamando o dataset:
+`path_local = 'sample_data/SISU_2023.1-MINAS.csv'
+path_drive = '/content/drive/MyDrive/SISU_2023.1-MINAS.csv'
+if os.path.exists(path_local):
+    print(f'O arquivo existe no local padrão!')
+    df_dataset = pd.read_csv(path_local, encoding='latin1', sep=';')
+elif os.path.exists(path_drive):
+    print(f'O arquivo existe no Google Drive!')
+    df_dataset = pd.read_csv(path_drive, encoding='latin1', sep=';')
+else:
+    print('O arquivo NÃO foi encontrado em nenhum dos locais especificados.')
+    print('Certifique-se de que o Drive está montado ou o arquivo foi enviado corretamente.')`
+
+Inspeção inicial:
+`df_dataset.head()
+df_dataset.tail()
+print(df_dataset.info())`
+
+
+## 7. Descrição dos Achados
 
 A partir da análise exploratória, foram identificados os seguintes pontos relevantes:
 - Centralidade dos dados: As notas apresentam concentração em uma faixa intermediária, com leve assimetria.
@@ -157,7 +198,7 @@ Inclua nesta seção, gráficos, tabelas, trechos de código e demais artefatos 
 
 A partir da análise descrita e exploratória realizada, descreva todos os achados considerados relevantes para o contexto em que o trabalho se insere. Por exemplo: com relação à centralidade dos dados algo chamou a atenção? Foi possível identificar correlação entre os atributos? Que tipo de correlação (forte, fraca, moderada)? -->
 
-## 4. Ferramentas utilizadas
+## 8. Ferramentas utilizadas
 As principais ferramentas utilizadas nesta etapa do projeto estão apresentadas a seguir, acompanhadas de suas características iniciais. Embora existam diversas opções para análise de dados, optou-se pelo uso do ambiente Google Colab, no qual foram empregadas bibliotecas específicas conforme descrito.
 
 Toda a programação foi desenvolvida utilizando a linguagem Python, escolhida por sua versatilidade, simplicidade e alta eficiência. O Python se destaca no contexto de ciência de dados por possuir um amplo ecossistema de bibliotecas científicas, estatísticas e matemáticas desenvolvidas por terceiros, o que amplia significativamente suas capacidades.
@@ -174,7 +215,7 @@ A utilização dessas bibliotecas permite a execução de análises mais avança
 
 
 
-## 5. Considerações Finais
+## 9. Considerações Finais
 
 A análise exploratória foi essencial para compreender a estrutura do dataset e identificar padrões importantes. Foi possível detectar:
 - Variabilidade significativa nos dados
