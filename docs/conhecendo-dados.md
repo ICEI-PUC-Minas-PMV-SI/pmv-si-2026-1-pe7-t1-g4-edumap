@@ -124,6 +124,21 @@ O êxito no certame depende da mitigação de erros em disciplinas de alta ponde
 
   <img src="../docs/img/vif.jpeg" alt="vif" width="400">
 
+A análise do Variance Inflation Factor (VIF) foi utilizada para identificar a presença de multicolinearidade entre as variáveis do dataset.
+Observou-se que diversas variáveis apresentaram valores extremamente elevados de VIF, indicando forte redundância de informação. Destacam-se:
+- NOTA_CANDIDATO (VIF = 241.44), evidenciando que é uma combinação linear das demais notas
+- Variáveis de notas com peso (NOTA_*_COM_PESO) e os PESOS, com VIFs acima de 100
+- Notas brutas como NOTA_R (33.04) e NOTA_M (23.38), também com multicolinearidade relevante
+
+Por outro lado, variáveis como NOTA_CORTE, CLASSIFICACAO, QT_VAGAS_CONCORRENCIA e variáveis categóricas (SEXO, TURNO, GRAU, etc.) apresentaram VIF baixo (próximo de 1 a 3), indicando maior independência.
+
+Esses resultados mostram que o dataset possui alta multicolinearidade, causada principalmente pela presença simultânea de:
+- notas brutas
+- notas ponderadas
+- pesos das provas
+- nota final do candidato
+
+Dessa forma, será necessário remover ou selecionar variáveis antes da modelagem, evitando redundância e melhorando a estabilidade dos modelos de machine learning.
 
 Todas essas visualizações ajudaram a identificar distribuição assimétrica das notas, detectar valores extremos (outliers) e compreender padrões de concentração de dados.
   
