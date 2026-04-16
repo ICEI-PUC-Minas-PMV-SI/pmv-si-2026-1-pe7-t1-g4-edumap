@@ -171,43 +171,45 @@ Principais observações:
 
 ## 6. Trechos de Código Relevantes
 
-Bibliotecas utilizadas:
-`import os
-import shap
-import numpy as np
-import pandas as pd
-import seaborn as sns
-import statsmodels.api as sm
-import matplotlib.pyplot as plt`
+Bibliotecas utilizadas: </br>
+`import os` </br>
+`import shap` </br>
+`import numpy as np`</br>
+`import pandas as pd`</br>
+`import seaborn as sns`</br>
+`import statsmodels.api as sm`</br>
+`import matplotlib.pyplot as plt`</br>
 
-Modelagem inicial (contexto do projeto):
-`from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.calibration import calibration_curve, CalibratedClassifierCV
-from sklearn.metrics import f1_score
-from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, brier_score_loss, log_loss, balanced_accuracy_score
-from sklearn.feature_selection import mutual_info_classif
-from sklearn.inspection import permutation_importance
-from sklearn.tree import plot_tree`
+Modelagem inicial (contexto do projeto): </br>
+`from sklearn.svm import SVC` </br>
+`from sklearn.ensemble import RandomForestClassifier` </br>
+`from sklearn.model_selection import train_test_split` </br>
+`from sklearn.calibration import calibration_curve, CalibratedClassifierCV` </br>
+`from sklearn.metrics import f1_score` </br>
+`from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, brier_score_loss, log_loss, balanced_accuracy_score` </br>
+`from sklearn.feature_selection import mutual_info_classif` </br>
+`from sklearn.inspection import permutation_importance` </br>
+`from sklearn.tree import plot_tree` </br>
 
-Chamando o dataset:
-`path_local = 'sample_data/SISU_2023.1-MINAS.csv'
-path_drive = '/content/drive/MyDrive/SISU_2023.1-MINAS.csv'
-if os.path.exists(path_local):
-    print(f'O arquivo existe no local padrão!')
-    df_dataset = pd.read_csv(path_local, encoding='latin1', sep=';')
-elif os.path.exists(path_drive):
-    print(f'O arquivo existe no Google Drive!')
-    df_dataset = pd.read_csv(path_drive, encoding='latin1', sep=';')
-else:
-    print('O arquivo NÃO foi encontrado em nenhum dos locais especificados.')
-    print('Certifique-se de que o Drive está montado ou o arquivo foi enviado corretamente.')`
+Chamando o dataset: </br>
+`path_local = 'sample_data/SISU_2023.1-MINAS.csv'` </br>
 
-Inspeção inicial:
-`df_dataset.head()
-df_dataset.tail()
-print(df_dataset.info())`
+`path_drive = '/content/drive/MyDrive/SISU_2023.1-MINAS.csv'` </br>
+
+`if os.path.exists(path_local):` </br>
+    `print(f'O arquivo existe no local padrão!')` </br>
+    `df_dataset = pd.read_csv(path_local, encoding='latin1', sep=';')` </br>
+`elif os.path.exists(path_drive):` </br>
+    `print(f'O arquivo existe no Google Drive!')` </br>
+    `df_dataset = pd.read_csv(path_drive, encoding='latin1', sep=';')` </br>
+`else:` </br>
+    `print('O arquivo NÃO foi encontrado em nenhum dos locais especificados.')` </br>
+    `print('Certifique-se de que o Drive está montado ou o arquivo foi enviado corretamente.')` </br>
+
+Inspeção inicial: </br>
+`df_dataset.head()`</br>
+`df_dataset.tail()`</br>
+`print(df_dataset.info())`</br>
 
 
 ## 7. Descrição dos Achados
