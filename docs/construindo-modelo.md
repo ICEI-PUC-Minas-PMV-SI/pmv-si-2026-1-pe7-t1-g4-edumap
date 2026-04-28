@@ -27,8 +27,24 @@ Algumas das etapas podem estar relacionadas à:
 Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.
 
 # Descrição do modelo
+## Escolha do Algoritmo
+Para a resolução do problema da classificação da aprovação de candidados no SISU 2023, foi utilizado o algoritmo Random Forest, pertencente à família de métodos de aprendizado supervisionado baseados em ensemble. 
 
-Nesta seção, conhecendo os dados e de posse dos dados preparados, é hora de descrever o algoritmo de aprendizado de máquina selecionado para a construção do modelo proposto. Inclua informações abrangentes sobre o algoritmo implementado, aborde conceitos fundamentais, princípios de funcionamento, vantagens/limitações e justifique a escolha do algoritmo utilizado. 
+## Justificativa da Escolha
+A escolha do Random Forest se deu por sua adequação às características do conjunto de dados ao tipo de problema abordado. O dataset apresenta
+* grande volume de registros
+* predominância de variáveis numéricas
+* possíveis relações não lineares entre os atributos
+
+Diante disso, o Random Forest se destaca por:
+* capturar relações complexas sem necessidade de transformações avançadas
+* apresenta alta robustez a ruídos e outliers
+* reduz o risco de overfiting em comparação a árvores de decisão (quando usadas de maneira isolada)
+* permite a análise da importância das variáveis
+
+Além disso, o problema apresenta desbalanceamento entre as classes (aprovados e não aprovados), o que reforça a escolha de um modelo que permita ajustes específicos para lidar com essa característica.
+
+**Nesta seção, conhecendo os dados e de posse dos dados preparados, é hora de descrever o algoritmo de aprendizado de máquina selecionado para a construção do modelo proposto. Inclua informações abrangentes sobre o algoritmo implementado, aborde conceitos fundamentais, princípios de funcionamento, vantagens/limitações e justifique a escolha do algoritmo utilizado.**
 
 Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo. Lembre-se de experimentar parâmetros diferentes e principalmente, de registrar os testes realizados com diferentes parâmetros que servirão para justificar as escolhas realizadas.
 
