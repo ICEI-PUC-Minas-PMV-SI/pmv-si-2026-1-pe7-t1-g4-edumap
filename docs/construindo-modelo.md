@@ -1,8 +1,16 @@
 # Preparação dos dados
 
-Nesta etapa, deverão ser descritas todas as técnicas utilizadas para pré-processamento/tratamento dos dados.
+Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento do modelo Random Forest. As técnicas de pré-processamento e tratamento foram aplicadas conforme as necessidades específicas do projeto, detalhadas a seguir:
 
-Algumas das etapas podem estar relacionadas à:
+* **Feature Engineering e Seleção de Variáveis:** Inicialmente, foi mapeado as variáveis preditoras (notas, pesos das provas e dados institucionais do curso) e a nossa variável alvo (APROVADO_T). Para otimizar o modelo, foi aplicado a métrica de Mutual Information para calcular a relevância de cada coluna. Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas: NOTA_L, NOTA_CH, NOTA_CN, NOTA_M, NOTA_R, CODIGO_CURSO, GRAU_T e TIPO_MOD_CONCORRENCIA_T.  
+
+* **Separação de Dados:** Os dados foram divididos em conjuntos de treinamento (80%) e teste (20%). Como foi identificado que a base de dados é altamente desbalanceada (90,2% pertencentes à classe 0 - Reprovado; e apenas 9,8% à classe 1 - Aprovado), utilizou-se o parâmetro de estratificação (stratify=target). Isso assegurou que a proporção das classes fosse preservada de maneira adequada em ambos os conjuntos.  
+
+* **Transformação e Normalização de Dados:** Optou-se por não realizar a normalização ou padronização dos dados (como Min-Max Scaling ou StandardScaler). Essa etapa foi dispensada porque o algoritmo escolhido, o Random Forest Classifier, é baseado em árvores de decisão e, portanto, não é sensível à magnitude ou à escala das variáveis matemáticas.  
+
+* **Tratamento de Dados Desbalanceados:** Para contornar a discrepância severa de volume entre as classes, foi configurado o hiperparâmetro class_weight='balanced_subsample' diretamente no modelo, o que ajuda a ajustar os pesos das classes automaticamente durante o treinamento. Vale registrar que a técnica de oversampling SMOTE chegou a ser aplicada na fase de testes, mas o modelo base se mostrou superior por manter uma melhor estabilidade geral e gerar predições mais confiáveis, justificando a não utilização do balanceamento sintético na versão final. 
+
+<!-- Algumas das etapas podem estar relacionadas à:
 
 * Limpeza de Dados: trate valores ausentes: decida como lidar com dados faltantes, seja removendo linhas, preenchendo com médias, medianas ou usando métodos mais avançados; remova _outliers_: identifique e trate valores que se desviam significativamente da maioria dos dados.
 
@@ -24,7 +32,7 @@ Algumas das etapas podem estar relacionadas à:
 
 * Entre outras....
 
-Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.
+Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.-->
 
 # Descrição do modelo
 ## Escolha do Algoritmo
