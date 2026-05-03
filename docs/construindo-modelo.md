@@ -51,18 +51,20 @@ Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo
 # Avaliação dos modelos criados
 
 ## Métricas utilizadas
-  O modelo Random Forest foi configurado com 800 árvores (_n_estimators=800_), utilizando o critério _entropy_ para avaliação das divisões. Não foi definida profundidade máxima para as árvores (_max_depth=None_), permitindo maior capacidade de aprendizado. 
+  O modelo Random Forest foi configurado com 800 árvores (**_n_estimators=800_**), utilizando o critério **_entropy_** para avaliação das divisões. Não foi definida profundidade máxima para as árvores (**_max_depth=None_**), permitindo maior capacidade de aprendizado. 
   
-  Os parâmetros _min_samples_split=5_ e _min_samples_leaf=2_ foram utilizados para reduzir divisões excessivas e melhorar a generalização do modelo. Além disso, foi aplicado _class_weight='balanced_subsample'_ para auxiliar no tratamento do desbalanceamento entre as classes.
+  Os parâmetros **_min_samples_split=5_** e **_min_samples_leaf=2_** foram utilizados para reduzir divisões excessivas e melhorar a generalização do modelo. Além disso, foi aplicado **_class_weight='balanced_subsample'_** para auxiliar no tratamento do desbalanceamento entre as classes.
   
-  O parâmetro _ramdom_state=42_ foi definido para garantir reprodutibilidade dos resultados.
+  O parâmetro **_ramdom_state=42_** foi definido para garantir reprodutibilidade dos resultados.
 
-  O modelo apresentou acurácia geral de 91% na classificação dos candidatos. Para a classe de não aprovados (0), foram obtidos _precision_ de 96%, _recall_ de 95% e _F1-score_ de 95%. Já para a classe de aprovados (1), o modelo alcançou _precision_ de 55%, _recall_ de 61% e _F1-score_ de 58%.
+  Foi realizado ajuste do limiar de decisão (**_threshold_**) aplicado às probabilidades previstas pelo modelo. Foi adotado o limiar de **0.35**, buscando melhorar o equilíbrio entre o _precision_ e _recall_, especialmente na  identificação da classe minoritária (_candidatos aprovados_).
 
-  Os resultados demonstram bom desempenho geral e maior equilíbrio na identificação da classe minoritária, indicando melhora na capacidade do modelo em reconhecer.
+  O modelo apresentou **acurácia geral de 91%** na classificação dos candidatos. Para a classe de **não aprovados (0)**, foram obtidos **_precision_ de 96%, _recall_ de 95% e _F1-score_ de 95%. Já para a classe de **aprovados (1)**, o modelo alcançou _precision_ de 55%, _recall_ de 61% e _F1-score_ de 58%.
+
+  Os resultados demonstram **bom desempenho geral e maior equilíbrio** na identificação da classe minoritária, indicando melhora na capacidade do modelo em reconhecer.
 
 
-_--Nesta seção, as métricas utilizadas para avaliar os modelos desenvolvidos deverão ser apresentadas (p. ex.: acurácia, precisão, recall, F1-Score, MSE etc.). A escolha de cada métrica deverá ser justificada, pois esta escolha é essencial para avaliar de forma mais assertiva a qualidade do modelo construído.--_
+**_--Nesta seção, as métricas utilizadas para avaliar os modelos desenvolvidos deverão ser apresentadas (p. ex.: acurácia, precisão, recall, F1-Score, MSE etc.). A escolha de cada métrica deverá ser justificada, pois esta escolha é essencial para avaliar de forma mais assertiva a qualidade do modelo construído.--_**
 
 ## Discussão dos resultados obtidos
 
