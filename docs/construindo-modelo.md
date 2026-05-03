@@ -78,8 +78,21 @@ Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo
 
   O ajuste do limiar de decisão também contribuiu para melhorar o equilíbrio entre as métricas, permitindo aumentar a capacidade do modelo em reconhecer candidados aprovados, mesmo com um impacto moderado na precisão das previsões positivas.
 
-  _falar sobre a análise de importância das variáveis_
-  _validação k-fold_
+  Na validação cruzada (**_k-fold_**), foram obtidos resultados de aproximadamente 76,22%, 76,71%, 64,79%, 76,19% e 86,64%, resultando em média de **76,11%**. Os resultados demonstram desempenho moderado entre os _folds_, embora ainda exista variação entre algumas divisões dos dados. A queda observada em determinados _folds_ pode estar relacionada ao desbalanceamento das classes e à dificuldade do modelo em igualar todos os subconjuntos avaliados. A utilização da métrica **_F1_weighted_** permitiu considerar o desempenho global do modelo levando em conta a proporção das classes no conjunto de dados, proporcionando uma avaliação mais equilibrada em relação ao desbalanceamento existente.
+
+  Na análise de **Importância das Variáveis (_Feature Importance_)** foi utilizada para identificar quais variáveis exerceram maior influência nas decisões do modelo. Os resultados demonstraram qua a variável **CODIGO_CURSO** apresentou a maior importância no processo de classificação, indicando forte relação entre o curso escolhido e a probabilidade de aprovação dos candidatos. Em seguida, destacaram-se as variáveis relacionadas ao desempenho dos candidados (_notas_), principalmente:
+  - **NOTA_M**
+  - **NOTA_CH**
+  - **NOTA_CN**
+  - **NOTA_L**
+  - **NOTA_R**
+Logo, reforça que o desempenho nas provas é importante na previsão da aprovação.
+
+Ainda falando sobre a Importância das Variáveis, **GRAU_T** e **TIPO_MOD_CONCORRENCIA_T** apresentam menor influência, contrubuindo de forma complementar para a classificação, mas não sendo o alvo principal no quesito **aprovação**. De forma geral, a análise evidencia que tanto fatores acadêmicos quando características relacionadas ao curso exercem impacto na previsão realizada pelo modelo.
+
+
+
+  _calibração_
 
 **_Nesta seção, discuta os resultados obtidos pelo modelo construído, no contexto prático em que os dados se inserem, promovendo uma compreensão abrangente e aprofundada da qualidade dele. Lembre-se de relacionar os resultados obtidos por cada uma das métricas ao problema identificado, a questão de pesquisa levantada e estabelecer relação com os objetivos previamente propostos. 
 É fundamental compreender o que cada uma das métricas "conta" sobre a qualidade do modelo desenvolvido._**
