@@ -149,9 +149,44 @@ Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo
 
   O ajuste do limiar de decisão também contribuiu para melhorar o equilíbrio entre as métricas, permitindo aumentar a capacidade do modelo em reconhecer candidados aprovados, mesmo com um impacto moderado na precisão das previsões positivas.
   
+  
 ### Validação Cruzada (k-fold)
 
   Na validação cruzada (**_k-fold_**), foram obtidos resultados de aproximadamente **76,22%, 76,71%, 64,79%, 76,19% e 86,64%**, resultando em média de **76,11%**. Os resultados demonstram desempenho moderado entre os _folds_, embora ainda exista variação entre algumas divisões dos dados. A queda observada em determinados _folds_ pode estar relacionada ao desbalanceamento das classes e à dificuldade do modelo em igualar todos os subconjuntos avaliados. A utilização da métrica **_F1_weighted_** permitiu considerar o desempenho global do modelo levando em conta a proporção das classes no conjunto de dados, proporcionando uma avaliação mais equilibrada em relação ao desbalanceamento existente.
+  
+
+### Calibração
+
+Ainda para melhorar a confiança das probabilidades previstas no modelo, foram aplicadas técnicas de calibração utilizando os métodos _sigmoid_ e _isotonic_. A avaliação foi realizada por meio de _Brier Score_, no qual valores menores indidcam melhor calibração das probabilidades. Os resultados mostraram que o método _isotonic_ apresentou melhor desempenho, com _Brier Score_ de aproximadamente **0,0550**, superior ao modelo base e ao método _sigmoid_. De forma geral, a calibração contribuiu para tornar as probabilidades mais consistentes com os resultados reais observados.
+
+- **Curva de Calibração - Classe 0**
+  <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6182c9ed-fe29-4a69-8003-91d8a3fce773" />
+
+- **Curva de Calibração - Classe 1**
+  <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c0c4e7fe-5c92-4f2b-8d32-beb6f01eb556" />
+  
+
+### Matriz de Confusão
+
+ A **Matriz de Confusão** permite a visualização mais detalhada entre erros e acertos do modelo na classificação dos candidatos. O modelo obteve **31.319** verdadeiros negativos, classificando corretamente candidatos não aprovados, e **2.202** verdadeiros positivos, identificando corretamente candidados aprovados. Também foram observados **1.796** falsos positivos, correspondentes a candidados classificados como aprovados quando não eram, e **1.392** falsos negativos, referentes a candidatos aprovados que não foram identificados corretamente pelo modelo. Com base nesses resultados, o modelo apresentou **acurácia de 91%**, **precisão de 55%** para a classe de aprovados e **recall de 61%**, indicando desempenho satisfatório e maior equilibrio na identificação da classe minoritária.
+  
+  - **Matriz de Confusão (gráfico)**
+  <img width="527" height="393" alt="image" src="https://github.com/user-attachments/assets/0b22a9a5-ddcd-4d88-b7a7-f5cfcf0cc610" />
+
+### Matriz de Confusão Normalizada
+
+  Na **Matriz de Confusão Normalizada** foi possível analisar o desempenho proporcional do modelo de cada classe. Para a classe de **não aprovados (0)**, o modelo classificou corretamente aproximadamente **95%** dos candidatos, enquanto cerca de **5%** foram classificados incorretamente como aprovados. Já para a classe de **aprovados (1)**, o modelo identificou corretamente aproximadamente **61%** dos candidados, enquanto cerca de **39%** não foram reconhecidos corretamente, sendo classificados como **não aprovados**. Os resultados demonstram que o modelo apresentou alto desempenho na identificação da classe maior e desempenho moderadamente satisfatório para a classe minoritária, indicando melhora na capacidade de reconhecer candidados aprovados.
+
+  - **Matriz de Confusão Normalizada (gráfico)**
+    <img width="535" height="455" alt="image" src="https://github.com/user-attachments/assets/aa884bb5-38b2-4681-b1f4-fb71175c6f8c" />
+    
+
+### Visualização da Árvore de Decisão
+
+  A estrutura da **Árvore de Decisão** permitiu visualizar como o modelo realiza as classificações com base nas variáveis disponíveis. No **nó raiz**, a variável _NOTA_M_ aparece como principal critério de divisão, indicando que a nota de Matemática é um dos fatores mais relevantes para a classificação inicial dos candidatos. A partir dessa divisão, o modelo utiliza outras variáveis para refinar as decisões ao longo da árvore. Entre as variáveis com mais destaque estão _CODIGO_CURSO_, _GRAU_T_, _NOTA_CH_ e _NOTA_R_, demonstrando que tanto o desempenho acadêmico quando características relacionadas ao curso influenciam a previsão final do modelo. A **análise da entropia** mostrou que os nós mais profundos apresentam valores menores, indicando maior pureza nas classificações e aumento da confiança do modelo nas decisões tomadas em cada caminho da árvore. Além disso, as cores presentes facilitam a interpretação das classes predominantes em cada nó, permitindo identificar regiões com maior tendência à classificação como aprovados ou não aprovados. Por fim, destaca-se que a árvore apresentada na imagem representa apenas uma das árvores utilizadas pelo modelo, sendo o resultado final do modelo basedo em combinações de múltiplas árvores de decisão.
+
+<img width="1600" height="555" alt="image" src="https://github.com/user-attachments/assets/6a690d04-777d-4bdc-bf92-5e469b7328a4" />
+
 
 ### Importância das Variáveis (Feature Importance)
 
@@ -168,37 +203,7 @@ Ainda falando sobre a Importância das Variáveis, **GRAU_T** e **TIPO_MOD_CONCO
 
 - **Gráfico: Importância das Variáveis**
   <img width="867" height="384" alt="image" src="https://github.com/user-attachments/assets/4d1cd641-df7b-46aa-90d4-b3c4e8d15059" />
-
-### Calibração
-
-Ainda para melhorar a confiança das probabilidades previstas no modelo, foram aplicadas técnicas de calibração utilizando os métodos _sigmoid_ e _isotonic_. A avaliação foi realizada por meio de _Brier Score_, no qual valores menores indidcam melhor calibração das probabilidades. Os resultados mostraram que o método _isotonic_ apresentou melhor desempenho, com _Brier Score_ de aproximadamente **0,0550**, superior ao modelo base e ao método _sigmoid_. De forma geral, a calibração contribuiu para tornar as probabilidades mais consistentes com os resultados reais observados.
-
-- **Curva de Calibração - Classe 0**
-  <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6182c9ed-fe29-4a69-8003-91d8a3fce773" />
-
-- **Curva de Calibração - Classe 1**
-  <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c0c4e7fe-5c92-4f2b-8d32-beb6f01eb556" />
-
-### Matriz de Confusão
-
- A **Matriz de Confusão** permite a visualização mais detalhada entre erros e acertos do modelo na classificação dos candidatos. O modelo obteve **31.319** verdadeiros negativos, classificando corretamente candidatos não aprovados, e **2.202** verdadeiros positivos, identificando corretamente candidados aprovados. Também foram observados **1.796** falsos positivos, correspondentes a candidados classificados como aprovados quando não eram, e **1.392** falsos negativos, referentes a candidatos aprovados que não foram identificados corretamente pelo modelo. Com base nesses resultados, o modelo apresentou **acurácia de 91%**, **precisão de 55%** para a classe de aprovados e **recall de 61%**, indicando desempenho satisfatório e maior equilibrio na identificação da classe minoritária.
   
-  - **Matriz de Confusão (gráfico)**
-  <img width="527" height="393" alt="image" src="https://github.com/user-attachments/assets/0b22a9a5-ddcd-4d88-b7a7-f5cfcf0cc610" />
-
-### Matriz de Confusão Normalizada
-
-  Na **Matriz de Confusão Normalizada** foi possível analisar o desempenho proporcional do modelo de cada classe. Para a classe de **não aprovados (0)**, o modelo classificou corretamente aproximadamente **95%** dos candidatos, enquanto cerca de **5%** foram classificados incorretamente como aprovados. Já para a classe de **aprovados (1)**, o modelo identificou corretamente aproximadamente **61%** dos candidados, enquanto cerca de **39%** não foram reconhecidos corretamente, sendo classificados como **não aprovados**. Os resultados demonstram que o modelo apresentou alto desempenho na identificação da classe maior e desempenho moderadamente satisfatório para a classe minoritária, indicando melhora na capacidade de reconhecer candidados aprovados.
-
-  - **Matriz de Confusão Normalizada (gráfico)**
-    <img width="535" height="455" alt="image" src="https://github.com/user-attachments/assets/aa884bb5-38b2-4681-b1f4-fb71175c6f8c" />
-
-### Visualização da Árvore de Decisão
-
-  A estrutura da **Árvore de Decisão** permitiu visualizar como o modelo realiza as classificações com base nas variáveis disponíveis. No **nó raiz**, a variável _NOTA_M_ aparece como principal critério de divisão, indicando que a nota de Matemática é um dos fatores mais relevantes para a classificação inicial dos candidatos. A partir dessa divisão, o modelo utiliza outras variáveis para refinar as decisões ao longo da árvore. Entre as variáveis com mais destaque estão _CODIGO_CURSO_, _GRAU_T_, _NOTA_CH_ e _NOTA_R_, demonstrando que tanto o desempenho acadêmico quando características relacionadas ao curso influenciam a previsão final do modelo. A **análise da entropia** mostrou que os nós mais profundos apresentam valores menores, indicando maior pureza nas classificações e aumento da confiança do modelo nas decisões tomadas em cada caminho da árvore. Além disso, as cores presentes facilitam a interpretação das classes predominantes em cada nó, permitindo identificar regiões com maior tendência à classificação como aprovados ou não aprovados. Por fim, destaca-se que a árvore apresentada na imagem representa apenas uma das árvores utilizadas pelo modelo, sendo o resultado final do modelo basedo em combinações de múltiplas árvores de decisão.
-
-<img width="1600" height="555" alt="image" src="https://github.com/user-attachments/assets/6a690d04-777d-4bdc-bf92-5e469b7328a4" />
-
     
 ### Permutation Importance por Classe
   A análise de **Permutation Importance por Classe** permitiu avaliar o impacto individual das variáveis no desempenho do modelo para cada classe analisada, considerando o F1-score como metrica principal. Os resultados mostraram que **_CODIGO_CURSO_** foi a variável de maior importância em ambas as classes, indicando forte influência do curso escolhido na previsão realizada pelo modelo. A remoção dessa variável provocou a maior queda no desempenho, especialmente na **Classe 1**. Para a **Classe 0**, observou-se maior influência das variáveis **_GRAU_T_**, **_NOTA_M_** e **_NOTA_R_**, enquanto variáveis como **_NOTA_CN_** e **_NOTA_L_** apresentam impacto reduzido no desempenho do modelo. Para a **Classe 1**, o modelo demonstrou maior dependência das notas acadêmicas, principalmente **_NOTA_M_** e **_NOTA_R_**, indicando que Matemática e Redação possuem forte relação com a identificação dessa classe. Além disso, as demais áreas do conhecimento também apresentam contribuição relevante para a classificação. A variável **_TIPO_MOD_CONCORRENCIA_T** apresentou baixa importância em ambas as classes, sugerindo influência reduzida na capacidade preditiva do modelo quando comparada às variáveis acadêmicas e às características do curso. De forma geral, os resultados indicam que o modelo utiliza padrões distintos para identificar cada classe, atribuindo pesos diferentes às variáveis conforme perfil analisado.
