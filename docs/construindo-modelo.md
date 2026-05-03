@@ -59,6 +59,36 @@ Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo
 # Avaliação dos modelos criados
 
 ## Métricas utilizadas
+
+## Configuração do Modelo e Parâmetros
+
+| Parâmetro | Valor | Descrição |
+| :--- | :--- | :--- |
+| `n_estimators` | 800 | Quantidade de árvores na floresta. |
+| `criterion` | **entropy** | Critério de avaliação das divisões. |
+| `max_depth` | **None** | Expansão máxima das árvores. |
+| `min_samples_split` | 5 | Mínimo de amostras para dividir um nó. |
+| `min_samples_leaf` | 2 | Mínimo de amostras em um nó folha. |
+| `class_weight` | `balanced_subsample` | Tratamento de desbalanceamento de classes. |
+| `random_state` | 42 | Garantia de reprodutibilidade. |
+
+> **Nota Técnica:** Foi adotado um limiar de decisão (**threshold**) de **0.35**, otimizando o equilíbrio entre *precision* e *recall* para a classe minoritária (candidatos aprovados).
+
+## Resultados
+
+O modelo apresentou uma **acurácia geral de 91%**. Abaixo, o detalhamento das métricas por classe:
+
+### Relatório de Classificação
+| Classe | Precision | Recall | F1-Score |
+| :--- | :---: | :---: | :---: |
+| **0 (Não Aprovados)** | 96% | 95% | 95% |
+| **1 (Aprovados)** | 55% | 61% | 58% |
+
+### Análise
+*   **Classe de Aprovados (1):** O modelo alcançou um *recall* de 61%, o que é fundamental neste contexto, pois indica uma boa sensibilidade para identificar candidatos aprovados, reduzindo falsos negativos.
+*   **Validação Cruzada (k-fold):** Média de **76,11%** (F1-weighted), demonstrando estabilidade, apesar das variações naturais entre os subconjuntos de dados.
+
+
   O modelo Random Forest foi configurado com 800 árvores (**_n_estimators=800_**), utilizando o critério **_entropy_** para avaliação das divisões. Não foi definida profundidade máxima para as árvores (**_max_depth=None_**), permitindo maior capacidade de aprendizado. 
   
   Os parâmetros **_min_samples_split=5_** e **_min_samples_leaf=2_** foram utilizados para reduzir divisões excessivas e melhorar a generalização do modelo. Além disso, foi aplicado **_class_weight='balanced_subsample'_** para auxiliar no tratamento do desbalanceamento entre as classes.
@@ -118,10 +148,10 @@ Ainda para melhorar a confiança das probabilidades previstas no modelo, foram a
   - **Matriz de Confusão Normalizada (gráfico)**
     <img width="535" height="455" alt="image" src="https://github.com/user-attachments/assets/aa884bb5-38b2-4681-b1f4-fb71175c6f8c" />
 
-  - **Visualização da Árvore de Decisão**
-    <img width="1600" height="555" alt="image" src="https://github.com/user-attachments/assets/b6b5c06c-e192-407e-8dc5-ad53eafc0423" />
+**Visualização da Árvore de Decisão**
+     A estrutura da **Árvore de Decisão** permitiu visualizar como o modelo realiza as classificações com base nas variáveis disponíveis. No **nó raiz**, a variável _NOTA_M_ aparece como principal critério de divisão, indicando que a nota de Matemática é um dos fatores mais relevantes para a classificação inicial dos candidatos. A partir dessa divisão, o modelo utiliza outras variáveis para refinar as decisões ao longo da árvore. Entre as variáveis com mais destaque estão _CODIGO_CURSO_, _GRAU_T_, _NOTA_CH_ e _NOTA_R_, demonstrando que tanto o desempenho acadêmico quando características relacionadas ao curso influenciam a previsão final do modelo. A **análise da entropia** mostrou que os nós mais profundos apresentam valores menores, indicando maior pureza nas classificações e aumento da confiança do modelo nas decisões tomadas em cada caminho da árvore. Além disso, as cores presentes facilitam a interpretação das classes predominantes em cada nó, permitindo identificar regiões com maior tendência à classificação como aprovados ou não aprovados. Por fim, destaca-se que a árvore apresentada na imagem representa apenas uma das árvores utilizadas pelo modelo, sendo o resultado final do modelo basedo em combinações de múltiplas árvores de decisão.
 
-    A estrutura da **Árvore de Decisão** permitiu visualizar como o modelo realiza as classificações com base nas variáveis disponíveis. No **nó raiz**, a variável _NOTA_M_ aparece como principal critério de divisão, indicando que a nota de Matemática é um dos fatores mais relevantes para a classificação inicial dos candidatos. A partir dessa divisão, o modelo utiliza outras variáveis para refinar as decisões ao longo da árvore. Entre as variáveis com mais destaque estão _CODIGO_CURSO_, _GRAU_T_, _NOTA_CH_ e _NOTA_R_, demonstrando que tanto o desempenho acadêmico quando características relacionadas ao curso influenciam a previsão final do modelo. A **análise da entropia** mostrou que os nós mais profundos apresentam valores menores, indicando maior pureza nas classificações e aumento da confiança do modelo nas decisões tomadas em cada caminho da árvore. Além disso, as cores presentes facilitam a interpretação das classes predominantes em cada nó, permitindo identificar regiões com maior tendência à classificação como aprovados ou não aprovados. Por fim, destaca-se que a árvore apresentada na imagem representa apenas uma das árvores utilizadas pelo modelo, sendo o resultado final do modelo basedo em combinações de múltiplas árvores de decisão.
+    <img width="1600" height="555" alt="image" src="https://github.com/user-attachments/assets/b6b5c06c-e192-407e-8dc5-ad53eafc0423" />
 
   A análise de **Permutation Importance por Classe** permitiu avaliar o impacto individual das variáveis no desempenho do modelo para cada classe analisada, considerando o F1-score como metrica principal. Os resultados mostraram que **_CODIGO_CURSO_** foi a variável de maior importância em ambas as classes, indicando forte influência do curso escolhido na previsão realizada pelo modelo. A remoção dessa variável provocou a maior queda no desempenho, especialmente na **Classe 1**. Para a **Classe 0**, observou-se maior influência das variáveis **_GRAU_T_**, **_NOTA_M_** e **_NOTA_R_**, enquanto variáveis como **_NOTA_CN_** e **_NOTA_L_** apresentam impacto reduzido no desempenho do modelo. Para a **Classe 1**, o modelo demonstrou maior dependência das notas acadêmicas, principalmente **_NOTA_M_** e **_NOTA_R_**, indicando que Matemática e Redação possuem forte relação com a identificação dessa classe. Além disso, as demais áreas do conhecimento também apresentam contribuição relevante para a classificação. A variável **_TIPO_MOD_CONCORRENCIA_T** apresentou baixa importância em ambas as classes, sugerindo influência reduzida na capacidade preditiva do modelo quando comparada às variáveis acadêmicas e às características do curso. De forma geral, os resultados indicam que o modelo utiliza padrões distintos para identificar cada classe, atribuindo pesos diferentes às variáveis conforme perfil analisado.
 
