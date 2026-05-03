@@ -111,6 +111,21 @@ Ainda para melhorar a confiança das probabilidades previstas no modelo, foram a
 - **Curva de Calibração - Classe 1**
   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c0c4e7fe-5c92-4f2b-8d32-beb6f01eb556" />
 
+ A **Matriz de Confusão** permite a visualização mais detalhada entre erros e acertos do modelo na classificação dos candidatos. O modelo obteve **31.319** verdadeiros negativos, classificando corretamente candidatos não aprovados, e **2.202** verdadeiros positivos, identificando corretamente candidados aprovados. Também foram observados **1.796** falsos positivos, correspondentes a candidados classificados como aprovados quando não eram, e **1.392** falsos negativos, referentes a candidatos aprovados que não foram identificados corretamente pelo modelo. Com base nesses resultados, o modelo apresentou **acurácia de 91%**, **precisão de 55%** para a classe de aprovados e **recall de 61%**, indicando desempenho satisfatório e maior equilibrio na identificação da classe minoritária.
+  
+  - **Matriz de Confusão (gráfico)**
+  <img width="527" height="393" alt="image" src="https://github.com/user-attachments/assets/0b22a9a5-ddcd-4d88-b7a7-f5cfcf0cc610" />
+
+  Na **Matriz de Confusão Normalizada** foi possível analisar o desempenho proporcional do modelo de cada classe. Para a classe de **não aprovados (0)**, o modelo classificou corretamente aproximadamente **95%** dos candidatos, enquanto cerca de **5%** foram classificados incorretamente como aprovados. Já para a classe de **aprovados (1)**, o modelo identificou corretamente aproximadamente **61%** dos candidados, enquanto cerca de **39%** não foram reconhecidos corretamente, sendo classificados como **não aprovados**. Os resultados demonstram que o modelo apresentou alto desempenho na identificação da classe maior e desempenho moderadamente satisfatório para a classe minoritária, indicando melhora na capacidade de reconhecer candidados aprovados.
+
+  - **Matriz de Confusão Normalizada (gráfico)**
+    <img width="535" height="455" alt="image" src="https://github.com/user-attachments/assets/aa884bb5-38b2-4681-b1f4-fb71175c6f8c" />
+
+  - **Visualização da Árvore de Decisão**
+    <img width="1600" height="555" alt="image" src="https://github.com/user-attachments/assets/b6b5c06c-e192-407e-8dc5-ad53eafc0423" />
+
+    A estrutura da **Árvore de Decisão** permitiu visualizar como o modelo realiza as classificações com base nas variáveis disponíveis. No **nó raiz**, a variável _NOTA_M_ aparece como principal critério de divisão, indicando que a nota de Matemática é um dos fatores mais relevantes para a classificação inicial dos candidatos. A partir dessa divisão, o modelo utiliza outras variáveis para refinar as decisões ao longo da árvore. Entre as variáveis com mais destaque estão _CODIGO_CURSO_, _GRAU_T_, _NOTA_CH_ e _NOTA_R_, demonstrando que tanto o desempenho acadêmico quando características relacionadas ao curso influenciam a previsão final do modelo. A **análise da entropia** mostrou que os nós mais profundos apresentam valores menores, indicando maior pureza nas classificações e aumento da confiança do modelo nas decisões tomadas em cada caminho da árvore. Além disso, as cores presentes facilitam a interpretação das classes predominantes em cada nó, permitindo identificar regiões com maior tendência à classificação como aprovados ou não aprovados. Por fim, destaca-se que a árvore apresentada na imagem representa apenas uma das árvores utilizadas pelo modelo, sendo o resultado final do modelo basedo em combinações de múltiplas árvores de decisão.
+
 
 
 
