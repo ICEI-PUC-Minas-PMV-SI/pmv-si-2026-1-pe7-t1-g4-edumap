@@ -86,9 +86,26 @@ Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo
   - **NOTA_CN**
   - **NOTA_L**
   - **NOTA_R**
+  - 
 Logo, reforça que o desempenho nas provas é importante na previsão da aprovação.
 
 Ainda falando sobre a Importância das Variáveis, **GRAU_T** e **TIPO_MOD_CONCORRENCIA_T** apresentam menor influência, contrubuindo de forma complementar para a classificação, mas não sendo o alvo principal no quesito **aprovação**. De forma geral, a análise evidencia que tanto fatores acadêmicos quando características relacionadas ao curso exercem impacto na previsão realizada pelo modelo.
+
+- **Gráfico: Importância das Variáveis**
+  <img width="867" height="384" alt="image" src="https://github.com/user-attachments/assets/4d1cd641-df7b-46aa-90d4-b3c4e8d15059" />
+
+
+Ainda para melhorar a confiança das probabilidades previstas no modelo, foram aplicadas técnicas de calibração utilizando os métodos _sigmoid_ e _isotonic_. A avaliação foi realizada por meio de _Brier Score_, no qual valores menores indidcam melhor calibração das probabilidades. Os resultados mostraram que o método _isotonic_ apresentou melhor desempenho, com _Brier Score_ de aproximadamente **0,0550**, superior ao modelo base e ao método _sigmoid_. De forma geral, a calibração contribuiu para tornar as probabilidades mais consistentes com os resultados reais observados.
+
+- **Curva de Calibração - Classe 0**
+  <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6182c9ed-fe29-4a69-8003-91d8a3fce773" />
+
+- **Curva de Calibração - Classe 1**
+  <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c0c4e7fe-5c92-4f2b-8d32-beb6f01eb556" />
+
+
+
+
 
 
 
