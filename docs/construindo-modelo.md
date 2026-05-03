@@ -2,13 +2,49 @@
 
 Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento do modelo Random Forest. As técnicas de pré-processamento e tratamento foram aplicadas conforme as necessidades específicas do projeto, detalhadas a seguir:
 
-* **Feature Engineering e Seleção de Variáveis:** Inicialmente, foi mapeado as variáveis preditoras (notas, pesos das provas e dados institucionais do curso) e a nossa variável alvo (APROVADO_T). Para otimizar o modelo, foi aplicado a métrica de Mutual Information para calcular a relevância de cada coluna. Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas: NOTA_L, NOTA_CH, NOTA_CN, NOTA_M, NOTA_R, CODIGO_CURSO, GRAU_T e TIPO_MOD_CONCORRENCIA_T.  
+- **Feature Engineering e Seleção de Variáveis:** Inicialmente, mapeamos as variáveis preditoras (notas, pesos das provas e dados institucionais do curso) e a nossa variável alvo (`APROVADO_T`)[cite: 4]. Para otimizar o modelo, aplicamos a métrica de *Mutual Information* para calcular a relevância de cada coluna[cite: 4].
 
-* **Separação de Dados:** Os dados foram divididos em conjuntos de treinamento (80%) e teste (20%). Como foi identificado que a base de dados é altamente desbalanceada (90,2% pertencentes à classe 0 - Reprovado; e apenas 9,8% à classe 1 - Aprovado), utilizou-se o parâmetro de estratificação (stratify=target). Isso assegurou que a proporção das classes fosse preservada de maneira adequada em ambos os conjuntos.  
+    - Ranking de Relevância (Mutual Information):
+      
+      | Variável | Score |
+      | :--- | :--- |
+      | CODIGO_CURSO | 0.046804 |
+      | DS_PERIODICIDADE_T | 0.034520 |
+      | NOTA_M | 0.029729 |
+      | NOTA_CH | 0.027505 |
+      | PESO_CH | 0.027175 |
+      | PESO_M | 0.025580 |
+      | NOTA_CN | 0.024956 |
+      | NOTA_L | 0.022827 |
+      | NOTA_R | 0.019348 |
+      | PESO_CN | 0.018738 |
+      | PESO_R | 0.016591 |
+      | TURNO_T | 0.014665 |
+      | PESO_L | 0.014025 |
+      | TIPO_MOD_CONCORRENCIA_T | 0.011604 |
+      | GRAU_T | 0.006226 |
+    
+      <img src="../docs/img/Mutual_Information_Graphic.jpeg" alt="Mutual Information Graphic" width="600">
+    
+  Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas, conforme o código abaixo:
+    ```python
+    # Seleção das features finais
+    features = df_dataset_tratado[[
+        'NOTA_L', 'NOTA_CH', 'NOTA_CN', 'NOTA_M', 'NOTA_R',
+        'CODIGO_CURSO', 'GRAU_T', 'TIPO_MOD_CONCORRENCIA_T'
+    ]]
+    ```
 
-* **Transformação e Normalização de Dados:** Optou-se por não realizar a normalização ou padronização dos dados (como Min-Max Scaling ou StandardScaler). Essa etapa foi dispensada porque o algoritmo escolhido, o Random Forest Classifier, é baseado em árvores de decisão e, portanto, não é sensível à magnitude ou à escala das variáveis matemáticas.  
+- **Separação de Dados:** Os dados foram divididos em conjuntos de treinamento (80%) e teste (20%). Como foi identificado que a base de dados é altamente desbalanceada (90,2% pertencentes à classe 0 - Reprovado; e apenas 9,8% à classe 1 - Aprovado), utilizou-se o parâmetro de estratificação (stratify=target). Isso assegurou que a proporção das classes fosse preservada de maneira adequada em ambos os conjuntos.  
 
-* **Tratamento de Dados Desbalanceados:** Para contornar a discrepância severa de volume entre as classes, foi configurado o hiperparâmetro class_weight='balanced_subsample' diretamente no modelo, o que ajuda a ajustar os pesos das classes automaticamente durante o treinamento. Vale registrar que a técnica de oversampling SMOTE chegou a ser aplicada na fase de testes, mas o modelo base se mostrou superior por manter uma melhor estabilidade geral e gerar predições mais confiáveis, justificando a não utilização do balanceamento sintético na versão final. 
+  | Conjunto    | Classe 0 (Reprovado) | Classe 1 (Aprovado) | % Classe 0 | % Classe 1 |
+  |-------------|----------------------|---------------------|------------|------------|
+  | y_train     | 132.457              | 14.375              | 90,21%     | 9,79%      |
+  | y_test      | 33.115               | 3.594               | 90,21%     | 9,79%      |
+
+- **Transformação e Normalização de Dados:** Optou-se por não realizar a normalização ou padronização dos dados (como Min-Max Scaling ou StandardScaler). Essa etapa foi dispensada porque o algoritmo escolhido, o Random Forest Classifier, é baseado em árvores de decisão e, portanto, não é sensível à magnitude ou à escala das variáveis matemáticas.  
+
+- **Tratamento de Dados Desbalanceados:** Para contornar a discrepância severa de volume entre as classes, foi configurado o hiperparâmetro class_weight='balanced_subsample' diretamente no modelo, o que ajuda a ajustar os pesos das classes automaticamente durante o treinamento. Vale registrar que a técnica de oversampling SMOTE chegou a ser aplicada na fase de testes, mas o modelo base se mostrou superior por manter uma melhor estabilidade geral e gerar predições mais confiáveis, justificando a não utilização do balanceamento sintético na versão final. 
 
 <!-- Algumas das etapas podem estar relacionadas à:
 
