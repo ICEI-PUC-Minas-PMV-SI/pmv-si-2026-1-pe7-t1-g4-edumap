@@ -68,8 +68,21 @@ Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo
 
 ## Discussão dos resultados obtidos
 
-Nesta seção, discuta os resultados obtidos pelo modelo construído, no contexto prático em que os dados se inserem, promovendo uma compreensão abrangente e aprofundada da qualidade dele. Lembre-se de relacionar os resultados obtidos por cada uma das métricas ao problema identificado, a questão de pesquisa levantada e estabelecer relação com os objetivos previamente propostos. 
-É fundamental compreender o que cada uma das métricas "conta" sobre a qualidade do modelo desenvolvido.
+  Os resultados obtidos demonstram que o modelo Random Forest apresentou bom desempenho na tarefa de classificação da aprovação dos candidatos. A acurácia geral indica alta taxa de acertos nas previsões realizadas pelo modelo.
+
+  Entretanto, considerando o desbalanceamento existente entre as classes, a análise não pode ser feita apenas com base na acurácia. Por este motivo, métricas como _precision_, _recall_ e _F1-score_ foram auxiliadoras para avaliar de forma mais adequada a qualidade do modelo.
+
+  Para a classe de **não aprovados (0)**, o modelo apresentou desempenho elevado em todas as métricas, demonstrando grande capacidade de identificar candidatos não aprovados.
+
+  Sobre a classe de **aprovados (1)**, os resultados medianos, com _precision_ de 55%, _recall_ de 61% e _F1-score_ de 58%. O valor do _recall_ indica que o modelo conseguiu identificar uma parcela significativa dos candidados, de fato, aprovados, reduzindo a quantidade de falsos negativos. Esse aspecto é importante no contexto do problema, pois demonstra a sensibilidade do modelo à classe minoritária. 
+
+  O ajuste do limiar de decisão também contribuiu para melhorar o equilíbrio entre as métricas, permitindo aumentar a capacidade do modelo em reconhecer candidados aprovados, mesmo com um impacto moderado na precisão das previsões positivas.
+
+  _falar sobre a análise de importância das variáveis_
+  _validação k-fold_
+
+**_Nesta seção, discuta os resultados obtidos pelo modelo construído, no contexto prático em que os dados se inserem, promovendo uma compreensão abrangente e aprofundada da qualidade dele. Lembre-se de relacionar os resultados obtidos por cada uma das métricas ao problema identificado, a questão de pesquisa levantada e estabelecer relação com os objetivos previamente propostos. 
+É fundamental compreender o que cada uma das métricas "conta" sobre a qualidade do modelo desenvolvido._**
 
 # Pipeline de pesquisa e análise de dados
 
