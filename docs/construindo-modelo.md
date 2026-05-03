@@ -217,8 +217,23 @@ Ainda falando sobre a Importância das Variáveis, **GRAU_T** e **TIPO_MOD_CONCO
 
 # Pipeline de pesquisa e análise de dados
 
-Em pesquisa e experimentação em sistemas de informação, um pipeline de pesquisa e análise de dados refere-se a um conjunto organizado de processos e etapas que um profissional segue para realizar a coleta, preparação, análise e interpretação de dados durante a fase de pesquisa e desenvolvimento de modelos. Esse pipeline é essencial para extrair _insights_ significativos, entender a natureza dos dados e, construir modelos de aprendizado de máquina eficazes. 
+O pipeline de pesquisa e análise de dados deste projeto foi estruturado com o objetivo de organizar as etapas necessárias para transformar os dados brutos do SISU 2023 em informações úteis para a construção e avaliação de um modelo de aprendizado de máquina. Como o problema proposto envolve prever se um candidato foi aprovado ou não aprovado, o projeto foi conduzido como uma tarefa de classificação supervisionada, tendo a variável `APROVADO_T` como alvo.
 
+A primeira etapa consistiu na coleta e carregamento da base de dados, seguida da análise inicial das colunas, tipos de variáveis, quantidade de registros e distribuição das classes. Nessa fase, foi possível identificar que o conjunto de dados apresentava forte desbalanceamento, com predominância da classe 0, referente aos candidatos não aprovados, em relação à classe 1, referente aos candidatos aprovados.
+
+Em seguida, foi realizada a preparação dos dados, envolvendo tratamento de valores ausentes, conversão de variáveis categóricas em formato numérico, seleção das variáveis mais relevantes e organização do conjunto final utilizado no treinamento. Para apoiar a escolha das features, foi aplicada a técnica de Mutual Information, que permitiu identificar quais atributos apresentavam maior relação com a variável-alvo.
+
+Após a preparação, os dados foram divididos em conjuntos de treino e teste, mantendo a proporção original das classes por meio da estratificação. Essa etapa foi importante para garantir uma avaliação mais justa do modelo, considerando o desbalanceamento existente na base.
+
+Na etapa de modelagem, foi utilizado o algoritmo Random Forest Classifier, escolhido por sua capacidade de lidar com grandes volumes de dados, capturar relações não lineares e permitir a análise da importância das variáveis. O modelo também recebeu ajustes específicos para lidar com o desbalanceamento das classes, como o uso do parâmetro `class_weight='balanced_subsample'` e a definição de um limiar de decisão ajustado.
+
+Por fim, o desempenho do modelo foi avaliado por meio de métricas como acurácia, precision, recall, F1-score, validação cruzada, matriz de confusão, matriz de confusão normalizada e calibração das probabilidades. Também foram utilizadas técnicas de interpretação, como Feature Importance e Permutation Importance, permitindo compreender quais variáveis tiveram maior influência nas previsões realizadas pelo modelo.
+
+Dessa forma, o pipeline seguido no projeto pode ser resumido da seguinte maneira:
+
+**Coleta dos dados → Carregamento da base → Análise exploratória → Preparação e tratamento dos dados → Seleção de variáveis → Separação entre treino e teste → Treinamento do modelo → Avaliação dos resultados → Calibração → Interpretação do modelo.**
+
+Esse fluxo permitiu conduzir o projeto de forma organizada, garantindo que as decisões tomadas durante a modelagem fossem baseadas na estrutura dos dados, no comportamento das variáveis e nos resultados obtidos durante a avaliação.
 ## Observações importantes
 
 Todas as tarefas realizadas nesta etapa deverão ser registradas em formato de texto junto com suas explicações de forma a apresentar os códigos desenvolvidos e também, o código deverá ser incluído, na íntegra, na pasta "src".
