@@ -2,7 +2,7 @@
 
 Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento do modelo Random Forest. As técnicas de pré-processamento e tratamento foram aplicadas conforme as necessidades específicas do projeto, detalhadas a seguir:
 
-- **Feature Engineering e Seleção de Variáveis:** Inicialmente, mapeamos as variáveis preditoras (notas, pesos das provas e dados institucionais do curso) e a nossa variável alvo (`APROVADO_T`)[cite: 4]. Para otimizar o modelo, aplicamos a métrica de *Mutual Information* para calcular a relevância de cada coluna[cite: 4].
+- **Feature Engineering e Seleção de Variáveis:** Inicialmente, mapeamos as variáveis preditoras (notas, pesos das provas e dados institucionais do curso) e a nossa variável alvo (`APROVADO_T`). Para otimizar o modelo, aplicamos a métrica de *Mutual Information* para calcular a relevância de cada coluna.
 
     - Ranking de Relevância (Mutual Information):
       
