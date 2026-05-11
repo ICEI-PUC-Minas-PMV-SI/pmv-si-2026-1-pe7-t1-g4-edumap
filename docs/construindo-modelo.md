@@ -88,9 +88,7 @@ Diante disso, o Random Forest se destaca por:
 
 Além disso, o problema apresenta desbalanceamento entre as classes (aprovados e não aprovados), o que reforça a escolha de um modelo que permita ajustes específicos para lidar com essa característica.
 
-**Nesta seção, conhecendo os dados e de posse dos dados preparados, é hora de descrever o algoritmo de aprendizado de máquina selecionado para a construção do modelo proposto. Inclua informações abrangentes sobre o algoritmo implementado, aborde conceitos fundamentais, princípios de funcionamento, vantagens/limitações e justifique a escolha do algoritmo utilizado.**
 
-Explore aspectos específicos, como o ajuste dos parâmetros livres do algoritmo. Lembre-se de experimentar parâmetros diferentes e principalmente, de registrar os testes realizados com diferentes parâmetros que servirão para justificar as escolhas realizadas.
 
 # Avaliação dos modelos criados
 
@@ -234,6 +232,3 @@ Dessa forma, o pipeline seguido no projeto pode ser resumido da seguinte maneira
 **Coleta dos dados → Carregamento da base → Análise exploratória → Preparação e tratamento dos dados → Seleção de variáveis → Separação entre treino e teste → Treinamento do modelo → Avaliação dos resultados → Calibração → Interpretação do modelo.**
 
 Esse fluxo permitiu conduzir o projeto de forma organizada, garantindo que as decisões tomadas durante a modelagem fossem baseadas na estrutura dos dados, no comportamento das variáveis e nos resultados obtidos durante a avaliação.
-## Observações importantes
-
-Todas as tarefas realizadas nesta etapa deverão ser registradas em formato de texto junto com suas explicações de forma a apresentar os códigos desenvolvidos e também, o código deverá ser incluído, na íntegra, na pasta "src".
