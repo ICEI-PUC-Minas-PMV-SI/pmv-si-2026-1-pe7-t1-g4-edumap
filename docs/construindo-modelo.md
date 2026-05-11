@@ -71,28 +71,27 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
 Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.-->
 
 # Descrição do modelo
+
 ## Escolha do Algoritmo
 Para a resolução do problema da classificação da aprovação de candidados no SISU 2023, foi utilizado o algoritmo Random Forest, pertencente à família de métodos de aprendizado supervisionado baseados em ensemble. 
 
 ## Justificativa da Escolha
-A escolha do Random Forest se deu por sua adequação às características do conjunto de dados ao tipo de problema abordado. O dataset apresenta
-* grande volume de registros
-* predominância de variáveis numéricas
-* possíveis relações não lineares entre os atributos
+A escolha do Random Forest se deu por sua adequação às características do conjunto de dados ao tipo de problema abordado. O dataset apresenta:
+* Grande volume de registros;
+* Predominância de variáveis numéricas;
+* Possíveis relações não lineares entre os atributos.
 
-Diante disso, o Random Forest se destaca por:
-* capturar relações complexas sem necessidade de transformações avançadas
-* apresenta alta robustez a ruídos e outliers
-* reduz o risco de overfiting em comparação a árvores de decisão (quando usadas de maneira isolada)
-* permite a análise da importância das variáveis
+Diante disso, o _Random Forest_ se destaca por:
+* Capturar relações complexas sem necessidade de transformações avançadas;
+* Apresenta alta robustez a ruídos e outliers;
+* Reduz o risco de overfiting em comparação a árvores de decisão (quando usadas de maneira isolada);
+* Permite a análise da importância das variáveis.
 
 Além disso, o problema apresenta desbalanceamento entre as classes (aprovados e não aprovados), o que reforça a escolha de um modelo que permita ajustes específicos para lidar com essa característica.
 
 
 
-# Avaliação dos modelos criados
-
-## Métricas utilizadas
+# Avaliação do modelo criado
 
 ## Configuração do Modelo e Parâmetros
 
@@ -133,7 +132,7 @@ Além disso, o problema apresenta desbalanceamento entre as classes (aprovados e
 
   Os resultados demonstram **bom desempenho geral e maior equilíbrio** na identificação da classe minoritária, indicando melhora na capacidade do modelo em reconhecer.
 
-## Discussão dos resultados obtidos
+### Discussão dos resultados obtidos
 
   Os resultados obtidos demonstram que o modelo Random Forest apresentou bom desempenho na tarefa de classificação da aprovação dos candidatos. A acurácia geral indica alta taxa de acertos nas previsões realizadas pelo modelo.
 
@@ -186,7 +185,7 @@ Ainda para melhorar a confiança das probabilidades previstas no modelo, foram a
 <img width="1600" height="555" alt="image" src="https://github.com/user-attachments/assets/6a690d04-777d-4bdc-bf92-5e469b7328a4" />
 
 
-### Importância das Variáveis (Feature Importance)
+### Importância das Variáveis _(Feature Importance)_
 
   Na análise de **Importância das Variáveis (_Feature Importance_)** foi utilizada para identificar quais variáveis exerceram maior influência nas decisões do modelo. Os resultados demonstraram qua a variável **CODIGO_CURSO** apresentou a maior importância no processo de classificação, indicando forte relação entre o curso escolhido e a probabilidade de aprovação dos candidatos. Em seguida, destacaram-se as variáveis relacionadas ao desempenho dos candidados (_notas_), principalmente:
   - **NOTA_M**
@@ -203,13 +202,13 @@ Ainda falando sobre a Importância das Variáveis, **GRAU_T** e **TIPO_MOD_CONCO
   <img width="867" height="384" alt="image" src="https://github.com/user-attachments/assets/4d1cd641-df7b-46aa-90d4-b3c4e8d15059" />
   
     
-### Permutation Importance por Classe
+### _Permutation Importance_ por Classe
   A análise de **Permutation Importance por Classe** permitiu avaliar o impacto individual das variáveis no desempenho do modelo para cada classe analisada, considerando o F1-score como metrica principal. Os resultados mostraram que **_CODIGO_CURSO_** foi a variável de maior importância em ambas as classes, indicando forte influência do curso escolhido na previsão realizada pelo modelo. A remoção dessa variável provocou a maior queda no desempenho, especialmente na **Classe 1**. Para a **Classe 0**, observou-se maior influência das variáveis **_GRAU_T_**, **_NOTA_M_** e **_NOTA_R_**, enquanto variáveis como **_NOTA_CN_** e **_NOTA_L_** apresentam impacto reduzido no desempenho do modelo. Para a **Classe 1**, o modelo demonstrou maior dependência das notas acadêmicas, principalmente **_NOTA_M_** e **_NOTA_R_**, indicando que Matemática e Redação possuem forte relação com a identificação dessa classe. Além disso, as demais áreas do conhecimento também apresentam contribuição relevante para a classificação. A variável **_TIPO_MOD_CONCORRENCIA_T** apresentou baixa importância em ambas as classes, sugerindo influência reduzida na capacidade preditiva do modelo quando comparada às variáveis acadêmicas e às características do curso. De forma geral, os resultados indicam que o modelo utiliza padrões distintos para identificar cada classe, atribuindo pesos diferentes às variáveis conforme perfil analisado.
 
-- **Permutation Importance - Classe 0 (gráfico)**
+- **_Permutation Importance_ - Classe 0 (gráfico)**
   <img width="981" height="390" alt="image" src="https://github.com/user-attachments/assets/6b2cf276-28fa-4a22-b580-020dcbc9ccd1" />
 
-- **Permutation Importance - Classe 1 (gráfico)**
+- **_Permutation Importance_ - Classe 1 (gráfico)**
   <img width="981" height="390" alt="image" src="https://github.com/user-attachments/assets/82af57d3-a0f8-452a-a679-e16e88849616" />
 
 
