@@ -48,7 +48,20 @@ Explore aspectos específicos, como o ajuste dos parâmetros livres de cada algo
 ## Métricas utilizadas
 
 ### K-Means
-Durante os experimentos foram realizados testes com diferentes quantidades de clusters, utilizando o Método do Cotovelo (Elbow Method) e o _Silhouette Score_. Os resultados indicaram melhor separação para **k = 2**, permitindo identificar dois perfis de candidados relacionados ao desempenho acadêmico e à concentração de aprovados e não aprovados.
+
+Para avaliar a qualidade dos agrupamentos gerados pelo algoritmo, foram utilizadas diferentes métricas de validação interna, considerando que modelos de clusterização não possuem variável alvo para comparação direta.
+
+A primeira métrica utilizada foi a **inércia**, responsável por medir a soma das distâncias entre os pontos e os centróides de seus respectivos clusters. Valores menores indicam grupos mais compactos e homogêneos. Para **k = 2**, o modelo apresentou inércia aproximada de **1.655.121,00**.
+
+Também foi utilizado o **Silhouette Score**, métrica que avalia simultaneamente a coesão interna e a separação entre os clusters. O modelo obteve valot aproximado de **0,3389**, indicando separação moderada entre os grupos formados e sugerindo que os clusters apresentam características relativamente distintas.
+
+Outra métrica aplicada foi o **Davies-Bouldin Index (DBI)**, utilizado para medir similaridade entre os clusters. Valores menores indicam melhor separação e menor sobreposição entre os grupos. O modelo apresentou **DBI = 1,6200**.
+
+Além disso, foi utilizado o **Calinski-Harabasz Index (CHI)**, que avalia a razão entre clusters e dispersão interna dos grupos. Valores maiores indicam definição dos agrupamentos. O modelo obteve **CHI = 55.820,27** sugerindo boa capacidade de superação entre os clusters identificados.
+
+A utilização conjunta dessas métricas permitiu avaliar a qualidade da clusterização de forma mais robusta, auxiliando na escolha do número ideal de clusters e na interpretação dos grupos formados pelo modelo.
+
+### Modelo X
 
 Nesta seção, as métricas utilizadas para avaliar os modelos desenvolvidos deverão ser apresentadas (p. ex.: acurácia, precisão, recall, F1-Score, MSE etc.). A escolha de cada métrica deverá ser justificada, pois esta escolha é essencial para avaliar de forma mais assertiva a qualidade do modelo construído. 
 
