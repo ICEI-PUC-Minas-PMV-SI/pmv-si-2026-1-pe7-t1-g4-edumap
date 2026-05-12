@@ -27,14 +27,28 @@ Algumas das etapas podem estar relacionadas à:
 Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.
 
 # Descrição dos modelos
+### K-Means
 
-Nesta seção, conhecendo os dados e de posse dos dados preparados, é hora de descrever os outros dois algoritmos de aprendizado de máquina selecionados para a construção dos modelos propostos. Inclua informações abrangentes sobre cada algoritmo implementado, aborde conceitos fundamentais, princípios de funcionamento, vantagens/limitações e justifique a escolha de cada um dos algoritmos. 
+O algoritmo K-Means foi utilizado como técnica de aprendizado não supervisionado como o objetivo de identificar padrões e classificar os candidatos em grupos com características semelhantes. Diferente dos modelos supervisionados, o K-Means **não utiliza variável alvo** durante o treinamento, realizando os agrupamentos com base na similaridade entre os dados de entrada.
+
+Ofuncionamento do algoritmo baseia-se na criação de centróides, que representam o centro de cada cluster. A partir disso, os registros são associados ao grupo cujo centróide apresenta menor distância em relação aos seus atributos. Esse processo é repetido iterativamente até que os clusters se estabilizem.
+
+O K-Means foi escolhido devido à sua simplicidade e capacidade de identificar padrões em grandes volumes de dados. Além disso, o algoritmo permite compreender diferentes perfis de candidatos, constibuindo para análises exploratórias complementares ao modelo supervisionado.
+
+Entre as vantagens do K-Means, destacam-se a facilidade de implementação, boa escalabilidade e interpretabilidade dos grupos formados. Como limitação, o modelo é sensível à escolha do número de clusters, à escala de variáveis e à presença de sobreposição entre os grupos.
+
+### Modelo X
+
+REMOVER POSTERIORMENTE ---->>>> Nesta seção, conhecendo os dados e de posse dos dados preparados, é hora de descrever os outros dois algoritmos de aprendizado de máquina selecionados para a construção dos modelos propostos. Inclua informações abrangentes sobre cada algoritmo implementado, aborde conceitos fundamentais, princípios de funcionamento, vantagens/limitações e justifique a escolha de cada um dos algoritmos. 
 
 Explore aspectos específicos, como o ajuste dos parâmetros livres de cada algoritmo. Lembre-se de experimentar parâmetros diferentes e principalmente, de justificar as escolhas realizadas e registrar todos os experimentos realizados.
 
 # Avaliação dos modelos criados
 
 ## Métricas utilizadas
+
+### K-Means
+Durante os experimentos foram realizados testes com diferentes quantidades de clusters, utilizando o Método do Cotovelo (Elbow Method) e o _Silhouette Score_. Os resultados indicaram melhor separação para **k = 2**, permitindo identificar dois perfis de candidados relacionados ao desempenho acadêmico e à concentração de aprovados e não aprovados.
 
 Nesta seção, as métricas utilizadas para avaliar os modelos desenvolvidos deverão ser apresentadas (p. ex.: acurácia, precisão, recall, F1-Score, MSE etc.). A escolha de cada métrica deverá ser justificada, pois esta escolha é essencial para avaliar de forma mais assertiva a qualidade do modelo construído. 
 
