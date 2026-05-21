@@ -1,6 +1,67 @@
 # Preparação dos dados
+Antes da aplicação do algoritmo K-Means, foi necessário realizar etapas de preparação e transformação dos dados, garantindo maior qualidade na formação dos clusters e evitando distorções nos cálculos de distância
 
-Nesta etapa, deverão ser descritas todas as técnicas utilizadas para pré-processamento/tratamento dos dados.
+- **Seleção de Features**: Definimos o conjunto de features que melhor representam os perfis dos candidatos:
+  ```python
+  features_cluster = df_dataset_tratado[['NOTA_L', 'NOTA_CH', 'NOTA_CN', 'NOTA_M', 'NOTA_R',
+                                         'PESO_L', 'PESO_CH', 'PESO_CN', 'PESO_M', 'PESO_R',
+                                         'GRAU_T', 'TIPO_MOD_CONCORRENCIA_T']].copy()
+  ```
+  Evitamos deliberadamente variáveis puramente identificadoras (como códigos de curso ou candidato) que não possuem significado ordinal, pois elas poderiam introduzir distorções na distância euclidiana
+
+- **Transformação de Variáveis Categóricas**: O K-Means interpreta distância numérica, o que criaria viés artificial. Por isso, aplicamos one-hot encoding completo. Essa transformação expandiu as colunas categóricas em variáveis binárias (dummies), garantindo que cada categoria fosse tratada de forma equidistante e sem ordenação implícita.
+  ```python
+  features_cluster = pd.get_dummies(features_cluster, drop_first=False)
+  ```
+- **Normalização dos Dados**: Como o K-Means é um algoritmo baseado em distâncias (euclidiana), variáveis em escalas diferentes distorceriam os resultados (notas variam na casa das centenas; pesos geralmente entre 1 e 3). Aplicamos StandardScaler para centralizar todas as features com média 0 e desvio padrão 1:
+  ```python
+  from sklearn.preprocessing import StandardScaler
+  
+  scaler = StandardScaler()
+  X_scaled = scaler.fit_transform(features_cluster)
+  
+  print("=== NORMALIZAÇÃO ===")
+  print("Shape de X_scaled:", X_scaled.shape)
+  
+  print("\nMédia aproximada após scaling:")
+  print(round(X_scaled.mean(), 4))
+  
+  print("\nDesvio padrão aproximado após scaling:")
+  print(round(X_scaled.std(), 4))
+  ```
+
+- **Tratamento de Outliers e Análise de Estabilidade**: Embora o dataset já estivesse tratado, realizamos análise pós-clusterização para validar a robustez:
+    - Calculamos a distância euclidiana de cada ponto ao centroide do seu cluster.
+    - Plotamos histograma das distâncias (com KDE) por cluster.
+    - Verificamos estatísticas descritivas das distâncias.
+
+- **Definição do Número de Clusters**: Como o algoritmo K-Means requer a definição prévia do número de clusters (n_clusters), realizamos uma análise sistemática para identificar o valor mais adequado para nossos dados. Foram testados valores de K variando de 2 a 6, utilizando duas métricas principais de validação interna:
+    - Método do Cotovelo (Elbow Method): baseado na inércia (soma das distâncias quadradas intra-cluster). Buscamos o ponto de inflexão onde o ganho de redução de inércia se torna marginal.
+    - Silhouette Score: métrica que avalia simultaneamente a coesão interna dos clusters e a separação entre eles. Quanto mais próximo de 1, melhor a qualidade do agrupamento.
+
+- **Separação / Preparação para Modelagem**: Não foi necessário dividir os dados em treino/validação/teste no sentido tradicional (hold-out), pois o K-Means é não supervisionado e utilizamos todo o dataset para treinamento. No entanto:
+  - Utilizamos random_state=42 em todos os experimentos para reprodutibilidade.
+  - Testamos múltiplos valores de n_init=10 para evitar mínimos locais.
+  - Realizamos experimentação sistemática com diferentes números de clusters (K=2 a 6) antes de fixar o modelo final.
+  ```python
+  K = range(2, 7)
+  inercias = []
+  silhuetas = []
+  
+  for k in K:
+      model_k = KMeans(n_clusters=k, random_state=42, n_init=10)
+      labels_k = model_k.fit_predict(X_scaled)
+      inercias.append(model_k.inertia_)
+      silhuetas.append(silhouette_score(X_scaled, labels_k))
+  ```
+  
+- **Redução de Dimensionalidade**: Foi utilizada a técnica PCA (Principal Component Analysis) para reduzir a dimensionalidade dos dados e permitir visualização gráfica dos clusters em duas dimensões. A redução manteve aproximadamente 55,92% da variância total dos dados originais.
+  ```python
+  from sklearn.decomposition import PCA
+  pca = PCA(n_components=2, random_state=42)
+  X_pca = pca.fit_transform(X_scaled)
+  ```
+<!-- Nesta etapa, deverão ser descritas todas as técnicas utilizadas para pré-processamento/tratamento dos dados.
 
 Algumas das etapas podem estar relacionadas à:
 
@@ -24,7 +85,7 @@ Algumas das etapas podem estar relacionadas à:
 
 * Entre outras....
 
-Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.
+Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto. -->
 
 # Descrição dos modelos
 ### K-Means
