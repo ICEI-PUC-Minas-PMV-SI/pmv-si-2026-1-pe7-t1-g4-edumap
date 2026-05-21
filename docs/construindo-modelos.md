@@ -49,9 +49,6 @@ Antes da aplicação do algoritmo K-Means, foi necessário realizar etapas de pr
       inercias.append(model_k.inertia_)
       silhuetas.append(silhouette_score(X_scaled, labels_k))
   ```
-- **Separação / Preparação para Modelagem**: Não foi necessário dividir os dados em treino/validação/teste no sentido tradicional (hold-out), pois o K-Means é não supervisionado e utilizamos todo o dataset para treinamento. No entanto:
-  - Utilizamos random_state=42 em todos os experimentos para reprodutibilidade.
-  - Testamos múltiplos valores de n_init=10 para evitar mínimos locais.
   
 - **Redução de Dimensionalidade**: Foi utilizada a técnica PCA (Principal Component Analysis) para reduzir a dimensionalidade dos dados e permitir visualização gráfica dos clusters em duas dimensões. A redução manteve aproximadamente 55,92% da variância total dos dados originais.
   ```python
