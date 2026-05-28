@@ -93,11 +93,16 @@ O K-Means foi escolhido devido à sua simplicidade e capacidade de identificar p
 
 Entre as vantagens do K-Means, destacam-se a facilidade de implementação, boa escalabilidade e interpretabilidade dos grupos formados. Como limitação, o modelo é sensível à escolha do número de clusters, à escala de variáveis e à presença de sobreposição entre os grupos.
 
-### Modelo X
+### XGBoost
 
-REMOVER POSTERIORMENTE ---->>>> Nesta seção, conhecendo os dados e de posse dos dados preparados, é hora de descrever os outros dois algoritmos de aprendizado de máquina selecionados para a construção dos modelos propostos. Inclua informações abrangentes sobre cada algoritmo implementado, aborde conceitos fundamentais, princípios de funcionamento, vantagens/limitações e justifique a escolha de cada um dos algoritmos. 
+O algoritmo XGBoost (_Extreme Gradient Boosting_) foi utilizado como técnica de aprendizado supervisionado para classificar os candidatos entre aprovados e não aprovados. O modelo baseia-se em árvores de decisão construídas sequencialmente, onde cada nova árvore busca corrigir os erros das anteriores por meio de técnicas de otimização baseadas em gradiente.
 
-Explore aspectos específicos, como o ajuste dos parâmetros livres de cada algoritmo. Lembre-se de experimentar parâmetros diferentes e principalmente, de justificar as escolhas realizadas e registrar todos os experimentos realizados.
+O funcionamento do XGBoost ocorre através do método _boosting_, combinando múltiplas árvores para melhorar gradualmente o desempenho do modelo. Além disso, o algoritmo utiliza regularização para reduzir overfitting e melhorar a capacidade de generalização.
+
+O XGBoost foi escolhido por conta do seu desempenho em problemas de classificação, capacidade de lidar com um maior volume de dados e eficiência na identificação de relações não lineares entre as variáveis.
+
+Entre as vantagens do modelo, destacam-se a alta precisão, robustez e capacidade de capturar padrões complexos. Como limitação, o algoritmo apresenta maior custo computacional e maior sensibilidade ao ajuste de hiperparâmetros.
+
 
 # Avaliação dos modelos criados
 
@@ -117,9 +122,20 @@ Além disso, foi utilizado o **Calinski-Harabasz Index (CHI)**, que avalia a raz
 
 A utilização conjunta dessas métricas permitiu avaliar a qualidade da clusterização de forma mais robusta, auxiliando na escolha do número ideal de clusters e na interpretação dos grupos formados pelo modelo.
 
-### Modelo X
+### XGBoost
 
-Nesta seção, as métricas utilizadas para avaliar os modelos desenvolvidos deverão ser apresentadas (p. ex.: acurácia, precisão, recall, F1-Score, MSE etc.). A escolha de cada métrica deverá ser justificada, pois esta escolha é essencial para avaliar de forma mais assertiva a qualidade do modelo construído. 
+Para avaliar o desempenho do modelo XGBoost, foram utilizadas métricas de classificação supervisionada, considerando o desbalanceamento entre as classes.
+
+A **accuracy** foi utilizada para medir a proporção geral de acertos do modelo que apresentou aproximadamente **94,47%** de acurácia.
+
+Também foram utilizadas as métricas de **precision, recall** e **F1-score**. A _precision_ mede a quantidade de previsões positivas corretas, o _recall_ avalia a capacidade do modelo em identificar candidados aprovados, e o _F1-score_ representa o equilíbrio entre essas duas métricas.
+
+Para a classe de aprovados, o modelo apresentou aproximadamente **72,70% de precision**, **70,20% de recall** e **71,40% de F1-score**, indicando desempenho satisfatório na identificação da classe minoritária (aprovados).
+
+Além disso, foram analisadas métricas da matriz de confusão, como **specificity**, **false positive rate** e **false negative rate**, permitindo avaliar os erros cometidos pelo modelo.
+
+Durante os experimentos, foram realizados ajustes de hiperparâmetros como **_learning_rate=0.30_**, **_max_depth=10_** e **_n_estimators=671_**, buscando melhorar o desempenho do modelo. Também foram utilizados parâmetros de regularização, como **gamma, subsample, colsample_bytree, reg_alpha** e **reg_lambda**, com o objetivo de reduzir overfitting e melhorar a capacidade de generalização.
+
 
 ## Discussão dos resultados obtidos
 
