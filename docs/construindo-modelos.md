@@ -1,8 +1,6 @@
 # Preparação dos dados
 
 ### K-Means
-Antes da aplicação do algoritmo K-Means, foi necessário realizar etapas de preparação e transformação dos dados, garantindo maior qualidade na formação dos clusters e evitando distorções nos cálculos de distância
-
 - **Seleção de Features**: Definimos o conjunto de features que melhor representam os perfis dos candidatos:
   ```python
   features_cluster = df_dataset_tratado[['NOTA_L', 'NOTA_CH', 'NOTA_CN', 'NOTA_M', 'NOTA_R',
@@ -66,6 +64,63 @@ Antes da aplicação do algoritmo K-Means, foi necessário realizar etapas de pr
   pca = PCA(n_components=2, random_state=42)
   X_pca = pca.fit_transform(X_scaled)
   ```
+
+### XGBoost
+- **Escolha das Features, do Target e Transformação de Dados (Encoding)**: Nesta etapa inicial, delimitamos quais variáveis serão utilizadas como preditoras (features) e qual será a variável de saída (target). As features selecionadas foram as notas (Linguagens, Ciências Humanas, Ciências da Natureza, Matemática, Redação), Grau, Tipo de Modalidade de Concorrência e Código do Curso. O target definido foi a coluna de aprovação (`APROVADO_T`).  Realizamos também a transformação da variável categórica `CODIGO_CURSO` em múltiplas colunas numéricas (variáveis dummy) utilizando a função pd.get_dummies. A separação entre features e target é a base do aprendizado supervisionado, ensinando ao modelo o que ele deve ler para tentar prever o resultado.  A transformação via dummies (One-Hot Encoding) foi necessária porque algoritmos de aprendizado de máquina exigem entradas numéricas, justificando a exclusão da primeira coluna (drop_first=True) para evitar multicolinearidade.  
+  ```python
+    features = df_dataset_tratado[[
+        'NOTA_L',
+        'NOTA_CH',
+        'NOTA_CN',
+        'NOTA_M',
+        'NOTA_R',
+        'GRAU_T',
+        'TIPO_MOD_CONCORRENCIA_T',
+        'CODIGO_CURSO'
+    ]]
+    
+    features = pd.get_dummies(
+        features,
+        columns=['CODIGO_CURSO'],
+        drop_first=True
+    )
+    
+    target = df_dataset_tratado['APROVADO_T']
+  ```
+  Saída de Dados
+  ```python
+    Shape das features:
+    (183541, 640)
+  ```
+
+- **Separação dos Dados (Treino e Teste):** O conjunto de dados total foi dividido em duas partes: 80% das amostras foram separadas para o treinamento do modelo e 20% foram reservadas para teste. Utilizamos a função `train_test_split` com o parâmetro `stratify=target`, a divisão impede o overfitting (quando o modelo apenas memoriza os dados), permitindo avaliar sua real capacidade de generalização em dados nunca vistos. O uso do parâmetro `stratify` foi fundamental devido ao alto desbalanceamento (90,2% de reprovados contra 9,8% de aprovados), pois ele garante que a proporção original entre as classes seja rigorosamente preservada tanto no conjunto de treino quanto no de teste
+  ```python
+    X_train, X_test, y_train, y_test = train_test_split(features, target.values.ravel(), test_size=0.2, random_state=42, stratify=target)
+  ```
+  Saída de Dados
+  ```python
+    Distribuição em y_train (percentual):
+    0    0.902099
+    1    0.097901
+    
+    Distribuição em y_test (percentual):
+    0    0.902095
+    1    0.097905
+  ```
+
+- **Tratamento de Dados Desbalanceados (Oversampling com SMOTE):** Aplicamos a técnica SMOTE (Synthetic Minority Over-sampling Technique) de forma exclusiva no conjunto de treinamento.  O SMOTE cria novas amostras sintéticas da classe minoritária (Aprovados) fazendo uma interpolação entre os vizinhos mais próximos, em vez de simplesmente duplicar linhas existentes. A distribuição inicial do target era altamente desbalanceada (apenas ~9,8% de aprovados). Isso faz com que o modelo tenda a favorecer a classe majoritária. O SMOTE foi testado para reduzir esse viés, ajudando o modelo a reconhecer os padrões da classe minoritária. (Nota: embora testado na preparação, análises posteriores do documento mostraram que o modelo base sem SMOTE teve acurácia mais estável no contexto do SISU, mas a técnica compõe a exploração da preparação )
+  ```python
+    sm = SMOTE(random_state=42)
+    X_tr_sm, y_tr_sm = sm.fit_resample(X_train, y_train)
+  ```
+
+- **Validação Cruzada (K-Fold):** Aplicamos a Validação Cruzada K-Fold (StratifiedKFold) para dividir os dados em 5 partes (folds). Durante o processo, 4 partes são usadas para treinar o modelo e 1 parte para validação, repetindo-se o ciclo até que todas as partes tenham sido usadas como validação. Para garantir que o desempenho do modelo não fosse dependente de uma única separação "sortuda" ou "azarada" dos dados entre treino e teste.  Essa técnica fornece uma métrica média muito mais confiável e estável sobre a capacidade de generalização do algoritmo. 
+Saída de Dados
+  ```python
+    F1-weighted por fold: [0.7622, 0.7671, 0.6479, 0.7619, 0.8664]
+    F1-weighted médio: 0.7611
+  ```
+
 <!-- Nesta etapa, deverão ser descritas todas as técnicas utilizadas para pré-processamento/tratamento dos dados.
 
 Algumas das etapas podem estar relacionadas à:
