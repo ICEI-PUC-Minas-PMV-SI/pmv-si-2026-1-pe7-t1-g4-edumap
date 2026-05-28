@@ -1,4 +1,6 @@
 # Preparação dos dados
+
+### K-Means
 Antes da aplicação do algoritmo K-Means, foi necessário realizar etapas de preparação e transformação dos dados, garantindo maior qualidade na formação dos clusters e evitando distorções nos cálculos de distância
 
 - **Seleção de Features**: Definimos o conjunto de features que melhor representam os perfis dos candidatos:
@@ -9,11 +11,11 @@ Antes da aplicação do algoritmo K-Means, foi necessário realizar etapas de pr
   ```
   Evitamos deliberadamente variáveis puramente identificadoras (como códigos de curso ou candidato) que não possuem significado ordinal, pois elas poderiam introduzir distorções na distância euclidiana
 
-- **Transformação de Variáveis Categóricas**: O K-Means interpreta distância numérica, o que criaria viés artificial. Por isso, aplicamos one-hot encoding completo. Essa transformação expandiu as colunas categóricas em variáveis binárias (dummies), garantindo que cada categoria fosse tratada de forma equidistante e sem ordenação implícita.
+- **Transformação de Variáveis Categóricas**: O K-Means interpreta distância numérica, o que criaria viés artificial. Por isso, aplicamos one-hot encoding completo nas variáveis categóricas. Essa transformação expandiu as colunas categóricas em variáveis binárias (dummies), garantindo que cada categoria fosse tratada de forma equidistante e sem ordenação implícita.
   ```python
   features_cluster = pd.get_dummies(features_cluster, drop_first=False)
   ```
-- **Normalização dos Dados**: Como o K-Means é um algoritmo baseado em distâncias (euclidiana), variáveis em escalas diferentes distorceriam os resultados (notas variam na casa das centenas; pesos geralmente entre 1 e 3). Aplicamos StandardScaler para centralizar todas as features com média 0 e desvio padrão 1:
+- **Normalização dos Dados**: Como o K-Means é um algoritmo baseado em distâncias (euclidiana), variáveis em escalas diferentes distorceriam os resultados (notas variam na casa das centenas; pesos geralmente entre 1 e 3). Aplicamos `StandardScaler` para centralizar todas as features com média 0 e desvio padrão 1:
   ```python
   from sklearn.preprocessing import StandardScaler
   
@@ -29,28 +31,36 @@ Antes da aplicação do algoritmo K-Means, foi necessário realizar etapas de pr
   print("\nDesvio padrão aproximado após scaling:")
   print(round(X_scaled.std(), 4))
   ```
-
-- **Tratamento de Outliers e Análise de Estabilidade**: Embora o dataset já estivesse tratado, realizamos análise pós-clusterização para validar a robustez:
-    - Calculamos a distância euclidiana de cada ponto ao centroide do seu cluster.
-    - Plotamos histograma das distâncias (com KDE) por cluster.
-    - Verificamos estatísticas descritivas das distâncias.
-
-- **Definição do Número de Clusters**: Como o algoritmo K-Means requer a definição prévia do número de clusters (n_clusters), realizamos uma análise sistemática para identificar o valor mais adequado para nossos dados. Foram testados valores de K variando de 2 a 6, utilizando duas métricas principais de validação interna:
-    - Método do Cotovelo (Elbow Method): baseado na inércia (soma das distâncias quadradas intra-cluster). Buscamos o ponto de inflexão onde o ganho de redução de inércia se torna marginal.
-    - Silhouette Score: métrica que avalia simultaneamente a coesão interna dos clusters e a separação entre eles. Quanto mais próximo de 1, melhor a qualidade do agrupamento.
+  A aplicação do `StandardScaler` apresentou os resultados esperados para a padronização. A matriz `X_scaled` manteve a estrutura original do dataset com 183.541 registros e 12 variáveis, enquanto a média de 0.0 e o desvio padrão de 1.0 confirmam que todas as features passarão a contribuir de forma equilibrada no cálculo das distâncias.
   ```python
-  K = range(2, 7)
-  inercias = []
-  silhuetas = []
+  === NORMALIZAÇÃO ===
+  Shape de X_scaled: (183541, 12)
   
-  for k in K:
-      model_k = KMeans(n_clusters=k, random_state=42, n_init=10)
-      labels_k = model_k.fit_predict(X_scaled)
-      inercias.append(model_k.inertia_)
-      silhuetas.append(silhouette_score(X_scaled, labels_k))
+  Média aproximada após scaling:
+  0.0
+  
+  Desvio padrão aproximado após scaling:
+  1.0
+  ```
+
+- **Definição do Número de Clusters**: O algoritmo K-Means requer a definição prévia do número de clusters (`n_clusters`). Foram testados valores de K variando de 2 a 6, utilizando o Método do Cotovelo (inércia) e o Silhouette Score
+    - **Método do Cotovelo** (Elbow Method): baseado na inércia (soma das distâncias quadradas intra-cluster). Buscamos o ponto de inflexão onde o ganho de redução de inércia se torna marginal.
+    - **Silhouette Score:** métrica que avalia simultaneamente a coesão interna dos clusters e a separação entre eles. Quanto mais próximo de 1, melhor a qualidade do agrupamento.
+
+   ```python
+    === TESTE DE DIFERENTES VALORES DE K ===
+    k=2 | Inércia=1681526.46 | Silhouette=0.3414
+    k=3 | Inércia=1371787.98 | Silhouette=0.2184
+    k=4 | Inércia=1246144.86 | Silhouette=0.2281
+    k=5 | Inércia=1132939.60 | Silhouette=0.2423
+    k=6 | Inércia=1042607.96 | Silhouette=0.2525
   ```
   
-- **Redução de Dimensionalidade**: Foi utilizada a técnica PCA (Principal Component Analysis) para reduzir a dimensionalidade dos dados e permitir visualização gráfica dos clusters em duas dimensões. A redução manteve aproximadamente 55,92% da variância total dos dados originais.
+  - **Justificativa da Escolha do K=2:** A escolha por formar 2 agrupamentos (K=2) deu-se porque este foi o melhor resultado matemático alcançável com este modelo para a estrutura dos nossos dados. O valor obteve o maior Silhouette Score (aproximadamente 0,3414), já os demais, a inércia diminui progressivamente conforme o número de clusters aumentava. Dessa forma, o valor K = 2 foi escolhido para o treinamento final do modelo por apresentar o melhor equilíbrio entre separação dos grupos e consistência interna dos clusters, resultando na segmentação mais adequada para a estrutura dos dados analisados
+
+- **Tratamento de Outliers e Análise de Estabilidade**: Calculamos a distância euclidiana de cada ponto ao centroide do seu respectivo cluster e plotamos um histograma para validar a robustez dos grupos gerados. Ambas as curvas do histograma seguem uma distribuição bem comportada, concentrando a grande maioria dos candidatos a distâncias predominantemente entre 1.0 e 3.0 dos seus centros. Não há a presença de caudas excessivamente longas, o que demonstra que candidatos com notas anômalas não distorceram a estrutura geométrica encontrada.
+  
+- **Redução de Dimensionalidade**: Utilizamos a técnica PCA (Principal Component Analysis) para reduzir a dimensionalidade dos dados (de 12 colunas originais para 2) e permitir visualização gráfica. A redução manteve aproximadamente 55,94% da variância total dos dados originais (Sendo o Componente Principal 1 = 28,63% e Componente Principal 2 = 27,31%)..
   ```python
   from sklearn.decomposition import PCA
   pca = PCA(n_components=2, random_state=42)
