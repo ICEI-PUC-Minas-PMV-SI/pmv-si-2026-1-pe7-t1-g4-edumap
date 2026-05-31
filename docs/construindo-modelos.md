@@ -422,17 +422,11 @@ Lembre-se de que um pipeline bem estruturado deve contemplar, de forma flexível
 
 O resultado desta etapa deverá ser um pipeline revisado e justificado, acompanhado de uma breve descrição das alterações realizadas e dos motivos que levaram a cada mudança.
 
-# Análise Comparativa das Abordagens de Machine Learning: Projeto EduMap
-
 Este documento apresenta uma análise comparativa entre as abordagens de aprendizado de máquina supervisionado e não supervisionado aplicadas ao conjunto de dados do SISU 2023/1 para o projeto **EduMap**.
-
----
 
 ## 1. Definição do Objetivo e Escolha da Abordagem Mais Adequada
 
 O objetivo central deste estudo é **prever a aprovação de candidatos com base em suas notas** e nas notas de corte das instituições. Diante deste cenário de predição com foco em um resultado rotulado (variável alvo conhecida), a **Abordagem Supervisionada** consolidou-se como a mais adequada e eficiente.
-
----
 
 ## 2. Justificativa Técnica da Abordagem Supervisionada
 
@@ -440,8 +434,6 @@ Os algoritmos de classificação baseados em árvores (como *Random Forest* e *X
 
 * **Mapeamento de Regras Decisórias:** O modelo segmenta o banco de dados criando regras lógicas a partir de divisões (*splits*) sucessivas. No contexto do SISU, o algoritmo identifica com precisão matemática o "ponto de virada" probabilístico, correlacionando a margem entre a `NOTA_CANDIDATO` e a `NOTA_CORTE` com o sucesso na chamada regular.
 * **Consistência Matemática (*Feature Importance*):** Conforme evidenciado no relatório de execução do código, o cálculo da importância das variáveis baseado na redução de impureza de Gini totalizou exatamente `1.0`. Isso valida a consistência do modelo ao atribuir pesos exatos aos atributos que mais impactam a classificação final do estudante.
-
----
 
 ## 3. Limitações da Abordagem Não Supervisionada para Predição
 
@@ -456,13 +448,54 @@ Apesar de sua eficiência computacional e geométrica para agrupar perfis semelh
 1. **Ausência de Rótulos:** O agrupamento identifica padrões ocultos de similaridade e assimetria de dados, mas não garante que a separação dos clusters corresponda às classes binárias de aprovação/reprovação.
 2. **Risco de Mistura de Classes:** Um mesmo cluster pode agregar candidatos reprovados com notas absolutas altas (em cursos muito concorridos) junto a candidatos aprovados com notas menores (em cursos de menor concorrência), inviabilizando o poder preditivo individual.
 
----
-
 ## 4. Conclusão Acadêmica
 
 Para o propósito de construir um sistema capaz de responder se um candidato será aceito no ensino superior dado o seu desempenho, a **Abordagem Supervisionada** é a escolha ideal. Ela provê métricas acionáveis, explicabilidade de variáveis e o direcionamento preditivo necessário para o projeto. 
 
 A abordagem não supervisionada assume papel secundário e exploratório, sendo útil apenas para o entendimento da distribuição demográfica macro das notas no território nacional.
+
+## Revisão do pipeline de pesquisa e análise de dados
+
+Nesta etapa, foi realizada a revisão do pipeline de pesquisa e análise de dados do projeto EduMap, considerando as abordagens já desenvolvidas com os modelos **XGBoost** e **K-Means**. O objetivo da revisão foi organizar, justificar e sintetizar as principais decisões metodológicas adotadas ao longo do processo, tornando o pipeline mais claro, modular e aplicável a diferentes técnicas de aprendizado de máquina.
+
+O projeto utiliza dados do **SISU 2023/1**, com foco na análise das notas de corte, nível de concorrência dos cursos e situação de aprovação dos candidatos. A base contém informações institucionais, características dos cursos, modalidades de concorrência, quantidade de vagas, notas dos candidatos, classificação e situação final de aprovação. A partir desses dados, foram propostas duas estratégias complementares de análise: uma supervisionada, por meio do **XGBoost**, e outra não supervisionada, por meio do **K-Means**.
+
+O pipeline revisado foi estruturado em etapas sequenciais:
+
+1. Formulação do problema;
+2. Coleta dos dados;
+3. Entendimento da base;
+4. Análise exploratória dos dados;
+5. Tratamento dos dados;
+6. Engenharia de atributos;
+7. Definição das variáveis de entrada;
+8. Escolha do modelo;
+9. Treinamento;
+10. Avaliação dos resultados;
+11. Interpretação;
+12. Documentação.
+
+Essa organização permite que o processo seja compreendido de forma lógica e replicável, independentemente do algoritmo utilizado.
+
+Na etapa de análise exploratória, foram avaliadas as principais características da base, incluindo tipos de dados, valores ausentes, distribuição das variáveis, balanceamento da variável-alvo e comportamento das notas. Essa etapa foi fundamental para identificar problemas que poderiam comprometer a qualidade dos modelos, como dados armazenados como texto, presença de valores nulos, notas iguais a zero, possíveis outliers e forte desbalanceamento entre candidatos aprovados e não aprovados.
+
+Durante a revisão, observou-se que algumas decisões de tratamento precisavam ser melhor justificadas. A identificação de **outliers**, por exemplo, não deve ser feita apenas visualmente. Por isso, o pipeline passou a considerar o método do intervalo interquartil (**IQR**), calculando **Q1**, **Q3**, **IQR**, limite inferior, limite superior e quantidade de registros fora dos limites para cada variável numérica. Essa abordagem torna a análise mais objetiva e documentada.
+
+Outro ponto importante foi a análise das notas iguais a zero. A remoção automática desses registros pode gerar perda de informação e viés, pois a nota zero pode representar ausência, eliminação, desempenho real ou regra específica do processo seletivo. Assim, o pipeline revisado recomenda que esses casos sejam analisados antes de qualquer exclusão, documentando a justificativa adotada.
+
+No modelo **XGBoost**, o pipeline foi direcionado para uma tarefa supervisionada de classificação, utilizando a variável `APROVADO` como alvo. Como a base apresenta forte desbalanceamento entre aprovados e não aprovados, a avaliação do modelo não deve se limitar à acurácia. Foram consideradas métricas como **precisão**, **recall**, **F1-score** e **matriz de confusão**, pois elas permitem avaliar melhor o desempenho do modelo principalmente em relação à classe minoritária, formada pelos candidatos aprovados.
+
+Também foi considerado o risco de **vazamento de dados** no modelo supervisionado. Variáveis como `CLASSIFICACAO` e `NOTA_CORTE` possuem relação muito próxima com o resultado final do processo seletivo e podem fazer com que o modelo apresente desempenho artificialmente elevado. Por isso, o pipeline recomenda avaliar cuidadosamente a inclusão dessas variáveis, testando cenários com e sem elas para verificar seu impacto real no desempenho e na interpretação do modelo.
+
+Já no modelo **K-Means**, o pipeline foi aplicado a uma tarefa não supervisionada, cujo objetivo é identificar agrupamentos naturais entre os candidatos com base em características semelhantes. Diferentemente do XGBoost, o K-Means não utiliza uma variável-alvo durante o treinamento. Sua finalidade é segmentar os registros em grupos, permitindo observar padrões de similaridade relacionados ao desempenho dos candidatos, pesos das áreas avaliadas e modalidades de concorrência.
+
+Como o **K-Means** é baseado em medidas de distância, a etapa de normalização foi essencial. Variáveis com escalas diferentes, como notas e pesos, poderiam influenciar o agrupamento de forma desigual. Por isso, foi aplicado o `StandardScaler`, padronizando as variáveis para média próxima de zero e desvio padrão próximo de um. Além disso, variáveis categóricas foram tratadas por meio de codificação adequada, evitando que códigos numéricos fossem interpretados incorretamente como valores ordinais.
+
+A escolha do número de clusters no K-Means foi realizada com apoio de métricas como o **Método do Cotovelo** e o **Silhouette Score**. Essa etapa reforça a importância de validar o agrupamento, evitando escolher a quantidade de grupos de forma arbitrária. A análise dos clusters permite complementar a abordagem supervisionada, pois ajuda a compreender perfis semelhantes de candidatos mesmo sem considerar diretamente a variável de aprovação.
+
+Assim, os dois modelos cumprem papéis diferentes dentro do mesmo pipeline. O **XGBoost** contribui para a previsão e interpretação dos fatores associados à aprovação, enquanto o **K-Means** contribui para a identificação de perfis e padrões ocultos na base. Juntos, eles ampliam a capacidade analítica do projeto, combinando classificação supervisionada e segmentação não supervisionada.
+
+Dessa forma, o pipeline revisado torna o projeto mais robusto, pois não se limita à aplicação dos algoritmos. Ele também documenta as decisões de preparação dos dados, justifica os tratamentos realizados, considera limitações metodológicas, avalia riscos de viés e propõe métricas adequadas para cada tipo de modelo. Essa revisão fortalece a confiabilidade dos resultados e permite que o processo seja reutilizado ou adaptado em outros contextos de ciência de dados e aprendizado de máquina.
 
 ## Observações importantes
 
