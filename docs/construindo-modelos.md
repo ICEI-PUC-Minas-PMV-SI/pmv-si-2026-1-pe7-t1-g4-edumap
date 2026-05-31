@@ -422,6 +422,48 @@ Lembre-se de que um pipeline bem estruturado deve contemplar, de forma flexível
 
 O resultado desta etapa deverá ser um pipeline revisado e justificado, acompanhado de uma breve descrição das alterações realizadas e dos motivos que levaram a cada mudança.
 
+# Análise Comparativa das Abordagens de Machine Learning: Projeto EduMap
+
+Este documento apresenta uma análise comparativa entre as abordagens de aprendizado de máquina supervisionado e não supervisionado aplicadas ao conjunto de dados do SISU 2023/1 para o projeto **EduMap**.
+
+---
+
+## 1. Definição do Objetivo e Escolha da Abordagem Mais Adequada
+
+O objetivo central deste estudo é **prever a aprovação de candidatos com base em suas notas** e nas notas de corte das instituições. Diante deste cenário de predição com foco em um resultado rotulado (variável alvo conhecida), a **Abordagem Supervisionada** consolidou-se como a mais adequada e eficiente.
+
+---
+
+## 2. Justificativa Técnica da Abordagem Supervisionada
+
+Os algoritmos de classificação baseados em árvores (como *Random Forest* e *XGBoost*) oferecem vantagens analíticas fundamentais para o problema proposto:
+
+* **Mapeamento de Regras Decisórias:** O modelo segmenta o banco de dados criando regras lógicas a partir de divisões (*splits*) sucessivas. No contexto do SISU, o algoritmo identifica com precisão matemática o "ponto de virada" probabilístico, correlacionando a margem entre a `NOTA_CANDIDATO` e a `NOTA_CORTE` com o sucesso na chamada regular.
+* **Consistência Matemática (*Feature Importance*):** Conforme evidenciado no relatório de execução do código, o cálculo da importância das variáveis baseado na redução de impureza de Gini totalizou exatamente `1.0`. Isso valida a consistência do modelo ao atribuir pesos exatos aos atributos que mais impactam a classificação final do estudante.
+
+---
+
+## 3. Limitações da Abordagem Não Supervisionada para Predição
+
+O algoritmo **K-Means**, combinado com a redução de dimensionalidade por **PCA**, foi testado sobre a volumetria de **183.541 registros**, resultando na seguinte segmentação natural:
+
+| Cluster | Quantidade de Registros | Percentual da Base |
+| :---: | :---: | :---: |
+| **Cluster 0** | 45.816 | 24,96% |
+| **Cluster 1** | 137.725 | 75,04% |
+
+Apesar de sua eficiência computacional e geométrica para agrupar perfis semelhantes, a técnica não supervisionada **não serve para prever a aprovação**, pelas seguintes razões:
+1. **Ausência de Rótulos:** O agrupamento identifica padrões ocultos de similaridade e assimetria de dados, mas não garante que a separação dos clusters corresponda às classes binárias de aprovação/reprovação.
+2. **Risco de Mistura de Classes:** Um mesmo cluster pode agregar candidatos reprovados com notas absolutas altas (em cursos muito concorridos) junto a candidatos aprovados com notas menores (em cursos de menor concorrência), inviabilizando o poder preditivo individual.
+
+---
+
+## 4. Conclusão Acadêmica
+
+Para o propósito de construir um sistema capaz de responder se um candidato será aceito no ensino superior dado o seu desempenho, a **Abordagem Supervisionada** é a escolha ideal. Ela provê métricas acionáveis, explicabilidade de variáveis e o direcionamento preditivo necessário para o projeto. 
+
+A abordagem não supervisionada assume papel secundário e exploratório, sendo útil apenas para o entendimento da distribuição demográfica macro das notas no território nacional.
+
 ## Observações importantes
 
 Todas as tarefas realizadas nesta etapa deverão ser registradas em formato de texto junto com suas explicações de forma a apresentar os códigos desenvolvidos e também, o código deverá ser incluído, na íntegra, na pasta "src".
