@@ -191,11 +191,11 @@ A utilização conjunta dessas métricas permitiu avaliar a qualidade da cluster
 
 Para avaliar o desempenho do modelo XGBoost, foram utilizadas métricas de classificação supervisionada, considerando o desbalanceamento entre as classes.
 
-A **accuracy** foi utilizada para medir a proporção geral de acertos do modelo que apresentou aproximadamente **94,47%** de acurácia.
+A **accuracy** foi utilizada para medir a proporção geral de acertos do modelo que apresentou aproximadamente **94%** de acurácia.
 
 Também foram utilizadas as métricas de **precision, recall** e **F1-score**. A _precision_ mede a quantidade de previsões positivas corretas, o _recall_ avalia a capacidade do modelo em identificar candidados aprovados, e o _F1-score_ representa o equilíbrio entre essas duas métricas.
 
-Para a classe de aprovados, o modelo apresentou aproximadamente **72,70% de precision**, **70,20% de recall** e **71,40% de F1-score**, indicando desempenho satisfatório na identificação da classe minoritária (aprovados).
+Para a classe de aprovados, o modelo apresentou aproximadamente **72% de precision**, **68% de recall** e **70% de F1-score**, indicando desempenho satisfatório na identificação da classe minoritária (aprovados).
 
 Além disso, foram analisadas métricas da matriz de confusão, como **specificity**, **false positive rate** e **false negative rate**, permitindo avaliar os erros cometidos pelo modelo.
 
