@@ -161,9 +161,9 @@ O cálculo foi realizado da seguinte forma:
 - Limite inferior: Q1 - 1,5 × IQR;
 - Limite superior: Q3 + 1,5 × IQR.
 
-Com esse critério, valores abaixo do limite inferior ou acima do limite superior são classificados como possíveis outliers. A análise foi aplicada às principais variáveis numéricas do projeto, como `NOTA_L`, `NOTA_CH`, `NOTA_CN`, `NOTA_M`, `NOTA_R`, `NOTA_CANDIDATO`, `NOTA_CORTE`, `CLASSIFICACAO` e `QT_VAGAS_CONCORRENCIA`.
+Com esse critério, valores abaixo do limite inferior ou acima do limite superior são classificados como possíveis outliers. A análise foi aplicada às principais variáveis numéricas do projeto, como NOTA_L, NOTA_CH, NOTA_CN, NOTA_M, NOTA_R, NOTA_CANDIDATO, NOTA_CORTE, CLASSIFICACAO e QT_VAGAS_CONCORRENCIA.
 
-A tabela gerada no Colab também contribuiu para essa etapa, pois apresentou estatísticas importantes das variáveis, como quantidade de registros, valores únicos, mínimo, máximo e amplitude. Esses resultados mostraram que algumas variáveis possuem grande variação, especialmente `CLASSIFICACAO`, `NOTA_CANDIDATO`, `NOTA_CORTE` e `QT_VAGAS_CONCORRENCIA`, indicando a necessidade de uma avaliação mais criteriosa dos valores extremos.
+A tabela gerada no Colab também contribuiu para essa etapa, pois apresentou estatísticas importantes das variáveis, como quantidade de registros, valores únicos, mínimo, máximo e amplitude. Esses resultados mostraram que algumas variáveis possuem grande variação, especialmente CLASSIFICACAO, NOTA_CANDIDATO, NOTA_CORTE e QT_VAGAS_CONCORRENCIA, indicando a necessidade de uma avaliação mais criteriosa dos valores extremos.
 
 É importante destacar que os outliers identificados não foram automaticamente considerados erros. No contexto do SISU, valores extremos podem representar situações reais do processo seletivo, como candidatos com desempenho muito alto ou muito baixo, cursos com maior concorrência, modalidades com poucas vagas ou classificações muito distantes. Portanto, a decisão metodológica foi tratar esses registros como pontos de atenção, e não removê-los automaticamente.
 
