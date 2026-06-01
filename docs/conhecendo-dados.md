@@ -147,14 +147,28 @@ Todas essas visualizações ajudaram a identificar distribuição assimétrica d
   
 ## 4. Detecção de Outliers
 
-A identificação de outliers foi realizada principalmente com:
-- Boxplots
-- Análise de dispersão
+Na etapa inicial do projeto, a identificação de outliers foi realizada principalmente por meio de boxplots e análise visual de dispersão. Essa abordagem permitiu observar a presença de valores extremos em variáveis como notas, classificação, nota de corte e quantidade de vagas por modalidade de concorrência.
 
-Observações:
-- Foram identificados valores extremos em notas e classificações
-- Esses valores podem representar candidatos com desempenho muito acima ou abaixo da média
-- A presença de outliers pode impactar modelos de machine learning
+Entretanto, durante a revisão do pipeline, verificou-se que a descrição anterior estava genérica, pois não informava claramente o critério estatístico utilizado, quais variáveis apresentavam possíveis outliers, quais eram os limites adotados e quantos registros estavam fora desses limites.
+
+Para tornar essa etapa mais objetiva e justificável, a análise de outliers passou a considerar também o método do intervalo interquartil, conhecido como IQR. Esse método utiliza os quartis da distribuição para definir limites estatísticos para cada variável numérica.
+
+O cálculo foi realizado da seguinte forma:
+
+- Q1: primeiro quartil, correspondente a 25% dos dados;
+- Q3: terceiro quartil, correspondente a 75% dos dados;
+- IQR: diferença entre Q3 e Q1;
+- Limite inferior: Q1 - 1,5 × IQR;
+- Limite superior: Q3 + 1,5 × IQR.
+
+Com esse critério, valores abaixo do limite inferior ou acima do limite superior são classificados como possíveis outliers. A análise foi aplicada às principais variáveis numéricas do projeto, como `NOTA_L`, `NOTA_CH`, `NOTA_CN`, `NOTA_M`, `NOTA_R`, `NOTA_CANDIDATO`, `NOTA_CORTE`, `CLASSIFICACAO` e `QT_VAGAS_CONCORRENCIA`.
+
+A tabela gerada no Colab também contribuiu para essa etapa, pois apresentou estatísticas importantes das variáveis, como quantidade de registros, valores únicos, mínimo, máximo e amplitude. Esses resultados mostraram que algumas variáveis possuem grande variação, especialmente `CLASSIFICACAO`, `NOTA_CANDIDATO`, `NOTA_CORTE` e `QT_VAGAS_CONCORRENCIA`, indicando a necessidade de uma avaliação mais criteriosa dos valores extremos.
+
+É importante destacar que os outliers identificados não foram automaticamente considerados erros. No contexto do SISU, valores extremos podem representar situações reais do processo seletivo, como candidatos com desempenho muito alto ou muito baixo, cursos com maior concorrência, modalidades com poucas vagas ou classificações muito distantes. Portanto, a decisão metodológica foi tratar esses registros como pontos de atenção, e não removê-los automaticamente.
+
+Assim, a revisão do pipeline tornou a etapa de detecção de outliers mais transparente, pois passou a indicar o método utilizado, as variáveis analisadas, os limites estatísticos considerados e a necessidade de separar possíveis erros de dados de valores extremos válidos.
+Tabela de Identificação de Outliers
 
   <img width="760" height="636" alt="image" src="https://github.com/user-attachments/assets/82a81e12-8539-4f02-88d0-cac2a6f50692" />
 
