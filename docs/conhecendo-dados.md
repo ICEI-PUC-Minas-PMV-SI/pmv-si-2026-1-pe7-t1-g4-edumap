@@ -25,6 +25,9 @@ A análise também considerou:
 - Intervalo entre valores mínimos e máximos
 - Possíveis dispersões elevadas indicando heterogeneidade dos dados
 
+<img width="828" height="292" alt="image" src="https://github.com/user-attachments/assets/f40a4814-e4b5-44cf-a527-3ecaad80971d" />
+
+
 Essas medidas mostram que há grande variação nas notas e classificações, o que é esperado em processos seletivos amplos como o SISU.
 
 
