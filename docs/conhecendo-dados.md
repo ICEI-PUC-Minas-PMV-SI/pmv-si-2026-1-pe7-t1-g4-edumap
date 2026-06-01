@@ -172,6 +172,11 @@ Tabela de Identificação de Outliers
 
   <img width="760" height="636" alt="image" src="https://github.com/user-attachments/assets/82a81e12-8539-4f02-88d0-cac2a6f50692" />
 
+Analise dos zeros
+
+<img width="649" height="246" alt="image" src="https://github.com/user-attachments/assets/8a6781b3-003c-4c9d-9643-9cbe2c81b96b" />
+<img width="168" height="549" alt="image" src="https://github.com/user-attachments/assets/2e1e9f20-7a51-4779-b0f8-314992955df0" />
+
 
 ## 5. Análise de Relações entre Variáveis
 
