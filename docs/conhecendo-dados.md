@@ -172,7 +172,19 @@ Tabela de Identificação de Outliers
 
   <img width="760" height="636" alt="image" src="https://github.com/user-attachments/assets/82a81e12-8539-4f02-88d0-cac2a6f50692" />
 
-Analise dos zeros
+## Análise de registros com notas zero
+
+Durante a revisão do pipeline, foi identificada a remoção de 1.132 registros com notas iguais a zero nas variáveis `NOTA_L`, `NOTA_CH`, `NOTA_CN`, `NOTA_M`, `NOTA_R`, `NOTA_CORTE` e `NOTA_CANDIDATO`.
+
+A análise desses registros foi necessária porque, no contexto do SISU, uma nota igual a zero não deve ser tratada automaticamente como erro. Esse valor pode representar diferentes situações, como ausência do candidato em uma prova, eliminação por regra do processo seletivo, desempenho real igual a zero ou ainda alguma condição específica registrada pelo sistema do MEC/SISU.
+
+Por esse motivo, a decisão de remover notas zero precisa estar baseada em uma regra objetiva e documentada. A remoção automática desses registros pode gerar viés na base de dados, especialmente se os zeros representarem informações válidas do processo seletivo.
+
+Para avaliar esses casos, foram analisadas as quantidades de zeros por variável, o percentual em relação ao total da base e a distribuição desses registros em relação à variável `APROVADO`. Também foi verificado se os registros com zero estavam concentrados em candidatos não aprovados ou se havia ocorrência entre candidatos aprovados.
+
+A partir dessa análise, os registros com notas zero passaram a ser tratados como pontos de atenção metodológica. Caso o zero represente ausência, eliminação ou inconsistência evidente, sua remoção deve ser justificada e documentada. Caso o zero represente um valor válido do processo seletivo, o registro deve ser mantido na base, podendo ser tratado como uma categoria analítica relevante.
+
+Dessa forma, a revisão do pipeline evita a exclusão automática de dados potencialmente válidos e torna o tratamento das notas zero mais transparente, justificado e alinhado ao domínio do problema.
 
 <img width="649" height="246" alt="image" src="https://github.com/user-attachments/assets/8a6781b3-003c-4c9d-9643-9cbe2c81b96b" />
 <img width="168" height="549" alt="image" src="https://github.com/user-attachments/assets/2e1e9f20-7a51-4779-b0f8-314992955df0" />
