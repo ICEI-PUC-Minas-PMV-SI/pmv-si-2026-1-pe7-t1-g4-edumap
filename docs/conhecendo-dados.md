@@ -156,6 +156,9 @@ Observações:
 - Esses valores podem representar candidatos com desempenho muito acima ou abaixo da média
 - A presença de outliers pode impactar modelos de machine learning
 
+  <img width="760" height="636" alt="image" src="https://github.com/user-attachments/assets/82a81e12-8539-4f02-88d0-cac2a6f50692" />
+
+
 ## 5. Análise de Relações entre Variáveis
 
 Foram analisadas relações entre variáveis utilizando:
