@@ -109,7 +109,7 @@ Demografia,Concentração etária nos 19 anos,Perfil homogêneo de egressos rece
 |Vulnerabilidade|Peso de Redação e Matemática|Subdesempenho nestas áreas é apresenta forte influencia no resultado final.|
 |Demografia|Concentração etária nos 19 anos|Perfil homogêneo de egressos recentes do Ensino Médio.|
 
-O êxito no certame depende da mitigação de erros em disciplinas de alta ponderação (Matemática e Redação) e da superação da barreira técnica imposta por Ciências da Natureza. O perfil dos aprovados indica a necessidade de uma precisão cirúrgica na pontuação para garantir o ingresso em cursos de alta demanda.
+O êxito no certame depende da mitigação de erros em disciplinas de alta ponderação (Matemática e Redação) e da superação da barreira técnica imposta por Ciências da Natureza. O perfil dos aprovados indica a necessidade de uma boa acertividade na pontuação para garantir o ingresso em cursos de alta demanda.
 
 ### 3.5 Mapa de Calor → relação entre variáveis
 
