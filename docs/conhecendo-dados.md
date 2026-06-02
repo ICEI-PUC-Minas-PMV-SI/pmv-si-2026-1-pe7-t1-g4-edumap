@@ -106,7 +106,7 @@ Demografia,Concentração etária nos 19 anos,Perfil homogêneo de egressos rece
 |Competitividade|Gap de 93 pontos (Média 600 vs. Corte 693)|Alta densidade de candidatos qualificados em intervalo restrito.|
 |Alavancagem|Tetos de Matemática (983) e Redação (1000)|Disciplinas determinantes para a classificação no topo.|
 |Gargalo Técnico|Menor média em Ciências da Natureza (528)|Área de maior complexidade; atua como principal filtro de seleção.|
-|Vulnerabilidade|Peso de Redação e Matemática|Subdesempenho nestas áreas é estatisticamente irreversível.|
+|Vulnerabilidade|Peso de Redação e Matemática|Subdesempenho nestas áreas é apresenta forte influencia no resultado final.|
 |Demografia|Concentração etária nos 19 anos|Perfil homogêneo de egressos recentes do Ensino Médio.|
 
 O êxito no certame depende da mitigação de erros em disciplinas de alta ponderação (Matemática e Redação) e da superação da barreira técnica imposta por Ciências da Natureza. O perfil dos aprovados indica a necessidade de uma precisão cirúrgica na pontuação para garantir o ingresso em cursos de alta demanda.
