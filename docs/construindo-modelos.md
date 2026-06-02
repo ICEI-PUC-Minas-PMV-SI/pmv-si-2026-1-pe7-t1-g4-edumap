@@ -7,7 +7,7 @@
                                          'PESO_L', 'PESO_CH', 'PESO_CN', 'PESO_M', 'PESO_R',
                                          'GRAU_T', 'TIPO_MOD_CONCORRENCIA_T']].copy()
   ```
-  Evitamos deliberadamente variáveis puramente identificadoras (como códigos de curso ou candidato) que não possuem significado ordinal, pois elas poderiam introduzir distorções na distância euclidiana
+  Evitamos deliberadamente variáveis puramente identificadoras (como códigos de curso ou candidato) que não possuem significado ordinal, pois elas poderiam introduzir distorções na distância euclidiana.
 
 - **Transformação de Variáveis Categóricas**: O K-Means interpreta distância numérica, o que criaria viés artificial. Por isso, aplicamos one-hot encoding completo nas variáveis categóricas. Essa transformação expandiu as colunas categóricas em variáveis binárias (dummies), garantindo que cada categoria fosse tratada de forma equidistante e sem ordenação implícita.
   ```python
@@ -41,20 +41,20 @@
   1.0
   ```
 
-- **Definição do Número de Clusters**: O algoritmo K-Means requer a definição prévia do número de clusters (`n_clusters`). Foram testados valores de K variando de 2 a 6, utilizando o Método do Cotovelo (inércia) e o Silhouette Score
+- **Definição do Número de Clusters**: O algoritmo K-Means requer a definição prévia do número de clusters (`n_clusters`). Foram testados valores de K variando de 2 a 10, utilizando o Método do Cotovelo (inércia) e o Silhouette Score.
     - **Método do Cotovelo** (Elbow Method): baseado na inércia (soma das distâncias quadradas intra-cluster). Buscamos o ponto de inflexão onde o ganho de redução de inércia se torna marginal.
     - **Silhouette Score:** métrica que avalia simultaneamente a coesão interna dos clusters e a separação entre eles. Quanto mais próximo de 1, melhor a qualidade do agrupamento.
 
    ```python
     === TESTE DE DIFERENTES VALORES DE K ===
-    k=2 | Inércia=1681526.46 | Silhouette=0.3414
-    k=3 | Inércia=1371787.98 | Silhouette=0.2184
-    k=4 | Inércia=1246144.86 | Silhouette=0.2281
-    k=5 | Inércia=1132939.60 | Silhouette=0.2423
-    k=6 | Inércia=1042607.96 | Silhouette=0.2525
+      k=2 | Inércia=1681526.46 | Silhouette=0.3414
+      k=3 | Inércia=1371787.98 | Silhouette=0.2184
+      k=4 | Inércia=1246144.86 | Silhouette=0.2281
+      k=5 | Inércia=1132939.60 | Silhouette=0.2423
+      k=6 | Inércia=1042607.96 | Silhouette=0.2525
   ```
   
-  - **Justificativa da Escolha do K=2:** A escolha por formar 2 agrupamentos (K=2) deu-se porque este foi o melhor resultado matemático alcançável com este modelo para a estrutura dos nossos dados. O valor obteve o maior Silhouette Score (aproximadamente 0,3414), já os demais, a inércia diminui progressivamente conforme o número de clusters aumentava. Dessa forma, o valor K = 2 foi escolhido para o treinamento final do modelo por apresentar o melhor equilíbrio entre separação dos grupos e consistência interna dos clusters, resultando na segmentação mais adequada para a estrutura dos dados analisados
+  - **Justificativa da Escolha do K=2:** A escolha por formar 2 agrupamentos (K=2) deu-se porque este foi o melhor resultado matemático alcançável com este modelo para a estrutura dos nossos dados. O valor obteve o maior Silhouette Score (aproximadamente 0,3414), já os demais, a inércia diminui progressivamente conforme o número de clusters aumentava. Dessa forma, o valor K = 2 foi escolhido para o treinamento final do modelo por apresentar o melhor equilíbrio entre separação dos grupos e consistência interna dos clusters, resultando na segmentação mais adequada para a estrutura dos dados analisados.
 
 - **Tratamento de Outliers e Análise de Estabilidade**: Calculamos a distância euclidiana de cada ponto ao centroide do seu respectivo cluster e plotamos um histograma para validar a robustez dos grupos gerados. Ambas as curvas do histograma seguem uma distribuição bem comportada, concentrando a grande maioria dos candidatos a distâncias predominantemente entre 1.0 e 3.0 dos seus centros. Não há a presença de caudas excessivamente longas, o que demonstra que candidatos com notas anômalas não distorceram a estrutura geométrica encontrada.
   
@@ -300,29 +300,18 @@ A matriz de confusão normalizada ajudou a interpretar esses resultados proporci
 
 A análise confirma que o XGBoost é forte para reconhecer o padrão dos não aprovados, mas ainda encontra maior dificuldade para capturar todos os aprovados. Essa dificuldade não significa que o modelo seja ruim. Ela reflete a própria estrutura do problema: há poucos aprovados em relação ao total de candidatos, e a aprovação depende de variáveis altamente competitivas e específicas.
 
-<img width="877" height="394" alt="importanciadasfeatures" src="https://github.com/user-attachments/assets/deeced21-a356-4850-8a9a-457a9f695536" />
-
-A importância das features foi analisada para compreender quais variáveis tiveram maior influência nas decisões do modelo. Embora o gráfico presente no notebook esteja identificado como “Importância das Features - Random Forest”, essa visualização foi utilizada na etapa supervisionada como apoio interpretativo para observar o peso relativo das variáveis na previsão da aprovação dos candidatos.
-
-Essa análise ajuda a identificar quais atributos contribuíram mais para distinguir aprovados e não aprovados. Em um problema como o do SISU, essa leitura é relevante porque permite verificar se o modelo está se apoiando em variáveis coerentes com a lógica do processo seletivo, como nota do candidato, nota de corte, classificação, curso, quantidade de vagas e modalidade de concorrência.
-
-A leitura desse gráfico também contribui para tornar a análise mais explicável. Em vez de observar apenas o resultado final da previsão, é possível discutir quais fatores tiveram maior participação no processo de decisão do modelo. Isso fortalece a interpretação dos resultados e permite relacionar o desempenho obtido ao contexto prático da competitividade dos cursos.
-
-A Permutation Importance foi considerada como uma técnica complementar para avaliar a relevância das variáveis, mas no material analisado ela aparece mais como referência metodológica do que como um gráfico específico a ser inserido. Por esse motivo, não foi adicionada uma marcação própria para esse item. A análise visual de importância das features ficou concentrada no gráfico apresentado anteriormente.
-
-Essa análise é útil porque permite verificar, por outro caminho, se o modelo está realmente utilizando variáveis relevantes para o problema. No contexto educacional, isso ajuda a evitar interpretações superficiais e torna a discussão mais alinhada ao fenômeno analisado, permitindo compreender melhor quais fatores estão mais associados à aprovação dos candidatos.
 
   ```python
 
 
               precision    recall  f1-score   support
 
-           0      0.959     0.738     0.834     33115
-           1      0.227     0.708     0.344      3594
+           0      0.962     0.964     0.963     33115
+           1      0.662     0.647     0.654      3594
 
-    accuracy                          0.735     36709
-   macro avg      0.593     0.723     0.589     36709
-weighted avg      0.887     0.735     0.786     36709
+     accuracy                          0.933     36709
+     macro avg      0.812     0.806     0.809     36709
+  weighted avg      0.932     0.933     0.933     36709
   ```
 
 Também foram realizados testes com SMOTE para lidar com o desbalanceamento das classes. O SMOTE cria amostras sintéticas da classe minoritária no conjunto de treino, buscando reduzir o viés do modelo em favor da classe majoritária.
