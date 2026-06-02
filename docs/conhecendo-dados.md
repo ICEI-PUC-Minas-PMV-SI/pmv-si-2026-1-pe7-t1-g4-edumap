@@ -48,7 +48,7 @@ Foram utilizados gráficos com Matplotlib e Seaborn, incluindo:
  - A classe `S` e `N` aparecem em quantidades iguais devido ao balanceamento do gráfico.
  - Em vários pares de notas, os pontos formam um desenho inclinado para cima, indicando relação positiva entre as variáveis comparadas, uma relação direta entre as variáveis, observamos com mais intensidade em Mat. e CN.
  - No KDE da redação é possível observar a distribuição entre as notas dos `S` e dos `N`
- - Mat. E CN definem muito bem a linha entre aprovados e reprovados em uma diagonal ascendentes com pontos bem agrupados.
+ - Mat. E CN Apresentam um bom agrupamento de `S` e `N` com uma região de transição, mas com visual ja mais bem definido.
  - Muitos candidatos com nota zero em CN tiveram boas notas em redação, mas não foram aprovados
  - A relação entre Redação e Mat. Possui muitos pontos espalhados e não tem boa indicação de influência, além de que estar bem misturados os `S` e s `N`.
 
