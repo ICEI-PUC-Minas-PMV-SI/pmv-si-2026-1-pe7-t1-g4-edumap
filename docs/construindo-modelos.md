@@ -52,6 +52,10 @@
       k=4 | Inércia=1246144.86 | Silhouette=0.2281
       k=5 | Inércia=1132939.60 | Silhouette=0.2423
       k=6 | Inércia=1042607.96 | Silhouette=0.2525
+      k=7 | Inércia=954281.58 | Silhouette=0.1913
+      k=8 | Inércia=906152.65 | Silhouette=0.1948
+      k=9 | Inércia=865041.70 | Silhouette=0.2002
+      k=10 | Inércia=836228.53 | Silhouette=0.1988
   ```
   
   - **Justificativa da Escolha do K=2:** A escolha por formar 2 agrupamentos (K=2) deu-se porque, entre os valores testados, K=2 apresentou o melhor Silhouette Score (aproximadamente 0,3414), já os demais, a inércia diminui progressivamente conforme o número de clusters aumentava. Dessa forma, o valor K = 2 foi escolhido para o treinamento final do modelo por apresentar o melhor equilíbrio entre separação dos grupos e consistência interna dos clusters, resultando na segmentação mais adequada para a estrutura dos dados analisados.
