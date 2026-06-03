@@ -29,7 +29,7 @@
   print("\nDesvio padrão aproximado após scaling:")
   print(round(X_scaled.std(), 4))
   ```
-  A aplicação do `StandardScaler` apresentou os resultados esperados para a padronização. A matriz `X_scaled` manteve a estrutura original do dataset com 183.541 registros e 12 variáveis, enquanto a média de 0.0 e o desvio padrão de 1.0 confirmam que todas as features passarão a contribuir de forma equilibrada no cálculo das distâncias.
+  A aplicação do `StandardScaler` apresentou os resultados esperados para a padronização. Após o One-Hot Encoding, o conjunto passou a possuir 12 variáveis resultantes, que posteriormente foram padronizadas utilizando StandardScaler. Enquanto a média de 0.0 e o desvio padrão de 1.0 confirmam que todas as features passarão a contribuir de forma equilibrada no cálculo das distâncias.
   ```python
   === NORMALIZAÇÃO ===
   Shape de X_scaled: (183541, 12)
@@ -54,9 +54,9 @@
       k=6 | Inércia=1042607.96 | Silhouette=0.2525
   ```
   
-  - **Justificativa da Escolha do K=2:** A escolha por formar 2 agrupamentos (K=2) deu-se porque este foi o melhor resultado matemático alcançável com este modelo para a estrutura dos nossos dados. O valor obteve o maior Silhouette Score (aproximadamente 0,3414), já os demais, a inércia diminui progressivamente conforme o número de clusters aumentava. Dessa forma, o valor K = 2 foi escolhido para o treinamento final do modelo por apresentar o melhor equilíbrio entre separação dos grupos e consistência interna dos clusters, resultando na segmentação mais adequada para a estrutura dos dados analisados.
+  - **Justificativa da Escolha do K=2:** A escolha por formar 2 agrupamentos (K=2) deu-se porque, entre os valores testados, K=2 apresentou o melhor Silhouette Score (aproximadamente 0,3414), já os demais, a inércia diminui progressivamente conforme o número de clusters aumentava. Dessa forma, o valor K = 2 foi escolhido para o treinamento final do modelo por apresentar o melhor equilíbrio entre separação dos grupos e consistência interna dos clusters, resultando na segmentação mais adequada para a estrutura dos dados analisados.
 
-- **Tratamento de Outliers e Análise de Estabilidade**: Calculamos a distância euclidiana de cada ponto ao centroide do seu respectivo cluster e plotamos um histograma para validar a robustez dos grupos gerados. Ambas as curvas do histograma seguem uma distribuição bem comportada, concentrando a grande maioria dos candidatos a distâncias predominantemente entre 1.0 e 3.0 dos seus centros. Não há a presença de caudas excessivamente longas, o que demonstra que candidatos com notas anômalas não distorceram a estrutura geométrica encontrada.
+- **Tratamento de Outliers e Análise de Estabilidade**: Calculamos a distância euclidiana de cada ponto ao centroide do seu respectivo cluster e plotamos um histograma para validar a robustez dos grupos gerados. Ambas as curvas do histograma seguem uma distribuição bem comportada, concentrando a grande maioria dos candidatos a distâncias predominantemente entre 1.0 e 3.0 dos seus centros. Não foram identificadas evidências fortes de que poucos registros estivessem dominando a formação dos clusters.
   
 - **Redução de Dimensionalidade**: Utilizamos a técnica PCA (Principal Component Analysis) para reduzir a dimensionalidade dos dados (de 12 colunas originais para 2) e permitir visualização gráfica. A redução manteve aproximadamente 55,94% da variância total dos dados originais (Sendo o Componente Principal 1 = 28,63% e Componente Principal 2 = 27,31%)..
   ```python
@@ -290,7 +290,7 @@ Esse resultado mostra que o XGBoost aprendeu padrões relevantes nos dados e con
 <img width="527" height="393" alt="matrizdeconfusao" src="https://github.com/user-attachments/assets/8246285a-e0e5-432e-bfbc-b06b2e7dcd85" />
 
 
-A matriz de confusão permitiu observar os acertos e erros do modelo de forma mais concreta. A saída analisada apresentou 31.319 verdadeiros negativos, 2.202 verdadeiros positivos, 1.796 falsos positivos e 1.392 falsos negativos.
+A matriz de confusão permitiu observar os acertos e erros do modelo de forma mais concreta. A saída analisada apresentou 32.158 verdadeiros negativos, 2.428 verdadeiros positivos, 957 falsos positivos e 1.166 falsos negativos.
 
 Esses valores mostram que o modelo teve ótimo desempenho ao identificar candidatos não aprovados, mas ainda apresentou erros relevantes na classe dos aprovados. Os falsos negativos merecem atenção, pois representam candidatos que foram aprovados na realidade, mas que o modelo classificou como não aprovados. Em um estudo sobre aprovação no SISU, esse tipo de erro é importante porque afeta justamente a classe de maior interesse analítico.
 
