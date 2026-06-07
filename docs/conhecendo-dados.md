@@ -4,6 +4,14 @@ Este trabalho tem como objetivo realizar uma 1ª análise exploratória de dados
 
 O projeto está inserido no contexto do sistema EduMap, que visa analisar notas de corte e o nível de concorrência em cursos superiores, utilizando técnicas de ciência de dados e aprendizado de máquina.
 
+Embora a base utilizada seja proveniente de dados públicos disponibilizados pelo Ministério da Educação, o uso dessas informações exige atenção a aspectos éticos e à Lei Geral de Proteção de Dados (LGPD). A origem pública dos dados não elimina a responsabilidade sobre sua finalidade de uso, tratamento adequado, minimização das informações utilizadas e prevenção de riscos de exposição ou discriminação.
+
+Neste trabalho, os dados foram utilizados exclusivamente para fins acadêmicos e analíticos, com o objetivo de estudar padrões relacionados ao processo seletivo do SISU. Foram consideradas apenas as variáveis necessárias para a modelagem, evitando o uso de informações diretamente identificáveis, como CPF, número de inscrição, matrícula, nome do candidato ou outros campos que possam permitir a reidentificação individual.
+
+Também foram observados possíveis riscos associados ao uso de variáveis sensíveis ou socialmente delicadas, como sexo, idade, modalidade de concorrência, cotas e indicadores socioeconômicos indiretos. Essas variáveis podem refletir desigualdades históricas e, caso utilizadas sem análise crítica, podem gerar vieses no modelo ou recomendações discriminatórias.
+
+Dessa forma, a análise deve ser interpretada com cautela, considerando que o modelo não deve ser utilizado como ferramenta automática de decisão individual sobre candidatos. Sua aplicação deve ficar limitada ao contexto acadêmico, exploratório e estatístico, com transparência sobre as variáveis utilizadas, os limites da base de dados e os riscos de viés associados ao processo de modelagem.
+
 ## 1. Descrição da Base de Dados
 
 A base de dados utilizada foi obtida por meio do portal de dados abertos do Ministério da Educação, contendo informações referentes aos candidatos participantes do SISU em 2023. O conjunto de dados original apresenta mais de um milhão de registros, sendo aplicado, neste trabalho, um recorte específico para o estado de Minas Gerais, totalizando aproximadamente 196 mil registros.
