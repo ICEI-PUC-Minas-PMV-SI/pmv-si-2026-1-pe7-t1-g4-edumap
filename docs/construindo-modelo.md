@@ -37,7 +37,9 @@ Para corrigir esse problema, a variável CODIGO_CURSO foi tratada como categóri
 Esse tratamento reduz o risco de o algoritmo aprender cortes arbitrários baseados nos códigos numéricos e melhora a coerência metodológica, a interpretabilidade dos resultados e a capacidade de generalização do modelo.
 
 - **Seleção inicial das features**
+  
 features = df_dataset_tratado[[
+
     'NOTA_L',
     'NOTA_CH',
     'NOTA_CN',
@@ -49,6 +51,7 @@ features = df_dataset_tratado[[
 ]].copy()
 
 - **Tratamento de CODIGO_CURSO como variável categórica**
+  
 features = pd.get_dummies(
     features,
     columns=['CODIGO_CURSO'],
