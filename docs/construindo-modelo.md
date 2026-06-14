@@ -53,7 +53,8 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     features,
     columns=['CODIGO_CURSO'],
     drop_first=True
-) ```
+)
+```
 
 - **Variável alvo:**
 
