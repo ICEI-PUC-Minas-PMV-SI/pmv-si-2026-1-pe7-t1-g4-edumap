@@ -59,7 +59,7 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
 
 - **Variável alvo:**
 
-```target = df_dataset_tratado['APROVADO_T']```
+        ```target = df_dataset_tratado['APROVADO_T']```
 
     Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
     Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas, conforme o código abaixo:
