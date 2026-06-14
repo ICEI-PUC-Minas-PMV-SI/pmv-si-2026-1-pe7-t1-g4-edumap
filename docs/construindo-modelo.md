@@ -26,8 +26,7 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     
       <img src="../docs/img/Mutual_Information_Graphic.jpeg" alt="Mutual Information Graphic" width="600">
 
-- **Tratamento da variável CODIGO_CURSO**
-  
+- **Tratamento da variável CODIGO_CURSO:**  
 Durante a etapa de seleção de variáveis, foi identificado que a variável CODIGO_CURSO apresentava alta relevância no ranking de Mutual Information. Entretanto, é importante destacar que essa variável não representa uma medida quantitativa contínua, mas sim um identificador categórico do curso.
 
 Dessa forma, utilizar CODIGO_CURSO diretamente como número poderia induzir o modelo a interpretar relações ordinais inexistentes, como se um código maior ou menor representasse algum grau de importância, dificuldade ou proximidade entre cursos. Essa interpretação seria inadequada, pois os códigos dos cursos funcionam apenas como rótulos administrativos.
