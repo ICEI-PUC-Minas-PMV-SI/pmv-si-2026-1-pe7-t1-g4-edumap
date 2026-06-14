@@ -38,8 +38,7 @@ Esse tratamento reduz o risco de o algoritmo aprender cortes arbitrários basead
 - **Seleção inicial das features**
   
 features = df_dataset_tratado[[
-
-    'NOTA_L',
+-   'NOTA_L',
     'NOTA_CH',
     'NOTA_CN',
     'NOTA_M',
@@ -49,7 +48,7 @@ features = df_dataset_tratado[[
     'TIPO_MOD_CONCORRENCIA_T'
 ]].copy()
 
-- **Tratamento de CODIGO_CURSO como variável categórica**
+- **Tratamento de CODIGO_CURSO como variável categórica:**
   
 features = pd.get_dummies(
     features,
@@ -57,7 +56,7 @@ features = pd.get_dummies(
     drop_first=True
 )
 
-- **Variável alvo**
+- **Variável alvo:**
 target = df_dataset_tratado['APROVADO_T']
 
 Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
