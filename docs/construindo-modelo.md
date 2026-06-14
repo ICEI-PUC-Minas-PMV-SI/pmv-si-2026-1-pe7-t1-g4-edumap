@@ -27,6 +27,7 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
       <img src="../docs/img/Mutual_Information_Graphic.jpeg" alt="Mutual Information Graphic" width="600">
 
 - **Tratamento da variável CODIGO_CURSO:**  Durante a etapa de seleção de variáveis, foi identificado que a variável CODIGO_CURSO apresentava alta relevância no ranking de Mutual Information. Entretanto, é importante destacar que essa variável não representa uma medida quantitativa contínua, mas sim um identificador categórico do curso.
+  
     Dessa forma, utilizar CODIGO_CURSO diretamente como número poderia induzir o modelo a interpretar relações ordinais inexistentes, como se um código maior ou menor representasse algum grau de importância, dificuldade ou proximidade entre cursos. Essa interpretação seria inadequada, pois os códigos dos cursos funcionam apenas como rótulos administrativos.
 
     Para corrigir esse problema, a variável CODIGO_CURSO foi tratada como categórica por meio da técnica de One-Hot Encoding, transformando cada curso em uma variável binária. Assim, o modelo passa a reconhecer a presença ou ausência de cada curso sem atribuir uma ordem artificial entre eles.
@@ -35,8 +36,8 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
 
 - **Seleção inicial das features**
   
-features = df_dataset_tratado[[
--   'NOTA_L',
+    features = df_dataset_tratado[[
+    'NOTA_L',
     'NOTA_CH',
     'NOTA_CN',
     'NOTA_M',
@@ -48,18 +49,18 @@ features = df_dataset_tratado[[
 
 - **Tratamento de CODIGO_CURSO como variável categórica:**
   
-features = pd.get_dummies(
+    features = pd.get_dummies(
     features,
     columns=['CODIGO_CURSO'],
     drop_first=True
 )
 
 - **Variável alvo:**
-target = df_dataset_tratado['APROVADO_T']
+    target = df_dataset_tratado['APROVADO_T']
 
-Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
+    Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
 
-  Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas, conforme o código abaixo:
+      Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas, conforme o código abaixo:
     ```python
     # Seleção das features finais
     features = df_dataset_tratado[[
