@@ -48,13 +48,12 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
 ]].copy()
 ```
 - **Tratamento de CODIGO_CURSO como variável categórica:**
-``` 
+
     features = pd.get_dummies(
     features,
     columns=['CODIGO_CURSO'],
     drop_first=True
 )
-```
 
 - **Variável alvo:**
 
