@@ -75,6 +75,15 @@ Avalie quais etapas são importantes para o contexto dos dados que você está t
 ## Escolha do Algoritmo
 Para a resolução do problema da classificação da aprovação de candidados no SISU 2023, foi utilizado o algoritmo Random Forest, pertencente à família de métodos de aprendizado supervisionado baseados em ensemble. 
 
+Nesta etapa, foi construído um modelo de aprendizado supervisionado com foco na previsão da aprovação do candidato.
+
+A variável alvo utilizada foi `APROVADO_T`, que indica se o candidato foi aprovado ou não no processo seletivo. Portanto, o problema foi modelado como uma tarefa de classificação binária.
+
+Apesar de o projeto envolver informações como nota de corte, classificação e competitividade, essas variáveis não foram definidas como alvo principal do modelo. Elas foram consideradas apenas como elementos de contexto ou variáveis auxiliares, quando aplicável.
+
+Assim, o objetivo da modelagem é estimar a probabilidade de aprovação do candidato com base nas características disponíveis no dataset, principalmente seu desempenho nas áreas de conhecimento e demais informações relacionadas ao processo seletivo.
+
+
 ## Justificativa da Escolha
 A escolha do Random Forest se deu por sua adequação às características do conjunto de dados ao tipo de problema abordado. O dataset apresenta:
 * Grande volume de registros;
