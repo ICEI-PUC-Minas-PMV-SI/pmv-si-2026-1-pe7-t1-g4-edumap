@@ -61,17 +61,15 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
 
 ```target = df_dataset_tratado['APROVADO_T']```
 
-    Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
-    Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas, conforme o código abaixo:
-   python
-
+Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
+Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas, conforme o código abaixo:
+   
 - **Seleção das features finais:**
 
-    ``` features = df_dataset_tratado[[
+  ``` features = df_dataset_tratado[[
         'NOTA_L', 'NOTA_CH', 'NOTA_CN', 'NOTA_M', 'NOTA_R',
         'CODIGO_CURSO', 'GRAU_T', 'TIPO_MOD_CONCORRENCIA_T'
-    ]]
-    ```
+   ]] ```
 
 - **Separação de Dados:** Os dados foram divididos em conjuntos de treinamento (80%) e teste (20%). Como foi identificado que a base de dados é altamente desbalanceada (90,2% pertencentes à classe 0 - Reprovado; e apenas 9,8% à classe 1 - Aprovado), utilizou-se o parâmetro de estratificação (stratify=target). Isso assegurou que a proporção das classes fosse preservada de maneira adequada em ambos os conjuntos.  
 
