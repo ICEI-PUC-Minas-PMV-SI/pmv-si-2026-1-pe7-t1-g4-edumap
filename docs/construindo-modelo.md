@@ -46,7 +46,6 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     'GRAU_T',
     'TIPO_MOD_CONCORRENCIA_T'
 ]].copy()
-
 ```
 - **Tratamento de CODIGO_CURSO como variável categórica:**
 ``` 
@@ -54,8 +53,7 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     features,
     columns=['CODIGO_CURSO'],
     drop_first=True
-)
-```
+) ```
 
 - **Variável alvo:**
 
