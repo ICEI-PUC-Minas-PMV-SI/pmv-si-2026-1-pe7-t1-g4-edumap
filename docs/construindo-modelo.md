@@ -36,7 +36,7 @@ Para corrigir esse problema, a variável CODIGO_CURSO foi tratada como categóri
 
 Esse tratamento reduz o risco de o algoritmo aprender cortes arbitrários baseados nos códigos numéricos e melhora a coerência metodológica, a interpretabilidade dos resultados e a capacidade de generalização do modelo.
 
-# Seleção inicial das features
+- **Seleção inicial das features**
 features = df_dataset_tratado[[
     'NOTA_L',
     'NOTA_CH',
@@ -48,14 +48,14 @@ features = df_dataset_tratado[[
     'TIPO_MOD_CONCORRENCIA_T'
 ]].copy()
 
-# Tratamento de CODIGO_CURSO como variável categórica
+- **Tratamento de CODIGO_CURSO como variável categórica**
 features = pd.get_dummies(
     features,
     columns=['CODIGO_CURSO'],
     drop_first=True
 )
 
-# Variável alvo
+- **Variável alvo**
 target = df_dataset_tratado['APROVADO_T']
 
 Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
