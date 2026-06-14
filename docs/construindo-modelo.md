@@ -35,7 +35,7 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     Esse tratamento reduz o risco de o algoritmo aprender cortes arbitrários baseados nos códigos numéricos e melhora a coerência metodológica, a interpretabilidade dos resultados e a capacidade de generalização do modelo.
 
 - **Seleção inicial das features:**
-  
+  ```
     features = df_dataset_tratado[[
     'NOTA_L',
     'NOTA_CH',
@@ -46,7 +46,7 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     'GRAU_T',
     'TIPO_MOD_CONCORRENCIA_T'
 ]].copy()
-
+```
 - **Tratamento de CODIGO_CURSO como variável categórica:**
  ``` 
     features = pd.get_dummies(
