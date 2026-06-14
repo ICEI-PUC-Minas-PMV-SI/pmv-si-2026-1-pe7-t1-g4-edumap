@@ -26,14 +26,12 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     
       <img src="../docs/img/Mutual_Information_Graphic.jpeg" alt="Mutual Information Graphic" width="600">
 
-- **Tratamento da variável CODIGO_CURSO:**  
-Durante a etapa de seleção de variáveis, foi identificado que a variável CODIGO_CURSO apresentava alta relevância no ranking de Mutual Information. Entretanto, é importante destacar que essa variável não representa uma medida quantitativa contínua, mas sim um identificador categórico do curso.
+- **Tratamento da variável CODIGO_CURSO:**  Durante a etapa de seleção de variáveis, foi identificado que a variável CODIGO_CURSO apresentava alta relevância no ranking de Mutual Information. Entretanto, é importante destacar que essa variável não representa uma medida quantitativa contínua, mas sim um identificador categórico do curso.
+    Dessa forma, utilizar CODIGO_CURSO diretamente como número poderia induzir o modelo a interpretar relações ordinais inexistentes, como se um código maior ou menor representasse algum grau de importância, dificuldade ou proximidade entre cursos. Essa interpretação seria inadequada, pois os códigos dos cursos funcionam apenas como rótulos administrativos.
 
-Dessa forma, utilizar CODIGO_CURSO diretamente como número poderia induzir o modelo a interpretar relações ordinais inexistentes, como se um código maior ou menor representasse algum grau de importância, dificuldade ou proximidade entre cursos. Essa interpretação seria inadequada, pois os códigos dos cursos funcionam apenas como rótulos administrativos.
+    Para corrigir esse problema, a variável CODIGO_CURSO foi tratada como categórica por meio da técnica de One-Hot Encoding, transformando cada curso em uma variável binária. Assim, o modelo passa a reconhecer a presença ou ausência de cada curso sem atribuir uma ordem artificial entre eles.
 
-Para corrigir esse problema, a variável CODIGO_CURSO foi tratada como categórica por meio da técnica de One-Hot Encoding, transformando cada curso em uma variável binária. Assim, o modelo passa a reconhecer a presença ou ausência de cada curso sem atribuir uma ordem artificial entre eles.
-
-Esse tratamento reduz o risco de o algoritmo aprender cortes arbitrários baseados nos códigos numéricos e melhora a coerência metodológica, a interpretabilidade dos resultados e a capacidade de generalização do modelo.
+    Esse tratamento reduz o risco de o algoritmo aprender cortes arbitrários baseados nos códigos numéricos e melhora a coerência metodológica, a interpretabilidade dos resultados e a capacidade de generalização do modelo.
 
 - **Seleção inicial das features**
   
