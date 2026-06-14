@@ -55,8 +55,10 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
     drop_first=True
 )
 ```
+
 - **Variável alvo:**
-    ```
+
+```
   target = df_dataset_tratado['APROVADO_T']
  ```
 
