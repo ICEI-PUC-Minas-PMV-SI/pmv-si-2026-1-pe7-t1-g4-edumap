@@ -57,18 +57,11 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
 
 - **Variável alvo:**
 
-        ```target = df_dataset_tratado['APROVADO_T']```
+        ``` target = df_dataset_tratado['APROVADO_T'] ```
 
     Após esse tratamento, a importância associada ao curso não deve ser interpretada como efeito numérico do código, mas como influência da categoria do curso na previsão da aprovação do candidato.
     Com base nos resultados, o dataset foi filtrado e mantiveram-se apenas as características mais informativas, conforme o código abaixo:
    
-- **Seleção das features finais:**
-
-  ``` features = df_dataset_tratado[[
-        'NOTA_L', 'NOTA_CH', 'NOTA_CN', 'NOTA_M', 'NOTA_R',
-        'CODIGO_CURSO', 'GRAU_T', 'TIPO_MOD_CONCORRENCIA_T'
-   ]] ```
-
 - **Separação de Dados:** Os dados foram divididos em conjuntos de treinamento (80%) e teste (20%). Como foi identificado que a base de dados é altamente desbalanceada (90,2% pertencentes à classe 0 - Reprovado; e apenas 9,8% à classe 1 - Aprovado), utilizou-se o parâmetro de estratificação (stratify=target). Isso assegurou que a proporção das classes fosse preservada de maneira adequada em ambos os conjuntos.  
 
   | Conjunto    | Classe 0 (Reprovado) | Classe 1 (Aprovado) | % Classe 0 | % Classe 1 |
@@ -79,30 +72,6 @@ Esta etapa consistiu na estruturação dos dados do SISU 2023 para o treinamento
 - **Transformação e Normalização de Dados:** Optou-se por não realizar a normalização ou padronização dos dados (como Min-Max Scaling ou StandardScaler). Essa etapa foi dispensada porque o algoritmo escolhido, o Random Forest Classifier, é baseado em árvores de decisão e, portanto, não é sensível à magnitude ou à escala das variáveis matemáticas.  
 
 - **Tratamento de Dados Desbalanceados:** Para contornar a discrepância severa de volume entre as classes, foi configurado o hiperparâmetro class_weight='balanced_subsample' diretamente no modelo, o que ajuda a ajustar os pesos das classes automaticamente durante o treinamento. Vale registrar que a técnica de oversampling SMOTE chegou a ser aplicada na fase de testes, mas o modelo base se mostrou superior por manter uma melhor estabilidade geral e gerar predições mais confiáveis, justificando a não utilização do balanceamento sintético na versão final. 
-
-<!-- Algumas das etapas podem estar relacionadas à:
-
-* Limpeza de Dados: trate valores ausentes: decida como lidar com dados faltantes, seja removendo linhas, preenchendo com médias, medianas ou usando métodos mais avançados; remova _outliers_: identifique e trate valores que se desviam significativamente da maioria dos dados.
-
-* Transformação de Dados: normalize/padronize: torne os dados comparáveis, normalizando ou padronizando os valores para uma escala específica; codifique variáveis categóricas: converta variáveis categóricas em uma forma numérica, usando técnicas como _one-hot encoding_.
-
-* _Feature Engineering_: crie novos atributos que possam ser mais informativos para o modelo; selecione características relevantes e descarte as menos importantes.
-
-* Tratamento de dados desbalanceados: se as classes de interesse forem desbalanceadas, considere técnicas como _oversampling_, _undersampling_ ou o uso de algoritmos que lidam naturalmente com desbalanceamento.
-
-* Separação de dados: divida os dados em conjuntos de treinamento, validação e teste para avaliar o desempenho do modelo de maneira adequada.
-  
-* Manuseio de Dados Temporais: se lidar com dados temporais, considere a ordenação adequada e técnicas específicas para esse tipo de dado.
-  
-* Redução de Dimensionalidade: aplique técnicas como PCA (Análise de Componentes Principais) se a dimensionalidade dos dados for muito alta.
-
-* Validação Cruzada: utilize validação cruzada para avaliar o desempenho do modelo de forma mais robusta.
-
-* Monitoramento Contínuo: atualize e adapte o pré-processamento conforme necessário ao longo do tempo, especialmente se os dados ou as condições do problema mudarem.
-
-* Entre outras....
-
-Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.-->
 
 # Descrição do modelo
 
@@ -173,7 +142,7 @@ Além disso, o problema apresenta desbalanceamento entre as classes (aprovados e
 
   O modelo apresentou **acurácia geral de 91%** na classificação dos candidatos. Para a classe de **não aprovados (0)**, foram obtidos **_precision_ de 96%, _recall_ de 95% e _F1-score_ de 95%. Já para a classe de **aprovados (1)**, o modelo alcançou _precision_ de 55%, _recall_ de 61% e _F1-score_ de 58%.
 
-  Os resultados demonstram **bom desempenho geral e maior equilíbrio** na identificação da classe minoritária, indicando melhora na capacidade do modelo em reconhecer.
+  Os resultados demonstram **bom desempenho geral e maior equilíbrio** na identificação da classe minoritária, indicando melhora na capacidade do modelo em reconhecer candidatos aprovados.
 
 ### Discussão dos resultados obtidos
 
@@ -197,7 +166,7 @@ Além disso, o problema apresenta desbalanceamento entre as classes (aprovados e
 
 ### Calibração
 
-Ainda para melhorar a confiança das probabilidades previstas no modelo, foram aplicadas técnicas de calibração utilizando os métodos _sigmoid_ e _isotonic_. A avaliação foi realizada por meio de _Brier Score_, no qual valores menores indidcam melhor calibração das probabilidades. Os resultados mostraram que o método _isotonic_ apresentou melhor desempenho, com _Brier Score_ de aproximadamente **0,0550**, superior ao modelo base e ao método _sigmoid_. De forma geral, a calibração contribuiu para tornar as probabilidades mais consistentes com os resultados reais observados.
+Ainda para melhorar a confiança das probabilidades previstas no modelo, foram aplicadas técnicas de calibração utilizando os métodos _sigmoid_ e _isotonic_. A avaliação foi realizada por meio de _Brier Score_, no qual valores menores indicam melhor calibração das probabilidades. Os resultados mostraram que o método _isotonic_ apresentou melhor desempenho, com _Brier Score_ de aproximadamente **0,0550**, superior ao modelo base e ao método _sigmoid_. De forma geral, a calibração contribuiu para tornar as probabilidades mais consistentes com os resultados reais observados.
 
 - **Curva de Calibração - Classe 0**
   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6182c9ed-fe29-4a69-8003-91d8a3fce773" />
@@ -230,7 +199,7 @@ Ainda para melhorar a confiança das probabilidades previstas no modelo, foram a
 
 ### Importância das Variáveis _(Feature Importance)_
 
-  Na análise de **Importância das Variáveis (_Feature Importance_)** foi utilizada para identificar quais variáveis exerceram maior influência nas decisões do modelo. Os resultados demonstraram qua a variável **CODIGO_CURSO** apresentou a maior importância no processo de classificação, indicando forte relação entre o curso escolhido e a probabilidade de aprovação dos candidatos. Em seguida, destacaram-se as variáveis relacionadas ao desempenho dos candidados (_notas_), principalmente:
+  Na análise de **Importância das Variáveis (_Feature Importance_)** foi utilizada para identificar quais variáveis exerceram maior influência nas decisões do modelo. Os resultados demonstraram que a variável **CODIGO_CURSO** apresentou a maior importância no processo de classificação, indicando forte relação entre o curso escolhido e a probabilidade de aprovação dos candidatos. Em seguida, destacaram-se as variáveis relacionadas ao desempenho dos candidados (_notas_), principalmente:
   - **NOTA_M**
   - **NOTA_CH**
   - **NOTA_CN**
