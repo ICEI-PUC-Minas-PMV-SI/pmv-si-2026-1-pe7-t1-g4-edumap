@@ -125,32 +125,6 @@ Saída de Dados
     F1-weighted médio: 0.7611
   ```
 
-<!-- Nesta etapa, deverão ser descritas todas as técnicas utilizadas para pré-processamento/tratamento dos dados.
-
-Algumas das etapas podem estar relacionadas à:
-
-* Limpeza de Dados: trate valores ausentes: decida como lidar com dados faltantes, seja removendo linhas, preenchendo com médias, medianas ou usando métodos mais avançados; remova _outliers_: identifique e trate valores que se desviam significativamente da maioria dos dados.
-
-* Transformação de Dados: normalize/padronize: torne os dados comparáveis, normalizando ou padronizando os valores para uma escala específica; codifique variáveis categóricas: converta variáveis categóricas em uma forma numérica, usando técnicas como _one-hot encoding_.
-
-* _Feature Engineering_: crie novos atributos que possam ser mais informativos para o modelo; selecione características relevantes e descarte as menos importantes.
-
-* Tratamento de dados desbalanceados: se as classes de interesse forem desbalanceadas, considere técnicas como _oversampling_, _undersampling_ ou o uso de algoritmos que lidam naturalmente com desbalanceamento.
-
-* Separação de dados: divida os dados em conjuntos de treinamento, validação e teste para avaliar o desempenho do modelo de maneira adequada.
-  
-* Manuseio de Dados Temporais: se lidar com dados temporais, considere a ordenação adequada e técnicas específicas para esse tipo de dado.
-  
-* Redução de Dimensionalidade: aplique técnicas como PCA (Análise de Componentes Principais) se a dimensionalidade dos dados for muito alta.
-
-* Validação Cruzada: utilize validação cruzada para avaliar o desempenho do modelo de forma mais robusta.
-
-* Monitoramento Contínuo: atualize e adapte o pré-processamento conforme necessário ao longo do tempo, especialmente se os dados ou as condições do problema mudarem.
-
-* Entre outras....
-
-Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto. -->
-
 # Descrição dos modelos
 ### K-Means
 
@@ -408,7 +382,9 @@ Os resultados também reforçam que a aprovação no SISU é um fenômeno multif
 Com isso, os objetivos do projeto foram atendidos. O K-Means permitiu identificar perfis e compreender a estrutura interna dos dados. O XGBoost demonstrou boa capacidade de previsão, especialmente quando avaliado por métricas adequadas ao desbalanceamento. A análise conjunta dos modelos oferece uma visão mais completa da competitividade dos cursos no SISU 2023/1 em Minas Gerais, combinando exploração, interpretação, previsão e avaliação da confiabilidade probabilística.
 
 # Revisão do pipeline de pesquisa e análise de dados
-Nesta etapa, para a revisão do pipeline de pesquisa e análise de dados, considerando as abordagens já desenvolvidas com os modelos XGBoost e K-Means. O objetivo da revisão foi organizar, justificar e sintetizar as principais decisões metodológicas adotadas ao longo do processo, tornando o pipeline mais claro, modular e aplicável a diferentes técnicas de aprendizado de máquina.
+Nesta etapa, foi realizada a revisão do pipeline de pesquisa e análise de dados, considerando as abordagens já desenvolvidas com os modelos XGBoost e K-Means. O objetivo dessa revisão foi organizar, justificar e sintetizar as principais decisões metodológicas adotadas ao longo do processo, tornando o pipeline mais claro, modular e aplicável a diferentes técnicas de aprendizado de máquina.
+
+A revisão também buscou evidenciar a função de cada etapa do fluxo de trabalho, desde a preparação dos dados e seleção de variáveis até a aplicação dos modelos, avaliação dos resultados e interpretação das métricas obtidas.
 
 Utilizando dados do SISU 2023/1, com foco na análise das notas de corte, nível de concorrência dos cursos e situação de aprovação dos candidatos. A base contém informações institucionais, características dos cursos, modalidades de concorrência, quantidade de vagas, notas dos candidatos, classificação e situação final de aprovação. A partir dos dados, foram propostas duas estratégias complementares de análise: uma supervisionada (XGBoost), e outra não supervisionada (K-Means).
 
@@ -443,7 +419,11 @@ No modelo K-Means, o pipeline foi aplicado a uma tarefa não supervisionada, cuj
 
 Como o K-Means é baseado em medidas de distância, a etapa de normalização foi essencial. Variáveis com escalas diferentes, como notas e pesos, poderiam influenciar o agrupamento de forma desigual. Por isso, foi aplicado o StandardScaler, padronizando as variáveis para média próxima de zero e desvio padrão próximo de um. Além disso, variáveis categóricas foram tratadas por meio de codificação adequada, evitando que códigos numéricos fossem interpretados incorretamente como valores ordinais.
 
-A escolha do número de clusters no K-Means foi realizada com apoio de métricas como o Método do Cotovelo e o Silhouette Score. Essa etapa reforça a importância de validar o agrupamento, no primeiro momento o numero 3 clusters seria o indicado, mas pelo uso da Silhouette Score vimos que usar 2 seria mais indicado evitando escolher a quantidade de grupos de forma arbitrária. A análise dos clusters permite complementar a abordagem supervisionada, pois ajuda a compreender perfis semelhantes de candidatos mesmo sem considerar diretamente a variável de aprovação.
+A definição do número de clusters no modelo K-Means foi realizada com apoio de métricas de validação, como o Método do Cotovelo e o Silhouette Score. Essa etapa foi importante para evitar a escolha arbitrária da quantidade de grupos e garantir maior consistência na interpretação dos agrupamentos.
+
+Inicialmente, a análise pelo Método do Cotovelo indicava que três clusters poderiam ser uma alternativa adequada. No entanto, ao considerar o Silhouette Score, observou-se que a configuração com dois clusters apresentou melhor equilíbrio entre coesão interna e separação entre os grupos. Por esse motivo, optou-se pela utilização de dois clusters no modelo final.
+
+A análise dos agrupamentos complementa a abordagem supervisionada, pois permite identificar perfis semelhantes de candidatos sem utilizar diretamente a variável de aprovação. Dessa forma, o K-Means contribui para uma compreensão mais ampla da estrutura dos dados e dos padrões existentes entre os candidatos analisados.
 
 Assim, os dois modelos cumprem papéis diferentes dentro do mesmo pipeline. O XGBoost contribui para a previsão e interpretação dos fatores associados à aprovação, enquanto o K-Means contribui para a identificação de perfis e padrões ocultos na base. Juntos, eles ampliam a capacidade analítica do projeto, combinando classificação supervisionada e segmentação não supervisionada.
 
