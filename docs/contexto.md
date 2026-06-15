@@ -7,8 +7,6 @@ Diante desse contexto, o objetivo geral consiste em investigar os fatores que in
 A relevância do estudo está na ampliação do entendimento sobre os determinantes da competitividade no SISU, contribuindo para análises mais embasadas e transparentes. O público-alvo inclui estudantes, pesquisadores e gestores educacionais interessados em compreender melhor a dinâmica de acesso ao ensino superior público.
 
 
-<!-- Texto descritivo introdutório apresentando a visão geral do projeto a ser desenvolvido considerando o contexto em que ele se insere, os objetivos gerais, a justificativa e o público-alvo do projeto.
-
 Nos últimos anos, o processo de ingresso no ensino superior brasileiro tem sido amplamente influenciado pelos resultados do Exame Nacional do Ensino Médio (ENEM), utilizado como principal mecanismo de seleção para diversas instituições públicas por meio do Sistema de Seleção Unificada (SISU). Esse sistema centraliza a oferta de vagas em cursos de graduação em instituições públicas de todo o país e utiliza as notas obtidas pelos candidatos no ENEM para realizar a classificação e seleção dos estudantes.
 
 O SISU reúne um grande volume de informações sobre candidatos, cursos, instituições e desempenho nas provas do ENEM, formando bases de dados ricas e complexas que possibilitam diferentes tipos de análises educacionais. Entre os dados disponíveis estão informações sobre cursos ofertados, quantidade de vagas, modalidade de concorrência, notas obtidas nas áreas avaliadas pelo ENEM, classificação dos candidatos, notas de corte e resultados de aprovação e matrícula.
@@ -25,9 +23,7 @@ Além disso, embora exista grande volume de dados disponibilizados pelo SISU, su
 
 Diante desse cenário, torna-se necessário desenvolver uma abordagem sistemática que permita não apenas analisar, mas também interpretar os fatores que influenciam as notas de a competitividade dos cursos no SISU 2023/1. A aplicação de modelos interpretáveis de aprendizado de máquina, aliada a técnicas de análise exploratória e segmentação de dados, surge como uma alternativa promissora para suprir essa lacuna. Assim, o problema central deste estudo consiste em compreender, de forma estruturada e baseada em dados, quais variáveis são mais determinantes e como elas se relacionam com os resultados do processo seletivo, considerando também as potencialidades e limitações do uso de Inteligência Artificial nesse contexto.
 
-<!-- Nesta seção, você deve apresentar o problema que a sua investigação/experimentação busca resolver. Por exemplo, caso o _dataset_ selecionado, seja um _dataset_ que contenha uma série temporal com o preço de diversas ações da bolsa de valores, o problema pode estar relacionado a dificuldade em saber a melhor hora (hora certa??) de comprar ou então, de executar a venda de uma determinada ação.
 
-Descreva ainda o contexto em que essa aplicação será usada, se houver: empresa parceira, tecnologias etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
 
 **Atenção:** Nesta etapa, apresente apenas informações reais e já confirmadas. Não antecipe requisitos técnicos detalhados, funcionalidades específicas ou desenhos de projeto — essa parte será desenvolvida posteriormente.
 
