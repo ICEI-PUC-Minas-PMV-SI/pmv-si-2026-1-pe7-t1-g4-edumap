@@ -40,6 +40,7 @@ Link da Aplicação: https://edumap-front-34527319953.us-central1.run.app/
 
 Nesta seção, deve ser produzido um vídeo de até 15 minutos apresentando o escopo geral do projeto, um resumo das etapas desenvolvidas, a demonstração da solução publicada e as conclusões finais, destacando aprendizados, impacto e possibilidades de melhorias.
 
+<a href="../docs/img/EduMap - 7° periodo.pdf">Acesse a apresentação final do projeto EduMap.
 
 
 
