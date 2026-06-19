@@ -34,7 +34,7 @@ O projeto EduMap tem como objetivo apoiar estudantes que pretendem ingressar no 
 
 ## Instruções de utilização
 
-Acesso em Produção (quando disponível)
+Acesso em Produção:
 * URL: [https://edumap-front-34527319953.us-central1.run.app/](https://edumap-front-34527319953.us-central1.run.app/)
 * Status: online
 
