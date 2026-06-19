@@ -386,13 +386,21 @@ Com isso, os objetivos do projeto foram atendidos. O K-Means permitiu identifica
 
 <img width="1128" height="293" alt="image" src="https://github.com/user-attachments/assets/b8815cf4-7870-4f6f-aa84-e6159e9998b3" />
 
-1. Relembrar o objetivo e a finalidade de cada modelo desenvolvido.
+1. Objetivo e finalidade de cada modelo
 
-2. Comparar o desempenho dos modelos supervisionados (Random Forest e XGBoost), utilizando as mesmas métricas de avaliação.
+Ao longo do projeto foram desenvolvidos três modelos com finalidades distintas. O Random Forest e o XGBoost foram utilizados como modelos de aprendizado supervisionado, tendo como objetivo prever a aprovação dos candidatos a partir das variáveis disponíveis no conjunto de dados. Já o K-Means foi empregado como técnica de aprendizado não supervisionado, buscando identificar agrupamentos naturais e perfis semelhantes entre os candidatos, sem utilizar a variável de aprovação durante o treinamento. Dessa forma, cada algoritmo contribuiu para responder a diferentes aspectos do problema estudado.
 
-3. Apresentar o K-Means como modelo não supervisionado, destacando sua contribuição complementar para a análise exploratória e justificando por que suas métricas não são diretamente comparáveis às dos classificadores.
+2. Comparação entre os modelos supervisionados
 
-4. Consolidar os resultados dos três modelos, justificando a escolha do XGBoost como principal modelo preditivo do projeto e evidenciando a contribuição específica de cada algoritmo para o alcance dos objetivos da pesquisa.
+Os modelos Random Forest e XGBoost foram comparados utilizando as mesmas métricas de avaliação, como acurácia, precisão, recall, F1-score e ROC AUC. Ambos apresentaram bom desempenho na tarefa de classificação dos candidatos, porém o XGBoost demonstrou melhor capacidade de generalização e maior equilíbrio entre as métricas analisadas, principalmente na identificação da classe minoritária (candidatos aprovados). Por esse motivo, o XGBoost foi considerado o modelo supervisionado com melhor desempenho para o objetivo proposto.
+
+3. Avaliação complementar do modelo não supervisionado
+
+O K-Means foi utilizado com uma finalidade diferente dos modelos supervisionados. Seu objetivo não foi prever a aprovação dos candidatos, mas identificar padrões e perfis presentes na base de dados por meio da formação de agrupamentos. Assim, seu desempenho foi avaliado por métricas específicas de clusterização, como Silhouette Score, Davies-Bouldin Index e Calinski-Harabasz Index, não sendo metodologicamente adequado compará-lo diretamente aos classificadores Random Forest e XGBoost. Dessa forma, o K-Means deve ser entendido como uma ferramenta complementar de análise exploratória, enriquecendo a interpretação dos dados.
+
+4. Consolidação dos resultados
+
+Considerando os resultados obtidos pelos três modelos, conclui-se que cada algoritmo cumpriu um papel específico dentro do projeto. O Random Forest serviu como modelo de referência para a classificação supervisionada, o XGBoost apresentou o melhor desempenho preditivo entre os classificadores avaliados e o K-Means contribuiu para compreender a estrutura e os perfis existentes na base de dados. Assim, a utilização conjunta dessas abordagens proporcionou uma análise mais abrangente do problema, justificando a escolha do XGBoost como principal modelo preditivo, sem desconsiderar as contribuições dos demais modelos para o desenvolvimento do trabalho.
 
 # Revisão do pipeline de pesquisa e análise de dados
 Nesta etapa, foi realizada a revisão do pipeline de pesquisa e análise de dados, considerando as abordagens já desenvolvidas com os modelos XGBoost e K-Means. O objetivo dessa revisão foi organizar, justificar e sintetizar as principais decisões metodológicas adotadas ao longo do processo, tornando o pipeline mais claro, modular e aplicável a diferentes técnicas de aprendizado de máquina.
