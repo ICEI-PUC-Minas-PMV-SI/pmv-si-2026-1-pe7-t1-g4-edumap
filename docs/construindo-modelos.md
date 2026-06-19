@@ -381,6 +381,19 @@ Os resultados também reforçam que a aprovação no SISU é um fenômeno multif
 
 Com isso, os objetivos do projeto foram atendidos. O K-Means permitiu identificar perfis e compreender a estrutura interna dos dados. O XGBoost demonstrou boa capacidade de previsão, especialmente quando avaliado por métricas adequadas ao desbalanceamento. A análise conjunta dos modelos oferece uma visão mais completa da competitividade dos cursos no SISU 2023/1 em Minas Gerais, combinando exploração, interpretação, previsão e avaliação da confiabilidade probabilística.
 
+
+# Comparação Consolidada dos Modelos
+
+<img width="1128" height="293" alt="image" src="https://github.com/user-attachments/assets/b8815cf4-7870-4f6f-aa84-e6159e9998b3" />
+
+1. Relembrar o objetivo e a finalidade de cada modelo desenvolvido.
+
+2. Comparar o desempenho dos modelos supervisionados (Random Forest e XGBoost), utilizando as mesmas métricas de avaliação.
+
+3. Apresentar o K-Means como modelo não supervisionado, destacando sua contribuição complementar para a análise exploratória e justificando por que suas métricas não são diretamente comparáveis às dos classificadores.
+
+4. Consolidar os resultados dos três modelos, justificando a escolha do XGBoost como principal modelo preditivo do projeto e evidenciando a contribuição específica de cada algoritmo para o alcance dos objetivos da pesquisa.
+
 # Revisão do pipeline de pesquisa e análise de dados
 Nesta etapa, foi realizada a revisão do pipeline de pesquisa e análise de dados, considerando as abordagens já desenvolvidas com os modelos XGBoost e K-Means. O objetivo dessa revisão foi organizar, justificar e sintetizar as principais decisões metodológicas adotadas ao longo do processo, tornando o pipeline mais claro, modular e aplicável a diferentes técnicas de aprendizado de máquina.
 
