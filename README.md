@@ -1,4 +1,4 @@
-# EduMap: Análises sobre as notas de corte e competitividade de cursos de Universidades públicas brasileiras
+# EduMap: Predição de Aprovação em Cursos de Universidades Públicas de Minas Gerais por Meio de Modelos de Inteligência Artificial
 
 `CURSO: Sistemas de Informação`
 
