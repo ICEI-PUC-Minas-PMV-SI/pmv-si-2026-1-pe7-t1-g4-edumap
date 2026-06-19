@@ -40,9 +40,6 @@ Link da Aplicação: https://edumap-front-34527319953.us-central1.run.app/
 
 Nesta seção, deve ser produzido um vídeo de até 15 minutos apresentando o escopo geral do projeto, um resumo das etapas desenvolvidas, a demonstração da solução publicada e as conclusões finais, destacando aprendizados, impacto e possibilidades de melhorias.
 
-# É IMPRESCINDÍVEL: 
-* Atualizar o arquivo **CITATION.cff** disponível no diretório raiz do repositório
-* Atualizar as **Instruções de utilização** no arquivo read.me
 
 
 
