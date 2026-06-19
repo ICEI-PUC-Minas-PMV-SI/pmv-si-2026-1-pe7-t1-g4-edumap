@@ -21,30 +21,25 @@ A elevada competitividade observada nos processos seletivos do Sistema de Seleç
 
 Além disso, embora exista grande volume de dados disponibilizados pelo SISU, sua utilização ainda é, em muitos casos, limitada a análises descritivas superficiais, sem o devido aproveitamento de técnicas mais robustas de Ciência de Dados e aprendizado de máquina. A ausência de abordagens analíticas mais avançadas compromete a identificação de padrões relevantes e a extração de conhecimento útil, tanto para candidatos quanto para gestores educacionais. Isso gera uma lacuna no entendimento sobre como diferentes variáveis contribuem, individual e conjuntamente, para os resultados do processo seletivo.
 
-Diante desse cenário, torna-se necessário desenvolver uma abordagem sistemática que permita não apenas analisar, mas também interpretar os fatores que influenciam as notas de a competitividade dos cursos no SISU 2023/1. A aplicação de modelos interpretáveis de aprendizado de máquina, aliada a técnicas de análise exploratória e segmentação de dados, surge como uma alternativa promissora para suprir essa lacuna. Assim, o problema central deste estudo consiste em compreender, de forma estruturada e baseada em dados, quais variáveis são mais determinantes e como elas se relacionam com os resultados do processo seletivo, considerando também as potencialidades e limitações do uso de Inteligência Artificial nesse contexto.
+Diante desse cenário, torna-se necessário desenvolver uma abordagem sistemática que permita não apenas analisar, mas também interpretar os fatores que influenciam a competitividade dos cursos no SISU 2023/1. A aplicação de modelos interpretáveis de aprendizado de máquina, aliada a técnicas de análise exploratória e segmentação de dados, surge como uma alternativa promissora para suprir essa lacuna. Assim, o problema central deste estudo consiste em compreender, de forma estruturada e baseada em dados, quais variáveis são mais determinantes e como elas se relacionam com os resultados do processo seletivo, considerando também as potencialidades e limitações do uso de Inteligência Artificial nesse contexto.
 
 
 
-**Atenção:** Nesta etapa, apresente apenas informações reais e já confirmadas. Não antecipe requisitos técnicos detalhados, funcionalidades específicas ou desenhos de projeto — essa parte será desenvolvida posteriormente.
-
-O ingresso em instituições públicas de ensino superior no Brasil é altamente competitivo e depende diretamente do desempenho dos candidatos no ENEM e da concorrência existente em cada curso. Um dos principais indicadores desse processo é a nota de corte, que representa a menor pontuação necessária para que um candidato seja classificado dentro do número de vagas disponíveis.
+<!-- O ingresso em instituições públicas de ensino superior no Brasil é altamente competitivo e depende diretamente do desempenho dos candidatos no ENEM e da concorrência existente em cada curso. Um dos principais indicadores desse processo é a nota de corte, que representa a menor pontuação necessária para que um candidato seja classificado dentro do número de vagas disponíveis.
 
 Entretanto, a nota de corte não é um valor fixo e pode variar significativamente de acordo com diversos fatores, como o número de candidatos concorrendo a uma vaga, a distribuição das notas obtidas no ENEM, a quantidade de vagas disponíveis e a modalidade de concorrência adotada no processo seletivo.
 
 Para candidatos, gestores educacionais e pesquisadores, pode ser difícil compreender ou prever o comportamento dessas notas ao longo do processo seletivo, especialmente em cursos com grande número de concorrentes. Dessa forma, surge a necessidade de utilizar métodos analíticos capazes de identificar padrões nos dados históricos e auxiliar na compreensão do comportamento das notas e da classificação dos candidatos.
 
-Neste contexto, a aplicação de técnicas de ciência de dados e aprendizado de máquina pode contribuir para a análise desse fenômeno, permitindo explorar relações entre variáveis como notas nas diferentes áreas do ENEM, pesos atribuídos pelos cursos, quantidade de vagas e desempenho dos candidatos no processo seletivo.
+Neste contexto, a aplicação de técnicas de ciência de dados e aprendizado de máquina pode contribuir para a análise desse fenômeno, permitindo explorar relações entre variáveis como notas nas diferentes áreas do ENEM, pesos atribuídos pelos cursos, quantidade de vagas e desempenho dos candidatos no processo seletivo. -->
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/) -->
+
 
 ## Questão de pesquisa
 
 A partir do problema apresentado, a seguinte questão de pesquisa orienta o desenvolvimento deste trabalho:
 
-Quais são os principais fatores que influenciam a competitividade dos cursos ofertados no SISU 2023/1 e de que forma variáveis institucionais, acadêmicas e estruturais impactam a nota de corte, a classificação e a aprovação dos candidatos, segundo a análise por técnicas de Ciência de Dados e aprendizado de máquina?
+"Quais são os principais fatores que influenciam a competitividade e a probabilidade de aprovação dos candidatos nos cursos ofertados no SISU 2023/1 em Minas Gerais, segundo a análise por técnicas de Ciência de Dados e Aprendizado de Máquina?"
 
 <!-- A questão de pesquisa é o ponto de partida e a base orientadora de todo o trabalho a ser desenvolvido. Ela deve estar diretamente alinhada ao problema identificado e expressar, de forma clara, o que se deseja investigar ou comprovar.
 
@@ -65,44 +60,15 @@ Essa questão busca investigar se modelos de aprendizado de máquina podem extra
 
 ### Objetivo Geral
 
-Investigar, por meio da aplicação de técnicas de Ciência de Dados e de aprendizado de máquina, os principais fatores que impactam a competitividade dos cursos ofertados no SISU 2023/1, examinando de que forma variáveis relacionadas à instituição, ao curso, ao turno, à modalidade de concorrência, à localização e à quantidade de vagas se correlacionam com a nota de corte, a classificação e a aprovação dos candidatos.
+Investigar os principais fatores que influenciam a competitividade dos cursos ofertados no SISU 2023/1 em Minas Gerais, utilizando técnicas de Ciência de Dados e de Aprendizado de Máquina, para identificar perfis de concorrência e estimar a probabilidade de aprovação dos candidatos.
 
 ### Objetivos Específicos
 
-- Realizar o pré-processamento e a estruturação do conjunto de dados referente ao SISU 2023/1, visando sua adequação para as etapas analíticas.
-- Conduzir uma análise estatística exploratória das distribuições de notas de corte, aprovações e classificações entre cursos, instituições e modalidades de concorrência.
-- Determinar os atributos mais significativos na explicação da competitividade dos cursos ofertados.
-- Empregar modelos de aprendizado de máquina com foco em interpretabilidade para avaliar a influência das variáveis sobre a nota de corte e a aprovação dos candidatos.
-- Executar a segmentação de cursos com características semelhantes em termos de competitividade e acesso.
-- Analisar criticamente o potencial e as limitações da utilização de técnicas de Inteligência Artificial na interpretação de dados educacionais do SISU.
+- Realizar o pré-processamento e a estruturação do conjunto de dados referente ao SISU 2023/1, visando sua adequação para as etapas analíticas;
+- Conduzir uma análise estatística exploratória das distribuições de notas de corte, aprovações e classificações entre cursos, instituições e modalidades de concorrência;
+- Desenvolver e avaliar modelos de Machine Learning (Random Forest e XGBoost) com foco em métricas de classificação;
+- Segmentar perfis de concorrência por meio de modelo de Aprendizado de Máquina não supervisionado (K-Means).
 
-
-<!-- Nesta seção, você deve apresentar os objetivos preliminares do trabalho, deixando claro que o objetivo geral é experimentar modelos de aprendizado de máquina adequados para solucionar o problema descrito anteriormente.
-
-Além do objetivo geral, é importante definir pelo menos dois objetivos específicos, que direcionem a investigação de acordo com o foco que o grupo pretende adotar. Esses objetivos específicos podem envolver: 
-* Explorar um determinado tipo de modelagem ou técnica de aprendizado de máquina;
-* Comparar diferentes abordagens para resolver o mesmo problema;
-* Aplicar o modelo em um cenário real ou simulado;
-* Otimizar parâmetros para melhorar métricas específicas de desempenho.
-
-Exemplo:
-Objetivo específico 1: Predizer a tendência de alta, estabilidade ou queda de uma determinada ação em uma janela de tempo definida.
-Objetivo específico 2: Estimar o valor exato da ação ao final do período analisado.
-
-Objetivo Geral
-
-Explorar e experimentar modelos de aprendizado de máquina aplicados ao dataset do processo seletivo do ensino superior brasileiro, com o objetivo de identificar padrões e analisar fatores relacionados ao desempenho e classificação dos candidatos.
-
-Objetivos Específicos
-- Analisar e explorar o conjunto de dados, identificando as principais variáveis e relações existentes entre elas.
-- Aplicar técnicas de pré-processamento e preparação de dados para possibilitar o uso em modelos de aprendizado de máquina.
-- Experimentar diferentes algoritmos de aprendizado de máquina para analisar padrões relacionados à classificação e às notas dos candidatos.
-- Avaliar o desempenho dos modelos utilizando métricas adequadas de avaliação.
-
-**Importante:** À medida que a pesquisa/experimentação avança, os objetivos podem ser ajustados ou refinados. Mantenha essa seção atualizada no repositório para refletir o andamento e as novas decisões do projeto.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/) -->
 
 ## Justificativa
 
