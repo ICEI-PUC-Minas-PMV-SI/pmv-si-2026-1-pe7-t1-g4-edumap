@@ -232,6 +232,8 @@ Depois do primeiro treinamento, foi realizada uma nova abordagem com refinamento
 
 Para avaliar o desempenho do XGBoost, foram utilizadas métricas de classificação supervisionada. Como o objetivo do modelo era prever a situação final do candidato, a avaliação foi feita comparando as previsões do modelo com os valores reais da variável APROVADO.
 
+Como o XGBoost é um modelo supervisionado aplicado a um problema de classificação com classes desbalanceadas, o F1-score da classe positiva foi adotado como principal métrica de comparação entre os modelos supervisionados. As demais métricas (accuracy, precision, recall, ROC AUC, matriz de confusão, Brier Score, LogLoss e ECE) foram utilizadas de forma complementar para avaliar diferentes aspectos do desempenho do modelo.
+
 O modelo foi treinado com hiperparâmetros ajustados, incluindo learning_rate = 0,30, max_depth = 10 e n_estimators = 671. Também foram utilizados parâmetros como gamma, subsample, colsample_bytree, reg_alpha e reg_lambda, buscando controlar a complexidade do modelo, reduzir overfitting e melhorar a capacidade de generalização.
 
 As previsões foram feitas a partir das probabilidades geradas pelo modelo, com uso de threshold igual a 0,4 para a classe positiva. Essa escolha é relevante em um cenário desbalanceado, pois permite ajustar o ponto de decisão para tentar melhorar a identificação dos aprovados.
