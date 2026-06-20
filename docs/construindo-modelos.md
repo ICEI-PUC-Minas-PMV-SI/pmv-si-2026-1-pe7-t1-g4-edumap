@@ -424,6 +424,8 @@ O pipeline revisado foi estruturado em etapas sequenciais:
 11. Interpretação;
 12. Documentação.
 
+O projeto foi desenvolvido utilizando notebooks independentes para cada modelo, mantendo uma sequência comum de preparação, treinamento e avaliação. Embora a implementação não tenha sido separada em módulos reutilizáveis, a organização em etapas padronizadas permite reproduzir o fluxo metodológico adotado em todos os experimentos.
+
 Essa organização permite que o processo seja compreendido de forma lógica e replicável.
 
 Na análise exploratória, foram avaliadas as principais características da base, incluindo tipos de dados, valores ausentes, distribuição das variáveis, balanceamento da variável-alvo e comportamento das notas. Essa etapa foi fundamental para identificar problemas que poderiam comprometer a qualidade dos modelos, dados armazenados como texto, valores nulos, notas iguais a zero, possíveis outliers e forte desbalanceamento entre candidatos aprovados e não aprovados.
