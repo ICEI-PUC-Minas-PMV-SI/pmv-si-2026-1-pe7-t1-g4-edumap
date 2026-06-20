@@ -146,12 +146,6 @@ O XGBoost foi escolhido por conta do seu desempenho em problemas de classificaç
 
 Entre as vantagens do modelo, destacam-se a alta precisão, robustez e capacidade de capturar padrões complexos. Como limitação, o algoritmo apresenta maior custo computacional e maior sensibilidade ao ajuste de hiperparâmetros.
 
-
-
-
-
-
-
 ## Avaliação dos modelos criados
 
 A avaliação dos modelos criados foi realizada considerando a finalidade de cada técnica aplicada no projeto. Como foram construídos modelos com naturezas diferentes, a análise dos resultados também precisou seguir critérios diferentes. O K-Means foi utilizado como modelo de aprendizado não supervisionado, com o objetivo de identificar agrupamentos naturais entre os candidatos a partir das características presentes no dataset. Já o XGBoost foi utilizado como modelo supervisionado, voltado à previsão da situação final do candidato, classificando os registros entre aprovados e não aprovados.
@@ -169,6 +163,8 @@ Embora diferentes métricas tenham sido utilizadas para analisar aspectos espec�
 ### K-Means
 
 Para avaliar a qualidade dos agrupamentos gerados pelo K-Means, foram utilizadas métricas de validação interna, já que modelos de clusterização não possuem uma variável alvo para comparação direta. O objetivo foi analisar se os clusters formados apresentavam coesão interna, separação entre si e coerência com os padrões presentes nos dados.
+
+Como o K-Means é um algoritmo de aprendizado não supervisionado, sua avaliação foi realizada por métricas específicas de clusterização. Nesse contexto, o Silhouette Score foi adotado como principal indicador da qualidade dos agrupamentos, enquanto Davies-Bouldin e Calinski-Harabasz foram utilizados como métricas complementares para apoiar a interpretação dos resultados.
 
 Antes da definição do modelo final, foram testados diferentes valores de K, variando de 2 a 6. Essa etapa foi necessária porque o número de clusters influencia diretamente a forma como os dados são segmentados. Para apoiar essa escolha, foram utilizadas duas abordagens principais: o Método do Cotovelo, baseado na inércia, e o Silhouette Score, voltado à avaliação da coesão interna e da separação entre os grupos.
 
