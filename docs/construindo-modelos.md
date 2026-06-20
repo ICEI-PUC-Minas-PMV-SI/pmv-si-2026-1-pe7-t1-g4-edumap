@@ -160,6 +160,10 @@ Essa diferença é importante porque os dois modelos não respondem exatamente �
 
 No contexto do SISU, essa avaliação é especialmente relevante porque o dataset apresenta forte desbalanceamento entre as classes. A maior parte dos registros pertence a candidatos não aprovados, enquanto os aprovados representam uma parcela menor do conjunto. Esse comportamento é esperado em processos seletivos concorridos, mas exige cuidado na interpretação das métricas. Uma acurácia elevada, por exemplo, pode transmitir uma impressão exageradamente positiva se o modelo estiver apenas reconhecendo bem a classe majoritária e falhando na identificação da classe minoritária.
 
+## Critério de comparação adotado
+
+Embora diferentes métricas tenham sido utilizadas para analisar aspectos específicos do desempenho dos modelos, este trabalho adota o F1-score da classe positiva como principal critério para comparação entre os modelos supervisionados. Essa escolha se justifica pelo forte desbalanceamento do conjunto de dados, no qual apenas cerca de 10% dos candidatos foram aprovados. O F1-score permite avaliar simultaneamente a precisão e a capacidade do modelo em identificar corretamente a classe minoritária, oferecendo uma medida mais equilibrada do desempenho preditivo. As demais métricas são apresentadas como análises complementares, contribuindo para uma interpretação mais abrangente do comportamento dos modelos.
+
 ## Métricas utilizadas
 
 ### K-Means
